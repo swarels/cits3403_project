@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>FitTrack</h1>
+<div class="page">
+  <div class="form-container">
+    <form action="login.php" method="post">
+
+      <img src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 150px>
+
+      <h2>Sign In!</h2>
+
+      <form class="inline">
+          <div class="input-icons">
+              <i class="material-icons">person</i>
+              <input type="text" id="username" name="username" required placeholder="Username">
+              <i class="material-icons">lock</i>
+              <input type="password" id="password" name="password" required placeholder="Password">
+          </div>
+          
+          <input type="submit" value="Sign In"> 
+    </form>
+  </div>
+
+  <div class="signUpLink">
+      <a href="#">Create an account!</a>
+  </div>
+
+</div>
+
+
+{% endblock %}
