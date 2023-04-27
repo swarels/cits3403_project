@@ -16,6 +16,9 @@ socketio = SocketIO(app)
 def home():
     return render_template("home.html")
 
+@app.route("/room")
+def room():
+    return render_template("room.html")
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
