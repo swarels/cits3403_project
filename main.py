@@ -1,6 +1,9 @@
 # install following before beginning:
 # pip install flask
 # pip install flask-socketio
+# pip install flask-wtf
+# pip install pymysql
+# pip install mysql-connector-python
 
 from flask import Flask, render_template, request, session, redirect
 from flask_socketio import join_room, leave_room, send, SocketIO
