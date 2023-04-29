@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        body {
+            background-color: #21262b;
+        }
+
+        /*.textbox {
+            background: #fff;
+            font-size: 4vw;
+            padding: 1em;
+            border-bottom: 1vw solid #21262b;
+        } */
+
+        p {
+            font-size: 4vw;
+        }
+
+        .dropdown-container {
+            position: relative;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        .dropdownmenu {
+            display: inline-block;
+        }
+
+        .dropdownbtn {
+            background-color: #21262b;
+            color: white;
+            border: 1px solid #6a7277;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+        }
+
+        .dropdown-content a {
+            display: block;
+        }
+
+        .show {display:block;}
+
+        img {
+            position: absolute;
+            top: 0;
+            padding: 50px;
+            z-index: 2;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+    <div class="textbox">
+        
+    </div>
+
+    <div class="dropdown-container">
+        <img src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width="150px" alt="">
+        <div class="dropdownmenu">
+            <button onclick="dropdownFunction()" class="dropdownbtn">Click here to pick fitness goals</button>
+            <div id="dropdownoptions" class="dropdown-content">
+                <a href="#">Gain weight(in muscle)</a>
+                <a href="#">Lose weight</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function dropdownFunction() {
+        document.getElementById("dropdownoptions").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdownbtn')) {
+            var droplist = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < droplist.length; i++) {
+                var openDroplist = droplist[i];
+                if (openDroplist.classList.contains('show')) {
+                    openDroplist.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</html>
