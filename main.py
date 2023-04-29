@@ -9,9 +9,28 @@ from string import ascii_uppercase
 
 from forms import SignUpForm
 
+import mysql.connector
+
+
+"""
+Initialize flask object
+"""
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secretkey123"
 socketio = SocketIO(app)
+
+# """
+# Initialize the database
+# """
+# mydb = mysql.connector.connect(
+#     host = "localhost",
+#     user="root",
+#     password="23073177"
+# )
+# # print(mydb) # tests the connection
+# mycurser = mydb.cursor()
+# mycurser.execute("CREATE DATABASE GymUsers")
+
 
 """
 Main homepage
