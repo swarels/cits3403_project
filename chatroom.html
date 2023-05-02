@@ -5,14 +5,29 @@
     <style>
         body {
             background-color: #21262b;
+            
         }
 
-        /*.textbox {
+        .textbox-container {
+            position: relative;
+        }  
+
+        .textbox {
+            position: absolute;
+            top: 20px;
+            left: 20px;
             background: #fff;
-            font-size: 4vw;
+            color: blue;
+            width: 470px;
+            font-size: 1vw;
             padding: 1em;
             border-bottom: 1vw solid #21262b;
-        } */
+            margin-left: 750px;
+        } 
+
+        #intro {
+            line-height: 4px;
+        }
 
         p {
             font-size: 4vw;
@@ -38,6 +53,7 @@
             border-radius: 5px;
             font-size: 20px;
             cursor: pointer;
+            
         }
 
         .dropdown-content {
@@ -69,9 +85,11 @@
 </head>
 <body>
 
+<div class="textbox-container">
     <div class="textbox">
-        
+        <h6 id="intro">Hi there, my name is gym rat. I am here to help you with your fitness goals. Please click below to choose your fitness options</h6>
     </div>
+</div>
 
     <div class="dropdown-container">
         <img src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width="150px" alt="">
@@ -83,8 +101,13 @@
             </div>
         </div>
     </div>
-</body>
+
 <script>
+    /*setTimeout(function(){
+        var message = document.getElementById("intro");
+        message.parentNode.removeChild(message); 
+    }, 3000); */
+
     function dropdownFunction() {
         document.getElementById("dropdownoptions").classList.toggle("show");
     }
@@ -101,4 +124,5 @@
         }
     }
 </script>
+</body>
 </html>
