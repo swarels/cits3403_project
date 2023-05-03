@@ -5,14 +5,36 @@
     <style>
         body {
             background-color: #21262b;
+            
         }
 
-        /*.textbox {
-            background: #fff;
-            font-size: 4vw;
+        .textbox-container {
+            position: relative;
+        }  
+
+        .textbox {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #21262b;
+            color: blue;
+            width: 470px;
+            font-size: 1vw;
             padding: 1em;
-            border-bottom: 1vw solid #21262b;
-        } */
+            margin-left: 750px;
+            border: 1px solid #6a7277;
+            border-radius: 5px;
+        } 
+
+        .corner {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        #intro {
+            line-height: 4px;
+        }
 
         p {
             font-size: 4vw;
@@ -38,6 +60,7 @@
             border-radius: 5px;
             font-size: 20px;
             cursor: pointer;
+            
         }
 
         .dropdown-content {
@@ -69,9 +92,14 @@
 </head>
 <body>
 
+<div class="textbox-container">
     <div class="textbox">
-        
+        <h6 id="intro">Hi there, my name is gym rat. I am here to help you with your fitness goals. Please click below to choose your fitness options</h6>
+        <svg class="corner" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35 3.5L65 6.5V62L0 0L35 3.52" fill="white"/> 
+        </svg>
     </div>
+</div>
 
     <div class="dropdown-container">
         <img src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width="150px" alt="">
@@ -83,8 +111,13 @@
             </div>
         </div>
     </div>
-</body>
+
 <script>
+    setTimeout(function(){
+        var message = document.getElementById("intro");
+        message.parentNode.removeChild(message); 
+    }, 3000); 
+
     function dropdownFunction() {
         document.getElementById("dropdownoptions").classList.toggle("show");
     }
@@ -101,4 +134,5 @@
         }
     }
 </script>
+</body>
 </html>
