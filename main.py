@@ -10,6 +10,9 @@ from flask_socketio import join_room, leave_room, send, SocketIO
 import random
 from string import ascii_uppercase
 
+from forms import LoginForm
+
+from forms import LoginForm
 from forms import SignUpForm
 
 import mysql.connector
@@ -40,7 +43,12 @@ Main homepage
 """
 @app.route("/", methods=["POST", "GET"])
 def home():
-    return render_template("home.html")
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user (), remember=()'.format(
+            form.username.data, form.remember.data))
+        return redirect('/room')
+    return render_template("home.html", title='Sign In', form=form)
 
 @app.route("/room")
 def room():
