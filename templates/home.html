@@ -3,27 +3,33 @@
 <h1>FitTrack</h1>
 <div class="page">
   <div class="form-container">
-    <form action="login.php" method="post">
-
+    
       <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 150px>
 
       <h2>Sign In!</h2>
 
-      <form class="inline">
-          <div class="input-icons">
-              <i class="material-icons">person</i>
-              <input type="text" id="username" name="username" required placeholder="Username">
+      <form class="inline" name="login" action="" method="post">
+          <div class="form-group">
+              <input id="csrf_token" name="csrf_token" type="hidden" value="InwiwfwiUUUIjjwjwullm">
+              <label for="username"><i class="material-icons">person</i></label>
+              <input type="text" id="username" name="username" required placeholder="Username"
+                value="{{request.form.username }}">
               <br/>
-              <i class="material-icons">lock</i>
-              <input type="password" id="password" name="password" required placeholder="Password">
+              <label for="password"><i class="material-icons">lock</i></label>
+              <input type="password" id="password" name="password" required placeholder="Password"
+                value="">
+              <br/>
+              <input id="remember" name="remember" type="checkbox" value="y">
+              <label for = "remember">Remember me?</label>
+              <br/>
+              <input type="submit" value="Sign In" style="align-self:center">
           </div>
           
-          <input type="submit" value="Sign In"> 
-    </form>
-  </div>
+      </form>
 
-  <div class="signUpLink">
+    <div class="signUpLink">
       <a href="#">Create an account!</a>
+    </div>
   </div>
 
 </div>
