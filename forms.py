@@ -8,3 +8,8 @@ class LoginForm(FlaskForm):
     password = StringField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+class SignUpForm(FlaskForm):
+    username = StringField('Username')
+    password = PasswordField('Password')
+    submit = SubmitField('Sign up')
