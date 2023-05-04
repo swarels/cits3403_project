@@ -9,29 +9,32 @@
 
       <form class="inline" name="login" action="" method="post">
           <div class="form-group">
-              <input id="csrf_token" name="csrf_token" type="hidden" value="InwiwfwiUUUIjjwjwullm">
-              <label for="username"><i class="material-icons">person</i></label>
+            <input id="csrf_token" name="csrf_token" type="hidden" value="InwiwfwiUUUIjjwjwullm">
+            <span><label for="username"><i class="material-icons">person</i></label>
               <input type="text" id="username" name="username" required placeholder="Username"
                 value="{{request.form.username }}">
-              <br/>
-              <label for="password"><i class="material-icons">lock</i></label>
+            </span>
+            <br/>
+            <span><label for="password"><i class="material-icons">lock</i></label>
               <input type="password" id="password" name="password" required placeholder="Password"
-                value="">
+                value=""> </span>
               <br/>
+            <span>
               <input id="remember" name="remember" type="checkbox" value="y">
               <label for = "remember">Remember me?</label>
-              <br/>
-              <input type="submit" value="Sign In" style="align-self:center">
+            </span>
+            <br/>
+            <input type="submit" value="Sign In">
           </div>
           
       </form>
 
   <div class="signUpLink">
-      <a href="http://127.0.0.1:5000/signup">Create an account!</a>
+      <a href="/signup">Create an account!</a>
   </div>
 
-  <div class="chatrromlink">
-    <a href="chatroom" target="_blank">Go to chatroom page</a>
+  <div class="chatroomlink">
+    <a href="/loading" target="_blank">Go to chatroom page</a>
   </div>
 
 </div>
