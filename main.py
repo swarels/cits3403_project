@@ -41,34 +41,48 @@ socketio = SocketIO(app)
 """
 Main homepage
 """
+
+
 @app.route("/", methods=["POST", "GET"])
 def home():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Login requested for user (), remember=()'.format(
-            form.username.data, form.remember.data))
-        return redirect('/room')
-    return render_template("home.html", title='Sign In', form=form)
+        flash(
+            "Login requested for user (), remember=()".format(
+                form.username.data, form.remember.data
+            )
+        )
+        return redirect("/room")
+    return render_template("home.html", title="Sign In", form=form)
+
 
 @app.route("/room")
 def room():
     return render_template("room.html")
 
+
 @app.route("/loading")
 def loading():
     return render_template("loadingpage.html")
 
+
 """
 Signup page
 """
-@app.route("/signup", methods = ["GET", "POST"])
+
+
+@app.route("/signup", methods=["GET", "POST"])
 def signup():
     form = SignUpForm()
     # if form.is_submitted():
     #     result = request.form
-    #     return 
-    return render_template("signup.html", form = form)
+    #     return
+    return render_template("signup.html", form=form)
 
+
+@app.route("/talkingRat")
+def talkingRat():
+    return render_template("talkingRat.html")
 
 
 if __name__ == "__main__":
