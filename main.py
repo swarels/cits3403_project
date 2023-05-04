@@ -54,6 +54,10 @@ def home():
 def room():
     return render_template("room.html")
 
+@app.route("/loading")
+def loading():
+    return render_template("loadingpage.html")
+
 """
 Signup page
 """
