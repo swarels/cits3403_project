@@ -4,13 +4,13 @@
 # pip install flask-wtf
 # pip install pymysql
 # pip install mysql-connector-python
+# pip install flask-sqlalchemy
+# pip install flask-migrate
 
 from flask import Flask, render_template, request, session, redirect
 from flask_socketio import join_room, leave_room, send, SocketIO
 import random
 from string import ascii_uppercase
-
-from forms import LoginForm
 
 from forms import LoginForm
 from forms import SignUpForm
@@ -42,6 +42,7 @@ socketio = SocketIO(app)
 Main homepage
 """
 @app.route("/", methods=["POST", "GET"])
+@app.route("/index", methods=["POST", "GET"])
 def home():
     form = LoginForm()
     if form.validate_on_submit():
