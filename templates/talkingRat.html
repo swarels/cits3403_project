@@ -1,13 +1,131 @@
-{% extends "base.html"%}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/x-icon" href="https://dreamlightvalleywiki.com/images/7/70/Remy.png">
 
-<div class="page">
+    <style> 
+    body{
+    background-color: #21262b; 
+    color: white;
+    margin: 10px;
+    margin-left: 40px;
+    font-family: 'Poppins', sans-serif;
+    }
 
-    <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 150px>
+    .content {
+    display: flex;
+    align-items: center;
+    justify-content: center
+    }
 
+    h1 {
+    font-family: 'Teko', sans-serif;
+    color: #eb1022;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px
+    
+    }
 
-</div>
+    .rat {
+        flex: 0 0 auto;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
 
+    .comments {
+        width: 400px;
+    }
 
-{% endblock %}
+    .comments .comment {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
+    .comments .comment p {
+        margin: 0 0 10px 0;
+    }
+
+    .bubble{
+        position: relative;
+        background: #fff;
+        padding: 20px;
+        color: #222;
+        border-radius: 3px;
+        margin-left: 75px;
+        margin-top: 50px;
+    }
+
+    .bubble:after {
+        content: "";
+        display: block;
+        position: absolute;
+
+        left: -15px;
+
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 15px solid #fff;
+    }
+
+    button {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 60px;
+    font-size: 1.2em;
+    color: #f5f1f1;
+    background-color: #3e707d;
+    margin-bottom: 100px;
+    }
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="content">
+
+        <h1>FitTrack</h1>
+
+        <div class = "rat">
+            <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 250px>
+        </div>
+
+        <div class = "comments">
+            <div class="comment bubble">
+                <p> Hey! I'm GymRat - nice to meet you! Glad to hear that you're starting 
+                    your fitness journey with us today. </p>
+            </div>
+
+            <div class="comment bubble">
+                <p> To get started, let's find out what your goals are and then we can 
+                    match you with a professional who'll take you through a fitness plan. </p>
+            </div>
+
+        </div>
+        
+        <div class="button"> 
+            <button type="button"> Start Matching </button>
+        </div>
+        
+        
+
+    </div>
+    
+
+</body>
+
+</html>
