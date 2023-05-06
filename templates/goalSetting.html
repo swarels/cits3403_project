@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/x-icon" href="https://dreamlightvalleywiki.com/images/7/70/Remy.png">
+
+    <style>
+    body{
+    background-color: #21262b;
+    color: white;
+    margin: 10px;
+    margin-left: 40px;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    /* .content {
+    display: flex;
+    align-items: center;
+    justify-content: center
+    } */
+
+    .content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+    h1 {
+    font-family: 'Teko', sans-serif;
+    color: #eb1022;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px
+    
+    }
+
+    input[type=radio]{
+        transform: scale(2);
+        margin-right: 1em;
+    }
+
+    label{
+        margin-right: 2em;
+    }
+
+    .rat {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-left: 200px;
+    } 
+
+    .comments {
+        width: 350px;
+    }
+
+    .comments .comment {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .comments .comment p {
+        margin: 0 0 10px 0;
+    }
+
+    .bubble{
+        position: relative;
+        background: #fff;
+        padding: 20px;
+        color: #222;
+        border-radius: 3px;
+        margin-left: 75px;
+        margin-top: 50px;
+    }
+
+    .bubble:after {
+        content: "";
+        display: block;
+        position: absolute;
+
+        left: -15px;
+
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 15px solid #fff;
+    }
+
+    .regular{
+        flex: 0 0 auto;
+        margin-right: 10px;
+        margin-top: 50px;
+        margin-left: 200px;
+    }
+
+    
+    </style>
+</head>
+<body> 
+    <div class="content">
+        <h1>FitTrack</h1>
+
+        <div class="rat">
+            <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+        </div>
+
+        <div class = "comments">
+            <div class="comment bubble">
+                <p> Please answer the following questions! </p>
+            </div>
+        </div>
+    </div>
+
+    <article class="regular">
+        <h4> What is your main goal?</h4>
+        <input type="radio" name="goal" id="rad1" value="Lose Weight">
+        <label for="rad1">Lose Weight</label>
+        <input type="radio" name="goal" id="rad2" value="Gain Weight">
+        <label for="rad2">Build Muscle</label>
+        <input type="radio" name="goal" id="rad3" value="Get in shape">
+        <label for="rad3">Get In Shape</label>
+        <input type="radio" name="goal" id="rad4" value="other">
+        <label for="rad4">Other</label>
+    </article>
+
+    <article class="regular">
+        <h4> What is your current height and weight?</h4>
+        <input type="text" name="height" id="text1" placeholder="Height">
+        <input type="text" name="height" id="text2" placeholder="Weight">
+    </article>
+
+</body>
+</html>
