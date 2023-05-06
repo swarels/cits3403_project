@@ -51,7 +51,9 @@ def signup():
     #     return 
     return render_template("signup.html", form = form)
 
-
+@app.route('/chatroom')
+def chatroom():
+    return render_template('chatroom.html')
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
