@@ -69,8 +69,6 @@ def loading():
 """
 Signup page
 """
-
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     form = SignUpForm()
@@ -83,6 +81,12 @@ def signup():
 @app.route("/talkingRat")
 def talkingRat():
     return render_template("talkingRat.html")
+
+
+
+@app.route("/goalSetting")
+def goalSetting():
+    return render_template("goalSetting.html")
 
 
 if __name__ == "__main__":

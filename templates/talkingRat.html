@@ -89,6 +89,12 @@
     color: #f5f1f1;
     background-color: #3e707d;
     margin-bottom: 100px;
+    cursor: pointer;
+    border-radius: 8px;
+    }
+    
+    button:hover {
+        background-color: #3e8e41;
     }
 
     .gobacklink {
@@ -124,7 +130,7 @@
         </div>
         
         <div class="button"> 
-            <button type="button"> Start Matching </button>
+            <button type="button" id="start_matching"> Start Matching </button>
         </div>
         
         <div class="gobacklink">
@@ -134,7 +140,12 @@
 
     </div>
     
-
+    <script>     
+        var signinButton = document.getElementById("start_matching");    // Was gonna be functionality for the button to bring you another page
+        signinButton.addEventListener('click', function() {
+            window.location.href = "/goalSetting";
+        });
+    </script>
 </body>
 
 </html>

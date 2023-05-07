@@ -8,6 +8,7 @@
       <h2>Sign In!</h2>
 
       <form class="inline" name="login" action="" method="post">
+
           <div class="form-group">
             <input id="csrf_token" name="csrf_token" type="hidden" value="InwiwfwiUUUIjjwjwullm">
             <span><label for="username"><i class="material-icons">person</i></label>
@@ -24,7 +25,7 @@
               <label for = "remember">Remember me?</label>
             </span>
             <br/>
-            <input type="submit" value="Sign In">
+            <input type="submit" id="signin-button" value="Sign In">
           </div>
           
       </form>
@@ -38,4 +39,11 @@
   </div>
 
 </div>
+
+<!-- <script>     
+  var signinButton = document.getElementById("signin-button");    // Was gonna be functionality for the button to bring you another page
+  signinButton.addEventListener('click', function() {
+    window.location.href = "/loading";
+  });
+</script> -->
 {% endblock %}
