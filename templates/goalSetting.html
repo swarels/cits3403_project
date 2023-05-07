@@ -115,27 +115,103 @@
         <div class = "comments">
             <div class="comment bubble">
                 <p> Please answer the following questions! </p>
+                <p> This will help our professional fitness guiders better understand how to help you and give you information tailored towards your specific needs</p>
             </div>
         </div>
     </div>
 
+    <!-- Goals -->
     <article class="regular">
         <h4> What is your main goal?</h4>
+
         <input type="radio" name="goal" id="rad1" value="Lose Weight">
         <label for="rad1">Lose Weight</label>
+
         <input type="radio" name="goal" id="rad2" value="Gain Weight">
         <label for="rad2">Build Muscle</label>
+
         <input type="radio" name="goal" id="rad3" value="Get in shape">
         <label for="rad3">Get In Shape</label>
+
         <input type="radio" name="goal" id="rad4" value="other">
-        <label for="rad4">Other</label>
+        <label for="rad4">Other</label><br><br>
+        <input type="text" name="goal" id="other-goal" name="other-goal" placeholder="Please specify" size="80" style="display: none;">
+
     </article>
 
+    <!-- Height/Weight -->
     <article class="regular">
         <h4> What is your current height and weight?</h4>
         <input type="text" name="height" id="text1" placeholder="Height">
         <input type="text" name="height" id="text2" placeholder="Weight">
     </article>
+
+    <!-- Gender -->
+    <article class="regular">
+        <h4> What sex does your body most identify as?<h4>
+        <select id="Gender" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+    </article>
+
+    <!-- How regularly do they exercise? -->
+    <article class="regular">
+        <h4> How often have you been exercising in the last year?<h4>
+        <select id="Past exercise" name="Past exercise">
+            <option value="Mutiple_Week">Multiple times a week</option>
+            <option value="Once_Week">Once a Week or so</option>
+            <option value="Occasion">On the off occasion</option>
+            <option value="Never">Almost never</option>
+        </select>
+    </article>
+
+    <!-- Days willing -->
+    <article class="regular">
+        <h4> How many days per week are you willing to commit to exercise?<h4>
+        <select id="willing" name="willing">
+            <option value="7"> 7 days a week</option>
+            <option value="5-6"> 5 to 6 days a week</option>
+            <option value="3-4"> 3 to 4 days a week</option>
+            <option value="2"> 2 days a week</option>
+            <option value="1"> Once a week</option>
+        </select>
+    </article>
+
+    <!-- Food allergies-->
+    <article class="regular">
+        <label for="dietary_requirements"> Do you have any dietary restrictions or food allergies</label><br><br>
+        <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80">
+    </article>
+
+    <!-- Food allergies-->
+    <article class="regular">
+        <input type="submit" value="Submit">
+    </article>
+    
+
+
+
+
+
+
+    <!-- JAVA SCRIPT SECTION-->
+    <script>
+        // Make an "other" textbook appear when selecting other
+        const otherGoalRadio = document.getElementById('rad4');
+        const otherGoalTextbox = document.getElementById('other-goal');
+
+        otherGoalRadio.addEventListener('change', function() {
+        if (otherGoalRadio.checked) {
+            otherGoalTextbox.style.display = 'block';
+        } else {
+            otherGoalTextbox.style.display = 'none';
+        }
+        });
+    </script>
+
+
 
 </body>
 </html>
