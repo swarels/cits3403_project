@@ -221,6 +221,7 @@
         }
         });
 
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
         /**
          * Add form elements to an array, once selecting submit
@@ -228,34 +229,43 @@
         const form = document.querySelector('form');
         form.addEventListener('submit', onSubmit);
 
-
+        // Function for submit
         function onSubmit(event) {
             console.log("onSubmit function triggered");
-            event.preventDefault();
+            event.preventDefault();                 // Prevent default when submit is pressed
             // Initialize answers array
-            const answers = [];
+            const form_answers = [];
             
             // Get the correct radio button for the goals
             const goalRadios = form.querySelectorAll('input[name="goal"]');
-            console.log(goalRadios);
             let goal = null;
             goalRadios.forEach(radio => {
-                if (radio.checked) {
+                if (radio.checked) {            // If checked select as the "goal"
                     goal = radio.value;
                 }
             })
-            console.log(goal);
+            if (goal == "other") {              // If other is selected, get the other value
+                goalRadios.forEach(radio => {
+                    if (radio.id == "other-goal") {
+                        goal = radio.value;
+                    }
+                })
+            }
+            form_answers.push(goal);
 
-
-            // Get the values of the form (with tags input)
-            const inputs = form.querySelectorAll('input');
+            // Get the values of the form (with tags input or select)
+            const inputs = form.querySelectorAll('input, select');
             
             // Loop through inputs, pushing to the answers array
             inputs.forEach(input => {
-                answers.push(input.value);
+                if (input.name == "goal") {
+                    return;
+                }
+                form_answers.push(input.value);
             })
             // Print array to console
-            console.log(answers);
+            console.log("Array of form_answers: ");
+            console.log(form_answers)
         }
     </script>
 
