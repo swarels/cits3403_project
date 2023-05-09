@@ -101,6 +101,10 @@
         margin-left: 200px;
     }
 
+    .hidden {
+        display: none;
+    }
+
     
     </style>
 </head>
@@ -120,9 +124,11 @@
         </div>
     </div>
 
+    <button id="next-button" class="regular">Next Question</button>
+
     <form>
     <!-- Goals -->
-    <article class="regular">
+    <article id="question1" class="regular">
         <h4> What is your main goal?</h4>
 
         <input type="radio" name="goal" id="rad1" value="Lose Weight">
@@ -141,14 +147,14 @@
     </article>
 
     <!-- Height/Weight -->
-    <article class="regular">
+    <article id="question2" class=" regular hidden">
         <h4> What is your current height and weight?</h4>
         <input type="text" name="height" id="text1" placeholder="Height">
         <input type="text" name="weight" id="text2" placeholder="Weight">
     </article>
 
     <!-- Gender -->
-    <article class="regular">
+    <article id="question3" class="regular hidden">
         <h4> What sex does your body most identify as?<h4>
         <select id="Gender" name="Gender">
             <option value="Male">Male</option>
@@ -158,7 +164,7 @@
     </article>
 
     <!-- How regularly do they exercise? -->
-    <article class="regular">
+    <article id="question4" class="regular hidden">
         <h4> How often have you been exercising in the last year?<h4>
         <select id="Past exercise" name="Past exercise">
             <option value="Mutiple_Week">Multiple times a week</option>
@@ -169,7 +175,7 @@
     </article>
 
     <!-- Days willing -->
-    <article class="regular">
+    <article id="question5" class="regular hidden">
         <h4> How many days per week are you willing to commit to exercise?<h4>
         <select id="willing" name="willing">
             <option value="7"> 7 days a week</option>
@@ -181,20 +187,20 @@
     </article>
 
     <!-- Food allergies-->
-    <article class="regular">
+    <article id="question6" class="regular hidden">
         <label for="dietary_requirements"> Do you have any dietary restrictions or food allergies</label><br><br>
         <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80">
     </article>
 
     <!-- Other Comments-->
-    <article class="regular">
+    <article id="question7" class="regular hidden">
         <label for="extra info"> Is there any additional information you want to provide to your fitness guider</label><br><br>
         <input type="text" name="extra info" id="extra info" placeholder="Please specify" size="80">
     </article>
 
     <!-- Submit-->
-    <article class="regular">
-        <input type="submit" value="Submit">
+    <article id="question8submit" class="regular">
+        <input type="submit" value="Submit" name="submit_button">
     </article>
     
     </form>
@@ -261,12 +267,47 @@
                 if (input.name == "goal") {
                     return;
                 }
+                if (input.name == "submit_button") {
+                    return;
+                }
                 form_answers.push(input.value);
             })
             // Print array to console
             console.log("Array of form_answers: ");
             console.log(form_answers)
         }
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+        /**
+         * Only show the next question once the previous one has been answered
+         **/
+        function showNextQuestion(currentQuestionId2) {
+            // Hide the current question
+            var currentQuestion = document.getElementById(currentQuestionId2);
+            currentQuestion.classList.add("hidden");
+
+            // Show the next question
+            var nextQuestionId = "question" + (parseInt(currentQuestionId2.replace("question", "")) + 1);
+            console.log("nextQuestionID: " + nextQuestionId);
+            var nextQuestion = document.getElementById(nextQuestionId);
+            nextQuestion.classList.remove("hidden");
+            q_count += 1;
+            currentQuestionId = "question" + q_count.toString();
+        }
+
+        // Call the showNextQuestion function when the user clicks the button
+        var button = document.getElementById("next-button");
+        var currentQuestionId = "question1";
+        var q_count = 1;
+
+
+        button.addEventListener("click", function() {
+            // Show the next question
+            showNextQuestion(currentQuestionId);
+        });
+
+        
     </script>
 
 
