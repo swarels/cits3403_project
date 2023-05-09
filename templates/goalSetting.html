@@ -144,7 +144,7 @@
     <article class="regular">
         <h4> What is your current height and weight?</h4>
         <input type="text" name="height" id="text1" placeholder="Height">
-        <input type="text" name="height" id="text2" placeholder="Weight">
+        <input type="text" name="weight" id="text2" placeholder="Weight">
     </article>
 
     <!-- Gender -->
@@ -206,17 +206,57 @@
 
     <!-- JAVA SCRIPT SECTION-->
     <script>
-        // Make an "other" textbook appear when selecting other
+        /**
+         * Make an "other" text-box appear when selecting other
+         **/
         const otherGoalRadio = document.getElementById('rad4');
         const otherGoalTextbox = document.getElementById('other-goal');
 
         otherGoalRadio.addEventListener('change', function() {
+            console.log("Other Pressed");
         if (otherGoalRadio.checked) {
             otherGoalTextbox.style.display = 'block';
         } else {
             otherGoalTextbox.style.display = 'none';
         }
         });
+
+
+        /**
+         * Add form elements to an array, once selecting submit
+         **/
+        const form = document.querySelector('form');
+        form.addEventListener('submit', onSubmit);
+
+
+        function onSubmit(event) {
+            console.log("onSubmit function triggered");
+            event.preventDefault();
+            // Initialize answers array
+            const answers = [];
+            
+            // Get the correct radio button for the goals
+            const goalRadios = form.querySelectorAll('input[name="goal"]');
+            console.log(goalRadios);
+            let goal = null;
+            goalRadios.forEach(radio => {
+                if (radio.checked) {
+                    goal = radio.value;
+                }
+            })
+            console.log(goal);
+
+
+            // Get the values of the form (with tags input)
+            const inputs = form.querySelectorAll('input');
+            
+            // Loop through inputs, pushing to the answers array
+            inputs.forEach(input => {
+                answers.push(input.value);
+            })
+            // Print array to console
+            console.log(answers);
+        }
     </script>
 
 
