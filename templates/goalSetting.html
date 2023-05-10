@@ -112,7 +112,7 @@
     <div class="content">
         <h1>FitTrack</h1>
 
-        <div class="rat">
+        <!-- <div class="rat">
             <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
         </div>
 
@@ -121,15 +121,23 @@
                 <p> Please answer the following questions! </p>
                 <p> This will help our professional fitness guiders better understand how to help you and give you information tailored towards your specific needs</p>
             </div>
-        </div>
+        </div> -->
     </div>
-
-    <button id="next-button" class="regular">Next Question</button>
 
     <form>
     <!-- Goals -->
     <article id="question1" class="regular">
-        <h4> What is your main goal?</h4>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> What is your main fitness goal? </p>
+                </div>
+            </div>
+        </div>
 
         <input type="radio" name="goal" id="rad1" value="Lose Weight">
         <label for="rad1">Lose Weight</label>
@@ -148,14 +156,36 @@
 
     <!-- Height/Weight -->
     <article id="question2" class=" regular hidden">
-        <h4> What is your current height and weight?</h4>
-        <input type="text" name="height" id="text1" placeholder="Height">
-        <input type="text" name="weight" id="text2" placeholder="Weight">
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> Thanks!</p>
+                    <p> And could I also know your current height and weight? </p>
+                </div>
+            </div>
+        </div>
+        <!-- <h4> What is your current height and weight?</h4> -->
+        <input type="text" name="height" id="text1" placeholder="Height (cm)">
+        <input type="text" name="weight" id="text2" placeholder="Weight (kg)">
     </article>
 
     <!-- Gender -->
     <article id="question3" class="regular hidden">
-        <h4> What sex does your body most identify as?<h4>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> What gender would you identify as? </p>
+                </div>
+            </div>
+        </div>
         <select id="Gender" name="Gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -165,7 +195,18 @@
 
     <!-- How regularly do they exercise? -->
     <article id="question4" class="regular hidden">
-        <h4> How often have you been exercising in the last year?<h4>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> And how often would you say you've been exercising in the last year? </p>
+                    <p> Be as honest as you can! </p>
+                </div>
+            </div>
+        </div>
         <select id="Past exercise" name="Past exercise">
             <option value="Mutiple_Week">Multiple times a week</option>
             <option value="Once_Week">Once a Week or so</option>
@@ -176,7 +217,17 @@
 
     <!-- Days willing -->
     <article id="question5" class="regular hidden">
-        <h4> How many days per week are you willing to commit to exercise?<h4>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> I wonder.. how many days per week are you willing to commit to exercise? </p>
+                </div>
+            </div>
+        </div>
         <select id="willing" name="willing">
             <option value="7"> 7 days a week</option>
             <option value="5-6"> 5 to 6 days a week</option>
@@ -188,22 +239,59 @@
 
     <!-- Food allergies-->
     <article id="question6" class="regular hidden">
-        <label for="dietary_requirements"> Do you have any dietary restrictions or food allergies</label><br><br>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> Oh very important, do you have any dietary restrictions or food allergies? </p>
+                    <p> Just so that our fitness pro can help guide you with the optimal diet for your fitness journey </p>
+                </div>
+            </div>
+        </div>
         <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80">
     </article>
 
     <!-- Other Comments-->
     <article id="question7" class="regular hidden">
-        <label for="extra info"> Is there any additional information you want to provide to your fitness guider</label><br><br>
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> Awesome! </p>
+                    <p> Is there any other additional information you'd want your fitness guider to know? </p>
+                </div>
+            </div>
+        </div>
         <input type="text" name="extra info" id="extra info" placeholder="Please specify" size="80">
     </article>
 
     <!-- Submit-->
-    <article id="question8submit" class="regular">
+    <article id="question8" class="regular hidden">
+        <div class="content">
+            <div class="rat">
+                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+            </div>
+    
+            <div class = "comments">
+                <div class="comment bubble">
+                    <p> Thanks so much for that! </p>
+                    <p> Just press submit to get connected, or feel free to change any of your previous answers :) </p>
+                </div>
+            </div>
+        </div>
         <input type="submit" value="Submit" name="submit_button">
     </article>
     
     </form>
+
+    <button id="previous-button" class="regular">Previous Question</button>
+    <button id="next-button" class="regular">Next Question</button>
 
 
 
@@ -296,15 +384,41 @@
             currentQuestionId = "question" + q_count.toString();
         }
 
+        function showPrevQuestion(currentQuestionId2) {
+            // Hide the current question
+            var currentQuestion = document.getElementById(currentQuestionId2);
+            currentQuestion.classList.add("hidden");
+
+            // Show the next question
+            var nextQuestionId = "question" + (parseInt(currentQuestionId2.replace("question", "")) - 1);
+            console.log("nextQuestionID: " + nextQuestionId);
+            var nextQuestion = document.getElementById(nextQuestionId);
+            nextQuestion.classList.remove("hidden");
+            q_count -= 1;
+            currentQuestionId = "question" + q_count.toString();
+        }
+
         // Call the showNextQuestion function when the user clicks the button
-        var button = document.getElementById("next-button");
+        var next_button = document.getElementById("next-button");
+        var prev_button = document.getElementById("previous-button");
         var currentQuestionId = "question1";
         var q_count = 1;
 
-
-        button.addEventListener("click", function() {
+        // Next question button
+        next_button.addEventListener("click", function() {
             // Show the next question
-            showNextQuestion(currentQuestionId);
+            if (currentQuestionId != "question8") {
+                showNextQuestion(currentQuestionId);
+            }
+            
+        });
+        // Previous question button
+        prev_button.addEventListener("click", function() {
+            // Show the next question
+            if (currentQuestionId != "question1") {
+                showPrevQuestion(currentQuestionId);
+            }
+            
         });
 
         
