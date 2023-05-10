@@ -1,4 +1,4 @@
-# install following before beginning:
+# install following in venv before beginning:
 # pip install flask
 # pip install flask-socketio
 # pip install flask-wtf
@@ -6,14 +6,20 @@
 # pip install mysql-connector-python
 # pip install flask-sqlalchemy
 # pip install flask-migrate
+# sudo apt install sqlite3
+# pip install db
+# pip install config
+# pip install flash
+
+# import app
 
 from flask import Flask, render_template, request, session, redirect
 from flask_socketio import join_room, leave_room, send, SocketIO
 import random
 from string import ascii_uppercase
 
-from forms import LoginForm
-from forms import SignUpForm
+from .forms import LoginForm
+from .forms import SignUpForm
 
 import mysql.connector
 
