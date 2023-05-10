@@ -9,19 +9,23 @@
 
       <form class="inline" name="login" action="" method="post">
           <div class="form-group">
-              <input id="csrf_token" name="csrf_token" type="hidden" value="InwiwfwiUUUIjjwjwullm">
+              {{ form.hidden_tag() }}
               <label for="username"><i class="material-icons">person</i></label>
-              <input type="text" id="username" name="username" required placeholder="Username"
-                value="{{request.form.username }}">
+              {{ form.username(size=30) }}
+              {% for error in form.username.errors %}
+                <span class="loginerror">Error: invalid username</span>
+              {% endfor %}
               <br/>
               <label for="password"><i class="material-icons">lock</i></label>
-              <input type="password" id="password" name="password" required placeholder="Password"
-                value="">
+              {{ form.password(size=30) }}
+              {% for error in form.password.errors %}
+                <span class="loginerror">Error: invalid password</span>
+              {% endfor %}
               <br/>
-              <input id="remember" name="remember" type="checkbox" value="y">
+              {{ form.remember_me() }} 
               <label for = "remember">Remember me?</label>
               <br/>
-              <input type="submit" value="Sign In" style="align-self:center">
+              {{ form.submit() }}
           </div>
           
       </form>

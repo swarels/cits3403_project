@@ -1,15 +1,16 @@
 from datetime import datetime
-from app import db
+import db
 
 class User(db.Model):
     username = db.Column(db.String(30), primary_key=True)
     name = db.Column(db.String(64), index=True)
-    hashed_password = db.Column(db.String(128)), nullable=False
+    hashed_password = db.Column(db.String(128), nullable=False)
     messages = db.relationship('Post', backref='author', lazy='dynamic')
+    is_pro = db.Column(db.Boolean)
 
     def __repr__(self):
         return '<User ()>'.format(self.name)
-
+    
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(288))
