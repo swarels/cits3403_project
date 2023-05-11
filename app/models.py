@@ -1,5 +1,5 @@
 from datetime import datetime
-import db
+from app import db
 
 class User(db.Model):
     username = db.Column(db.String(30), primary_key=True)
@@ -9,7 +9,8 @@ class User(db.Model):
     is_pro = db.Column(db.Boolean)
 
     def __repr__(self):
-        return '<User ()>'.format(self.name)
+        value = "User({})".format(self.username)
+        return value
     
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,4 +19,5 @@ class Message(db.Model):
     userid = db.Column(db.String(30), db.ForeignKey('user.username'))
 
     def __repr__(self):
-        return '<Post ()>'.format(self.body)
+        value = "Post({})".format(self.id)
+        return value
