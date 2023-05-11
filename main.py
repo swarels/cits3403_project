@@ -71,11 +71,18 @@ Signup page
 """
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    username = None
+    password = None
     form = SignUpForm()
+    # Validate form
+    if form.validate_on_submit():
+        username = form.username.data
+        form.username.data = ""
+
     # if form.is_submitted():
     #     result = request.form
     #     return
-    return render_template("signup.html", form=form)
+    return render_template("signup.html", username=username, password=password, form=form)
 
 
 @app.route("/talkingRat")
