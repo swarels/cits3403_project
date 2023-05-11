@@ -3,7 +3,7 @@
 # pip install flask-socketio
 
 from flask import Flask, render_template, request, session, redirect
-from flask_socketio import join_room, leave_room, send, SocketIO
+from flask_socketio import join_room, leave_room, emit, send, SocketIO
 import random
 from string import ascii_uppercase
 
@@ -37,9 +37,9 @@ Main homepage
 """
 @app.route("/", methods=["POST", "GET"])
 def home():
-    return render_template("home.html")
-
-
+     return render_template("home.html")
+    
+    
 """
 Signup page
 """
@@ -54,6 +54,19 @@ def signup():
 @app.route('/chatroom')
 def chatroom():
     return render_template('chatroom.html')
+
+@socketio.on("connect")
+def handle_connect():
+    print("Client connected!")
+
+@socketio.on("join_user")
+def connect_user(preferred_name):
+    print(f"User {preferred_name} joined")
+
+@socketio.on("new_message")
+def handle_new_message(message):
+    print(f"New message: {message}")
+    emit("new_text", {"message": message}, broadcast=True)
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)

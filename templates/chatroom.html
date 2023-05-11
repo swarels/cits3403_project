@@ -3,7 +3,8 @@
 {% block content %}
 
 <div class="message-container">
-    <div class="messages">
+    <div class="messages" id="messages">
+        <ul id="message-input"></ul>
         <div class="message-input">
             <input
             type="text"
@@ -18,10 +19,24 @@
 </div>
 
 <script>
-    var socketio = io();
+    var socket = io();
 
-    function sendMessage() {
-        console.log("send");
-    }
+    socket.connect();
+
+    document.getElementById("message").addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+            let message = document.getElementById("message").value;
+            socket.emit("new_message", message);
+            document.getElementById("message-input").value = "";
+        }
+    })
+
+    socket.on("newtext", function(data) {
+        let ul = document.getElementById("message-input");
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(data["message"]));
+        ul.appendChild(li);
+    })
 </script>
+
 {% endblock %}

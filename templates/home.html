@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="page">
+<div class="page" id="page">
   <div class="form-container">
     <form action="login.php" method="post">
 
@@ -24,9 +24,30 @@
       <a href="http://127.0.0.1:5000/signup">Create an account!</a>
   </div>
 
-  <div class="chatrromlink">
-    <a href="http://127.0.0.1:5000/chatroom">Go to chatroom page</a>
-  </div>
+  <div id="landing">
+    <input type="text" id="preferred_name" placeholder="preferred_name">
+    <button id="join-btn">JOIN</button>
+</div>
+
+<script>
+  /*var socket = io({autoConnect: false}); */
+
+  document.getElementById("join-btn").addEventListener("click", function() {
+    window.location.href = "http://127.0.0.1:5000/chatroom"
+  }) 
+
+  /*document.getElementById("join-btn").addEventListener("click", function() {
+      let preferred_name = document.getElementById("preferred_name").value;
+
+      socket.connect();
+
+      socket.on("connect", function() {
+        socket.emit("join_user", preferred_name); 
+      })
+
+  }) */
+
+</script>
 
 </div>
 {% endblock %}
