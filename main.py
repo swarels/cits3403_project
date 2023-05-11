@@ -6,7 +6,7 @@
 # pip install mysql-connector-python
 
 from flask import Flask, render_template, request, session, redirect
-from flask_socketio import join_room, leave_room, send, SocketIO
+from flask_socketio import join_room, leave_room, emit, send, SocketIO
 import random
 from string import ascii_uppercase
 
@@ -45,25 +45,7 @@ Main homepage
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash(
-            "Login requested for user (), remember=()".format(
-                form.username.data, form.remember.data
-            )
-        )
-        return redirect("/room")
-    return render_template("home.html", title="Sign In", form=form)
-
-
-@app.route("/room")
-def room():
-    return render_template("room.html")
-
-
-@app.route("/loading")
-def loading():
-    return render_template("loadingpage.html")
+    return render_template("home.html")
 
 
 """
@@ -77,6 +59,9 @@ def signup():
     #     return
     return render_template("signup.html", form=form)
 
+@app.route('/chatroom')
+def chatroom():
+    return render_template('chatroom.html')
 
 @app.route("/talkingRat")
 def talkingRat():
@@ -88,6 +73,18 @@ def talkingRat():
 def goalSetting():
     return render_template("goalSetting.html")
 
+@socketio.on("connect")
+def handle_connect():
+    print("Client connected!")
+
+@socketio.on("join_user")
+def connect_user(preferred_name):
+    print(f"User {preferred_name} joined")
+
+@socketio.on("new_message")
+def handle_new_message(message):
+    print(f"New message: {message}")
+    emit("new_text", {"message": message}, broadcast=True)
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #21262b;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .loader {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            border: 13px solid white;
+            border-top-color: black;
+            border-radius: 50%;
+            animation: loading 0.75s ease infinite;
+        }
+
+        @keyframes loading {
+            from { transform: rotate(0turn) }
+            to { transform: rotate(1turn) }
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="content">
+        <h1>FitTrack</h1>
+        <h2>We are now connecting you to a professional</h2>
+        <div class="loader">
+        </div> 
+    </div>
+</body>
+</html>
