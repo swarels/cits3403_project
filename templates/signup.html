@@ -8,20 +8,21 @@
     <h4> Click below to navigate to chat with a professional </h4>
     <a href="/room" target="_blank">Go to chatroom</a>
 {% else %}
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <br/>
+        <form method="POST">
+            {{form.hidden_tag()}}
 
-    <h2>Sign Up</h2>
-    <br/>
-    <form method="POST">
-        {{form.hidden_tag()}}
+            {{form.username.label}} <br>
+            {{form.username(size = 30)}} <br>
 
-        {{form.username.label}} <br>
-        {{form.username(size = 30)}} <br>
+            {{form.password.label}} <br>
+            {{form.password(size = 30)}} <br>
 
-        {{form.password.label}} <br>
-        {{form.password(size = 30)}} <br>
-
-        {{form.submit}}
-    </form>
+            {{form.submit}}
+        </form>
+    </div>
 
 {% endif %}
 
