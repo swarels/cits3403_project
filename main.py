@@ -88,10 +88,10 @@ def handle_connect():
 def connect_user(preferred_name):
     print(f"User {preferred_name} joined")
 
-@socketio.on("new_message")
-def handle_new_message(message):
-    print(f"New message: {message}")
-    emit("new_text", {"message": message}, broadcast=True)
+@socketio.on('chat')
+def new_message(data):
+    socketio.emit('chat', data)
+
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
