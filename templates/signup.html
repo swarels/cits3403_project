@@ -11,7 +11,7 @@
     <div class="form-container">
         <h2>Sign Up</h2>
         <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 150px>
-        <form method="POST">
+        <form name="signupForm" onsubmit="return validateEmail()" method="POST">
             {{form.hidden_tag()}}
 
             {{form.username.label}} <br>
@@ -25,6 +25,16 @@
 
             {{form.submit}}
         </form>
+
+        <script>
+            function validateEmail() {
+            let x = document.forms["signupForm"]["email"].value;
+            if (!(x.includes("@"))) {
+                alert("Must fill out a valid email");
+                return false;
+                }
+            }
+        </script>
     </div>
 
 {% endif %}
