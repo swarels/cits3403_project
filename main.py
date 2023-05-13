@@ -1,4 +1,4 @@
-# install following in venv before beginning:
+# install following before beginning:
 # pip install flask
 # pip install flask-socketio
 # pip install flask-wtf
@@ -6,39 +6,50 @@
 # pip install mysql-connector-python
 # pip install flask-sqlalchemy
 # pip install flask-migrate
-# sudo apt install sqlite3
-# pip install db
-# for the above folder, you will have to adjust some errors due to it being an older python version
-# pip install config
-# pip install flash
-# export FLASK_APP=main.py
 
 from flask import Flask, render_template, request, session, redirect
 from flask_socketio import join_room, leave_room, send, SocketIO
 import random
 from string import ascii_uppercase
 
-from app import app
-import os
-from app.forms import LoginForm
-from app.forms import SignUpForm
+from forms import LoginForm
+from forms import SignUpForm
 
 import mysql.connector
 
+from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
 
 """
-Initialize flask object
+Initialize flask object and database
 """
-template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-template_dir = os.path.join(template_dir, 'app')
-template_dir = os.path.join(template_dir, 'templates')
-# hard coded absolute path for testing purposes
-#working = 'C:\Python34\pro\\frontend\\templates'
-#print(working == template_dir)
-app = Flask(__name__, template_folder=template_dir)
+app = Flask(__name__)
 app.config["SECRET_KEY"] = "secretkey123"
 socketio = SocketIO(app)
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
+from app import routes, models
+
+# """
+# Initialize the database
+# """
+# mydb = mysql.connector.connect(
+#     host = "localhost",
+#     user="root",
+#     password="23073177"
+# )
+# # print(mydb) # tests the connection
+# mycurser = mydb.cursor()
+# mycurser.execute("CREATE DATABASE GymUsers")
+
+
+"""
+Main homepage
+"""
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
 def home():
