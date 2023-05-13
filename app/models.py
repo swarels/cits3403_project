@@ -4,12 +4,14 @@ from app import db
 class User(db.Model):
     username = db.Column(db.String(30), primary_key=True)
     name = db.Column(db.String(64), index=True)
-    hashed_password = db.Column(db.String(128)), nullable=False
+    hashed_password = db.Column(db.String(128), nullable=False)
     messages = db.relationship('Post', backref='author', lazy='dynamic')
+    is_pro = db.Column(db.Boolean)
 
     def __repr__(self):
-        return '<User ()>'.format(self.name)
-
+        value = "User({})".format(self.username)
+        return value
+    
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(288))
@@ -17,4 +19,5 @@ class Message(db.Model):
     userid = db.Column(db.String(30), db.ForeignKey('user.username'))
 
     def __repr__(self):
-        return '<Post ()>'.format(self.body)
+        value = "Post({})".format(self.id)
+        return value
