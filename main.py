@@ -12,8 +12,8 @@ from flask_socketio import join_room, leave_room, send, SocketIO
 import random
 from string import ascii_uppercase
 
-from forms import LoginForm
-from forms import SignUpForm
+from app.forms import LoginForm
+from app.forms import SignUpForm
 
 import mysql.connector
 
