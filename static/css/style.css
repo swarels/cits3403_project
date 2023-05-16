@@ -140,13 +140,13 @@ button {
 
  #message-container {
   margin: 20px;
-  height: 65vh;
+  height: 70vh;
   border: 1px solid #6a7277;
   border-radius: 5px;
   background-color: #384047;
   display: flex;
   flex-direction: column;
-  /*align-items: stretch; */
+  justify-content: space-between;
  } 
 /*
  .messages {
@@ -158,13 +158,23 @@ button {
  } */
 
  #message-input {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
  } 
 
- #message {
-  height: 10vh;
+ .input-area {
+  display: flex;
+  justify-content: space-between;
  }
+
+ #message {
+  flex-grow: 1;
+  height: 5vh;
+ }
+
+ #send-btn {
+  height: 9vh;
+  width: 70px;
+ } 
 
  ul {
   height: 500px;

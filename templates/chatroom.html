@@ -5,52 +5,53 @@
         <div id="message-container" class="message-input">
             <ul id="message-input">
             </ul>
+            <div class="input-area">
             <input
             type="text"
             placeholder="message"
             id="message"
             />
-        </div>
             <button type="button" id="send-btn" onClick="sendMessage()">
                 Send
             </button>
-        
+           </div>
+       </div>
 
 <script>
     var socket = io();
 
+    const message = document.getElementById('message');
+    const send_btn = document.getElementById('send-btn');
+    var preferred_name = localStorage.getItem('name');
+    var join_btn = localStorage.getItem('join-button');
+
     socket.connect();
 
-    /*document.getElementById("message").addEventListener("keyup", function (event) {
-        if (event.key == "Enter") {
-            let message = document.getElementById("message").value;
-            socket.emit("new_message", message);
-            document.getElementById("message-input").value = "";
-        }
-    })
+       socket.on("connect", function() {
+        socket.emit("join_user", preferred_name); 
+        }) 
 
-    socket.on("newtext", function(data) {
-        const message = document.getElementById("message-input");
-        if (message.value = "") 
-        return;
-        socketio.emit("message", {data: message.value})
-        message.value = "";
-    }) */
-
-    const message = document.getElementById('message');
-    const send_btn = document.getElementById('send-btn')
+    socket.on("join_user", function(preferred_name) {
+        var ul = document.getElementById("message-input");
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode("User " + preferred_name + " has joined the room"));
+        ul.appendChild(li);
+    }); 
 
     send_btn.addEventListener('click', function(){
         socket.emit('chat', {
+            your_name: preferred_name,
             message: message.value,
         })
-    });
+    }); 
 
     socket.on('chat', function(data) {
         var ul = document.getElementById('message-input');
         var li = document.createElement('li');
-        li.appendChild(document.createTextNode(data["message"]));
+        li.appendChild(document.createTextNode(data["your_name"] + ": " + data["message"]));
         ul.appendChild(li);
+        message.value = "";
+        ul.scrolltop = ul.scrollHeight;
     });
     
 </script>
