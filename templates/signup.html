@@ -14,6 +14,9 @@
         <form name="signupForm" onsubmit="return validateEmail()" method="POST">
             {{form.hidden_tag()}}
 
+            {{form.name.label}} <br>
+            {{form.name(size = 30)}} <br>
+
             {{form.username.label}} <br>
             {{form.username(size = 30)}} <br>
 
@@ -23,16 +26,48 @@
             {{form.email.label}} <br>
             {{form.email(size = 30)}} <br>
 
+            {{form.professional.label}} <br>
+            {{form.professional(size = 30)}} <br>
+
             {{form.submit}}
         </form>
 
         <script>
+            /** function to validate email (make sure it includes '@') **/
             function validateEmail() {
             let x = document.forms["signupForm"]["email"].value;
             if (!(x.includes("@"))) {
                 alert("Must fill out a valid email");
                 return false;
                 }
+            }
+
+            /**
+            * Add form elements to an array, once selecting submit
+            **/
+            const form = document.querySelector('form');
+            form.addEventListener('submit', onSubmit);
+
+            // Function for submit
+            function onSubmit(event) {
+                console.log("onSubmit function triggered");
+                event.preventDefault();                 // Prevent default when submit is pressed
+                // Initialize answers array
+                const form_answers = [];
+
+                // Get the values of the form (with tags input or select)
+                const inputs = form.querySelectorAll('input, select');
+            
+                // Loop through inputs, pushing to the answers array
+                inputs.forEach(input => {
+                    if (input.name == "Sign up") {
+                        return;
+                    }
+                    form_answers.push(input.value);
+                })
+                // Print array to console
+                console.log("Array of form_answers: ");
+                console.log(form_answers.slice(1,-1))  // doesnt register different buttons clicked yet for pro/not pro
             }
         </script>
     </div>

@@ -9,11 +9,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" type="image/x-icon" href="https://dreamlightvalleywiki.com/images/7/70/Remy.png">
+    <style>
+        #logo:hover {
+            cursor:pointer;
+        }
+        #logo {
+            font-family: Impact;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
-        <h1>FitTrack</h1>
+        <h1 id="logo">FitTrack</h1>
         {% block content %}   {% endblock %}
     </div>
+    <script>
+        var logo = document.getElementById('logo');
+
+        logo.addEventListener("click", () => {
+            console.log("Logo pressed");
+            window.location.href = "/";
+        });
+    </script>
 </body>
 </html>

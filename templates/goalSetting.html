@@ -78,6 +78,7 @@
         border-radius: 3px;
         margin-left: 75px;
         margin-top: 50px;
+        font-family: Verdana;
     }
 
     .bubble:after {
@@ -103,6 +104,17 @@
 
     .hidden {
         display: none;
+    }
+
+    .buttons {
+        padding: 12px 24px;
+        border-radius: 4px;
+        background-color: #ca2d1f;
+        color:white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
     }
 
     
@@ -285,13 +297,14 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="Submit" name="submit_button">
+        <input class = "buttons" type="submit" value="Submit" name="submit_button">
+        
     </article>
     
     </form>
 
-    <button id="previous-button" class="regular">Previous Question</button>
-    <button id="next-button" class="regular">Next Question</button>
+    <button id="previous-button" class="regular buttons">Previous Question</button>
+    <button id="next-button" class="regular buttons">Next Question</button>
 
 
 
