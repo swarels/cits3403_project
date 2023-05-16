@@ -1,10 +1,15 @@
 import unittest, os
-from <DATABASE> import <DATABASE>, db 
-from <DATABASE>.models import <TABLES TO TEST>
+from app import app, db 
+from app.models import User, Message
 
 class TestDB(unittest.TestCase):
+    
     def setUp(self):
-        basedir = #enter path
+        basedir = os.path.abspath(os.path.dirname(__file__))
+        app.config['SQLALCHEMY_DATABASE_URI'] = \'sqlite:///' + os.path.join(basedir, 'test.db')
+        self.app = app_test_client()
+        db.create_all()
+        
 
 
 
