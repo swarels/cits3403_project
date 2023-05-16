@@ -70,28 +70,31 @@ def signup():
 def chatroom():
     return render_template('chatroom.html')
 
+@app.route('/preferredname')
+def preferred_name():
+    return render_template('preferredname.html')
+
 @app.route("/talkingRat")
 def talkingRat():
     return render_template("talkingRat.html")
-
-
 
 @app.route("/goalSetting")
 def goalSetting():
     return render_template("goalSetting.html")
 
 @socketio.on("connect")
-def handle_connect():
+def handle_connect(preferred_name):
     print("Client connected!")
 
 @socketio.on("join_user")
 def connect_user(preferred_name):
     print(f"User {preferred_name} joined")
+    socketio.emit("join_user", preferred_name)
 
-@socketio.on("new_message")
-def handle_new_message(message):
-    print(f"New message: {message}")
-    emit("new_text", {"message": message}, broadcast=True)
+@socketio.on("chat")
+def new_message(data):
+    socketio.emit("chat", data)
+
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)

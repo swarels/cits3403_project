@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="landing">
+    <input type="text" id="preferred_name" placeholder="Enter your preferred name">
+    <button id="join-btn">JOIN</button>
+</div>
+
+<script>
+  /*var socket = io({autoConnect: false}); */
+
+  document.getElementById("join-btn").addEventListener("click", function() {
+    window.location.href = "http://127.0.0.1:5000/chatroom"
+  }) 
+
+  document.getElementById("join-btn").addEventListener("click", function() {
+      let preferred_name = document.getElementById("preferred_name").value;
+        localStorage.setItem('name', preferred_name);
+        localStorage.setItem('join-button', join-btn);
+      /*socket.connect(); 
+
+      socket.on("connect", function() {
+        socket.emit("join_user", preferred_name); 
+      }) */
+
+  });
+
+</script>
+
+{% endblock %}
