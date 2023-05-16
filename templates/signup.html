@@ -14,6 +14,9 @@
         <form name="signupForm" onsubmit="return validateEmail()" method="POST">
             {{form.hidden_tag()}}
 
+            {{form.name.label}} <br>
+            {{form.name(size = 30)}} <br>
+
             {{form.username.label}} <br>
             {{form.username(size = 30)}} <br>
 
@@ -22,6 +25,13 @@
 
             {{form.email.label}} <br>
             {{form.email(size = 30)}} <br>
+
+            <p> Are you a professional? </p>
+            <input type="radio" name="pro" id="rad1" value="Yes">
+            <label for="rad1">Yes</label>
+
+            <input type="radio" name="pro" id="rad2" value="No">
+            <label for="rad2">No</label> <br>
 
             {{form.submit}}
         </form>
