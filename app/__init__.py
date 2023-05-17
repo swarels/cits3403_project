@@ -14,6 +14,7 @@ print(app.secret_key)
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+#db.init_app(app)
 
 #from .main import *
 #from .models import *
