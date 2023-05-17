@@ -6,7 +6,7 @@
 {% if username %}
     <h2> Welcome {{username}}!</h2>
     <h4> Click below to navigate to chat with a professional </h4>
-    <a href="/room" target="_blank">Go to chatroom</a>
+    <a href="/chatroom" target="_blank">Go to chatroom</a>
 {% else %}
     <div class="form-container">
         <h2>Sign Up</h2>
@@ -34,21 +34,17 @@
 
         <script>
             /** function to validate email (make sure it includes '@') **/
-            function validateEmail() {
+            function validateEmailandCreateArray() {
             let x = document.forms["signupForm"]["email"].value;
             if (!(x.includes("@"))) {
                 alert("Must fill out a valid email");
                 return false;
                 }
-            }
 
-            /**
-            * Add form elements to an array, once selecting submit
-            **/
+            /** function to create an array **/
             const form = document.querySelector('form');
             form.addEventListener('submit', onSubmit);
 
-            // Function for submit
             function onSubmit(event) {
                 console.log("onSubmit function triggered");
                 event.preventDefault();                 // Prevent default when submit is pressed
@@ -69,6 +65,9 @@
                 console.log("Array of form_answers: ");
                 console.log(form_answers.slice(1,-1)) 
             }
+            
+            }
+
         </script>
     </div>
 
