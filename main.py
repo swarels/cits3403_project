@@ -15,46 +15,18 @@ from flask_wtf.csrf import CSRFProtect
 from wtforms import TextAreaField, StringField, SubmitField
 from wtforms.validators import DataRequired, Email
 
-#from app.forms import LoginForm
-#from app.forms import SignUpForm
-
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-
-"""
-Initialize flask object and database
-"""
 app = Flask(__name__)
-#app.config['SECRET_KEY'] = SECRET_KEY
-#app.secret_key = "secretkey123"
-#csrf = CSRFProtect(app)
-#csrf.init_app(app)
-#app.config['WTF_CSRF_SECRET_KEY'] = "verysecretKEY"
-#app.config['SESSION_TYPE'] = "filesystem"
 
-#socketio = SocketIO(app)
-#app.config.from_object(Config)
-#db = SQLAlchemy(app)
-#migrate = Migrate(app, db)
+from app import app, db
+from app.models import User, Message
 
-from app import app
-
-"""
-Main homepage
-"""
-
-"""
-Signup page
-"""
-#@app.route("/signup", methods = ["GET", "POST"])
-#def signup():
-#    form = SignUpForm()
-#    # if form.is_submitted():
-#    #     result = request.form
-#    #     return 
-#    return render_template("signup.html", form = form)
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Message': Message}
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
