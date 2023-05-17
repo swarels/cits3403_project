@@ -16,7 +16,7 @@ from wtforms import TextAreaField, StringField, SubmitField
 from wtforms.validators import DataRequired, Email
 
 from app.forms import LoginForm
-from app.forms import SignUpForm
+#from app.forms import SignUpForm
 
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -27,13 +27,12 @@ from flask_migrate import Migrate
 Initialize flask object and database
 """
 app = Flask(__name__)
-#SECRET_KEY = os.urandom(32)
 #app.config['SECRET_KEY'] = SECRET_KEY
-app.secret_key = "words456"
-csrf = CSRFProtect(app)
-csrf.init_app(app)
-#app.config['WTF_CSRF_SECRET_KEY'] = SECRET_KEY
-#temporary secret key is words456
+#app.secret_key = "secretkey123"
+#csrf = CSRFProtect(app)
+#csrf.init_app(app)
+#app.config['WTF_CSRF_SECRET_KEY'] = "verysecretKEY"
+#app.config['SESSION_TYPE'] = "filesystem"
 
 socketio = SocketIO(app)
 app.config.from_object(Config)
@@ -75,13 +74,13 @@ def room():
 """
 Signup page
 """
-@app.route("/signup", methods = ["GET", "POST"])
-def signup():
-    form = SignUpForm()
-    # if form.is_submitted():
-    #     result = request.form
-    #     return 
-    return render_template("signup.html", form = form)
+#@app.route("/signup", methods = ["GET", "POST"])
+#def signup():
+#    form = SignUpForm()
+#    # if form.is_submitted():
+#    #     result = request.form
+#    #     return 
+#    return render_template("signup.html", form = form)
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
