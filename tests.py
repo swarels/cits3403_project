@@ -11,8 +11,8 @@ class TestDB(unittest.TestCase):
         db.create_all()
         u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages="test message 1", is_pro="N")
         u2 = User(username="user2", name="Test Case2", hashed_password="testpassword2", messages="test message 2", is_pro="Y")
-        m1 = Message(id=1, text="testmessage 1", time="IDK WHAT FORMAT THIS IS", userid="user1")
-        m2 = Message(id=2, text="testmessage 2", time="IDK WHAT FORMAT THIS IS", userid="user2")
+        m1 = Message(id=1, text="testmessage 1", time="now", userid="user1")
+        m2 = Message(id=2, text="testmessage 2", time="now", userid="user2")
         db.session.add(u1)
         db.session.add(u2)
         db.session.add(m1)
@@ -22,6 +22,18 @@ class TestDB(unittest.TestCase):
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+
+    def test_password_hashing(self):
+        u = User.query.get("user1")
+        u.set_password("test")
+        self.assertFalse(u.check_password("case"))
+        self.assertTrue(u.check_password("test"))
+
+    def test_is_committed(self):
+        u1 = User.query.get("user1")
+        self.assertFalse(u1.is_committed())
+        u2 = User.query.get("user2")
+        m1 = Message.query.get(1)
 
 
 
