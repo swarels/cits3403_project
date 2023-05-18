@@ -4,6 +4,7 @@
 # pip install flask-wtf
 # pip install flask-sqlalchemy
 # pip install flask-migrate
+# pip install flask-login
 
 from flask import Flask, request, session, redirect
 from flask_socketio import join_room, leave_room, send, SocketIO
