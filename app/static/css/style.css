@@ -72,6 +72,10 @@ button {
   from { transform: rotate(0turn) }
   to { transform: rotate(1turn) }
 }
+
+#logo:hover {
+  cursor:pointer;
+}
   
   img.icon{
     border-radius: 50%;
