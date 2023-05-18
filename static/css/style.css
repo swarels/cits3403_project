@@ -184,4 +184,41 @@ button {
  li {
   list-style: none;
  }
+
+ /* .stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgb(82, 202, 200) 25%, transparent 25%, transparent 75%, rgb(51, 186, 152) 75%, rgb(45, 165, 111)), linear-gradient(-45deg, rgb(65, 176, 34) 25%, transparent 25%, transparent 75%, red 75%, red);
+  background-size: 50px 50px;
+  animation: animateStripes 5s linear infinite;
+  z-index: -1;
+ } */
+
+ .stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 8px);
+  background-size: 10px 10px;
+  animation: animateStripes 5s linear infinite;
+  z-index: -1;
+}
+
+ @keyframes animateStripes {
+  0% {
+    background-position: 0 0;
+  }
+  
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+
+
  /* end of styling for chatroom.html page */
