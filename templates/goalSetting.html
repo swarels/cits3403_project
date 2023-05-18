@@ -117,6 +117,15 @@
         cursor: pointer;
     }
 
+    .textbox {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    
+    
     
     </style>
 </head>
@@ -181,8 +190,8 @@
             </div>
         </div>
         <!-- <h4> What is your current height and weight?</h4> -->
-        <input type="text" name="height" id="text1" placeholder="Height (cm)">
-        <input type="text" name="weight" id="text2" placeholder="Weight (kg)">
+        <input type="text" name="height" id="text1" placeholder="Height (cm)" class="textbox">
+        <input type="text" name="weight" id="text2" placeholder="Weight (kg)" class="textbox">
     </article>
 
     <!-- Gender -->
@@ -198,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <select id="Gender" name="Gender">
+        <select id="Gender" name="Gender" class="textbox">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -219,7 +228,7 @@
                 </div>
             </div>
         </div>
-        <select id="Past exercise" name="Past exercise">
+        <select id="Past exercise" name="Past exercise" class="textbox">
             <option value="Mutiple_Week">Multiple times a week</option>
             <option value="Once_Week">Once a Week or so</option>
             <option value="Occasion">On the off occasion</option>
@@ -240,7 +249,7 @@
                 </div>
             </div>
         </div>
-        <select id="willing" name="willing">
+        <select id="willing" name="willing" class="textbox">
             <option value="7"> 7 days a week</option>
             <option value="5-6"> 5 to 6 days a week</option>
             <option value="3-4"> 3 to 4 days a week</option>
@@ -263,7 +272,7 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80">
+        <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80" class="textbox">
     </article>
 
     <!-- Other Comments-->
@@ -280,7 +289,7 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="extra info" id="extra info" placeholder="Please specify" size="80">
+        <input type="text" name="extra info" id="extra info" placeholder="Please specify" size="80" class="textbox">
     </article>
 
     <!-- Submit-->
