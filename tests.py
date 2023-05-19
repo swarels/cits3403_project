@@ -11,12 +11,18 @@ class TestDB(unittest.TestCase):
         db.create_all()
         u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages="test message 1", is_pro="N")
         u2 = User(username="user2", name="Test Case2", hashed_password="testpassword2", messages="test message 2", is_pro="Y")
+        u3 = User(username="user3", name="Test Case3", hashed_password="testpassword3", messages="test message 3", is_pro="N")
+
         m1 = Message(id=1, text="testmessage 1", time="now", userid="user1")
         m2 = Message(id=2, text="testmessage 2", time="now", userid="user2")
+        m3 = Message(id=3, text="testmessage 3", time="now", userid="user3")
+
         db.session.add(u1)
         db.session.add(u2)
+        db.session.add(u3)
         db.session.add(m1)
         db.session.add(m2)
+        db.session.add(m3)
         db.session.commit()
 
     def tearDown(self):
@@ -34,7 +40,7 @@ class TestDB(unittest.TestCase):
         self.assertFalse(u1.is_committed())
         u2 = User.query.get("user2")
         m1 = Message.query.get(1)
-
+        db.session.add()
 
 
 
