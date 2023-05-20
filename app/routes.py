@@ -49,7 +49,7 @@ def signup():
             user.set_password(form.password.data)
             db.session.add(user)
             db.session.commit()
-        return redirect('/index')
+        return redirect('/talkingRat')
     return render_template("signup.html", title='Sign Up', form=form)
 
 @app.route('/chatroom')
