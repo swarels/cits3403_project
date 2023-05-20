@@ -23,13 +23,13 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 
 from app import app, db
-from app.models import User, Message
+from app.models import User, Message, Trainer
 
 socketio = SocketIO(app)
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'Message': Message}
+    return {'db': db, 'User': User, 'Message': Message, 'Trainer':Trainer}
 
 @socketio.on("connect")
 def handle_connect(preferred_name):
