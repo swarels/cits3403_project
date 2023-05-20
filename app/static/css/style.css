@@ -73,6 +73,16 @@ button {
   to { transform: rotate(1turn) }
 }
 
+article.history {
+  text-align:left;
+  background-color: #21262b;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  margin: 10px 0px;
+}
+
 #logo:hover {
   cursor:pointer;
 }

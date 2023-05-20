@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def load_user(username):
     return User.query.get(username)
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     username = db.Column(db.String(30), primary_key=True)
     name = db.Column(db.String(64), index=True)
     hashed_password = db.Column(db.String(128))
@@ -22,6 +22,8 @@ class User(db.Model):
     allergies = db.Column(db.String(128))
     other_comments = db.Column(db.String(256))
 
+    def msg_history(self):
+        return Message.query.filter_by(user_id=self.username).order_by(Message.time.asc()).limit(12)
 
     def __repr__(self):
         value = "User({})".format(self.username)
@@ -38,6 +40,9 @@ class Trainer(db.Model):
     name = db.Column(db.String(64), index=True)
     hashed_password = db.Column(db.String(128))
     messages = db.relationship('Message', backref='trainer_name', lazy='dynamic')
+
+    def msg_history(self):
+        return Message.query.filter_by(trainer_id=self.username).order_by(Message.time.asc()).limit(12)
 
     def __repr__(self):
         value = "Trainer({})".format(self.username)
