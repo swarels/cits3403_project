@@ -16,6 +16,8 @@ print(app.secret_key)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, render_as_batch=True)
 login = LoginManager(app)
+#login.login_view = 'login'
+#uncomment above line when we have logging in working
 #db.init_app(app)
 
 #from .main import *

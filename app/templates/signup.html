@@ -11,24 +11,35 @@
     <div class="form-container">
         <h2>Sign Up</h2>
         <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 150px>
-        <form name="signupForm" onsubmit="return validateEmail()" method="POST">
+        <form name="signupForm" action="" method="POST">
             {{form.hidden_tag()}}
 
             {{form.name.label}} <br>
             {{form.name(size = 30)}} <br>
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
 
             {{form.username.label}} <br>
             {{form.username(size = 30)}} <br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
 
             {{form.password.label}} <br>
             {{form.password(size = 30)}} <br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
 
-            {{form.email.label}} <br>
-            {{form.email(size = 30)}} <br>
+            {{form.passwordagain.label}} <br>
+            {{form.passwordagain(size = 30)}} <br>
+            {% for error in form.passwordagain.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
 
-            {{form.professional.label}} <br>
-            {{form.professional(size = 30)}} <br>
-
+            {{form.professional()}} {{form.professional.label}} <br>
+            
             {{form.submit}}
         </form>
 
