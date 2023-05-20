@@ -24,3 +24,4 @@ login = LoginManager(app)
 #from .main import *
 #from .models import *
 from app import routes, models
+
