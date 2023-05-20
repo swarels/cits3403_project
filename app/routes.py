@@ -29,11 +29,12 @@ def logout():
     logout_user()
     return redirect('/index')
 
-@app.route("/history")
+@app.route("/history", methods=['GET'])
 def history():
-    if not current_user.is_authenticated:
-        current_user = User.query.get('testUser123')
-    return render_template("history.html")
+    #if not current_user.is_authenticated:
+    current_user = User.query.get('testUser123')
+    messages = current_user.msg_history().all()
+    return render_template("history.html", title='History', messages=messages)
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
