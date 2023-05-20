@@ -19,7 +19,7 @@ def home():
             flash('Invalid username or password')
             return redirect('/index')
         login_user(user, remember=form.remember.data)
-        return redirect('/chatroom')
+        return redirect('/talkingRat')
     else:
         print("wrong!")
     return render_template("home.html", title='Sign In', form=form)
@@ -29,9 +29,11 @@ def logout():
     logout_user()
     return redirect('/index')
 
-@app.route("/room")
-def room():
-    return render_template("room.html")
+@app.route("/history")
+def history():
+    if not current_user.is_authenticated:
+        current_user = User.query.get('testUser123')
+    return render_template("history.html")
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
