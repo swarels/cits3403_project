@@ -2,9 +2,8 @@ from flask import Flask, request, session, redirect, render_template, flash
 from app import app, db
 from flask_login import current_user, login_user, logout_user
 from flask_socketio import join_room, leave_room, emit, send, SocketIO
-from app.models import User
-from app.forms import LoginForm
-from app.forms import SignUpForm
+from app.models import User, Trainer, Message
+from app.forms import LoginForm, SignUpForm, MessageForm
 
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
@@ -45,7 +44,7 @@ def signup():
     form = SignUpForm()
     if form.validate_on_submit():
         if form.professional():
-            trainer = User(username=form.username.data, name=form.name.data)
+            trainer = Trainer(username=form.username.data, name=form.name.data)
             trainer.set_password(form.password.data)
             db.session.add(trainer)
             db.session.commit()
@@ -57,11 +56,21 @@ def signup():
         return redirect('/talkingRat')
     return render_template("signup.html", title='Sign Up', form=form)
 
-@app.route('/chatroom')
+@app.route('/chatroom', methods=["GET", "POST"])
 #@login_required
 #uncomment above when logging in works
 def chatroom():
-    return render_template('chatroom.html')
+    try:
+        current_user.is_authenticated()
+    except UnboundLocalError:
+        current_user = User.query.get('testUser123')
+        current_trainer = Trainer.query.get('sallyspeed')
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = Message(text=form.message.data, from_trainer=False, user_name=current_user, trainer_name=current_trainer)
+        db.session.add(msg)
+        db.session.commit()
+    return render_template('chatroom.html', form=form)
 
 @app.route('/preferredname')
 def preferred_name():

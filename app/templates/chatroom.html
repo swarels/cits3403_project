@@ -7,7 +7,12 @@
         </div>
 
         <div id="message-container" class="message-input">
-            <ul id="message-input">
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.message(cols=32, rows=4) }}
+                {{ form.submit() }}
+            </form>
+            <!--<ul id="message-input">
             </ul>
             <div class="input-area">
             <input
@@ -18,6 +23,7 @@
             <button type="button" id="send-btn" onClick="sendMessage()">
                 Send
             </button>
+            -->
            </div>
        </div>
 
@@ -25,7 +31,7 @@
     var socket = io();
 
     const message = document.getElementById('message');
-    const send_btn = document.getElementById('send-btn');
+    const send_btn = document.getElementById('submit');
     var preferred_name = localStorage.getItem('name');
     var join_btn = localStorage.getItem('join-button');
 

@@ -1,7 +1,7 @@
 #adapted from lecture 9
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, ValidationError, EqualTo
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, ValidationError, EqualTo, Length
 from app.models import User
 
 class LoginForm(FlaskForm):
@@ -22,3 +22,8 @@ class SignUpForm(FlaskForm):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Username is already in use')
+
+class MessageForm(FlaskForm):
+    message = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=288)])
+    submit = SubmitField('Submit')
