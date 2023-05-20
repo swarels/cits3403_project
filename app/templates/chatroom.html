@@ -7,12 +7,21 @@
         </div>
 
         <div id="message-container" class="message-input">
-            <form action="" method="post">
-                {{ form.hidden_tag() }}
-                {{ form.message(cols=32, rows=4) }}
-                {{ form.submit() }}
-            </form>
-            <!--<ul id="message-input">
+
+            <div id="message-form" class="message-form" style="margin-top: 360px;">
+                <form action="" method="post" onsubmit="sendMessage(event)">
+                    {{ form.hidden_tag() }}
+                    {{ form.message(cols=114, rows=50) }}
+                    {{ form.submit() }}
+                </form>
+            </div>
+
+            <div id="chat-container">
+                <ul id="chat-messages"></ul>
+            </div>
+            
+            <!-- THIS IS THE OLD CODE WITH TEXT BOX AND SUBMIT BUTTON NOT CONNECTED TO DB 
+            <ul id="message-input">
             </ul>
             <div class="input-area">
             <input
@@ -23,10 +32,34 @@
             <button type="button" id="send-btn" onClick="sendMessage()">
                 Send
             </button>
-            -->
            </div>
+           -->
        </div>
 
+<!-- attempting to write code to print messages - not working at the moment -->       
+<script>
+    function sendMessage(event) {
+    event.preventDefault();
+    
+    // Get the message input value
+    var messageInput = document.getElementById("message-input");
+    var message = messageInput.value;
+
+    // Create a new list item for the message
+    var newMessage = document.createElement("li");
+    newMessage.textContent = message;
+
+    // Add the new message to the chat container
+    var chatMessages = document.getElementById("chat-messages");
+    chatMessages.appendChild(newMessage);
+
+    // Clear the message input
+    messageInput.value = "";
+}
+</script>
+
+<!-- ######################################################## -->
+<!-- below is the old code -->
 <script>
     var socket = io();
 
@@ -74,5 +107,6 @@
     });
     
 </script>
+
 
 {% endblock %}
