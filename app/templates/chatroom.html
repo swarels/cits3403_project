@@ -8,6 +8,10 @@
 
         <div id="message-container" class="message-input">
 
+            <div class="history" id="message-history">
+                <!-- Existing message history code -->
+            </div>
+
             <div id="message-form" class="message-form" style="margin-top: 360px;">
                 <form action="" method="post" onsubmit="sendMessage(event)">
                     {{ form.hidden_tag() }}
@@ -41,20 +45,20 @@
     function sendMessage(event) {
     event.preventDefault();
     
-    // Get the message input value
-    var messageInput = document.getElementById("message-input");
-    var message = messageInput.value;
+    // Get the user input value
+    var userInput = document.getElementById("user-input");
+    var message = userInput.value;
 
-    // Create a new list item for the message
-    var newMessage = document.createElement("li");
+    // Create a new paragraph element for the message
+    var newMessage = document.createElement("p");
     newMessage.textContent = message;
 
-    // Add the new message to the chat container
-    var chatMessages = document.getElementById("chat-messages");
-    chatMessages.appendChild(newMessage);
+    // Add the new message to the message history
+    var messageHistory = document.getElementById("message-history");
+    messageHistory.appendChild(newMessage);
 
-    // Clear the message input
-    messageInput.value = "";
+    // Clear the user input
+    userInput.value = "";
 }
 </script>
 
