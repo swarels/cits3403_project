@@ -31,8 +31,10 @@ def logout():
 
 @app.route("/history", methods=['GET'])
 def history():
-    #if not current_user.is_authenticated:
-    current_user = User.query.get('testUser123')
+    try:
+        current_user.is_authenticated()
+    except UnboundLocalError:
+        current_user = User.query.get('testUser123')
     messages = current_user.msg_history().all()
     return render_template("history.html", title='History', messages=messages)
 
