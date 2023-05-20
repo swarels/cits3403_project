@@ -19,6 +19,8 @@ def home():
             return redirect('/index')
         login_user(user, remember=form.remember.data)
         return redirect('/chatroom')
+    else:
+        print("wrong!")
     return render_template("home.html", title='Sign In', form=form)
 
 @app.route('/logout')
