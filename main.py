@@ -18,18 +18,18 @@ from wtforms.validators import DataRequired, Email
 
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-#from flask_migrate import Migrate
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 
-#from app import app, db
-#from app.models import User, Message
+from app import app, db
+from app.models import User, Message, Trainer
 
 socketio = SocketIO(app)
 
-#@app.shell_context_processor
-#def make_shell_context():
- #   return {'db': db, 'User': User, 'Message': Message}
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Message': Message, 'Trainer':Trainer}
 
 @socketio.on("connect")
 def handle_connect(preferred_name):
