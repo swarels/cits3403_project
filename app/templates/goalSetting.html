@@ -162,20 +162,6 @@
         </div>
         <br>
 
-<<<<<<< HEAD
-        <input type="radio" name="goal" id="rad1" value="Lose Weight">
-        <label for="rad1">Lose Weight</label>
-
-        <input type="radio" name="goal" id="rad2" value="Gain Weight">
-        <label for="rad2">Build Muscle</label>
-
-        <input type="radio" name="goal" id="rad3" value="Get in shape">
-        <label for="rad3">Get In Shape</label>
-
-        <input type="radio" name="goal" id="rad4" value="other">
-        <label for="rad4">Other</label><br><br>
-        <input type="text" name="goal" id="other-goal" name="other-goal" placeholder="Please specify" size="80" style="display: none;" class="textbox">
-=======
        <div class="form-goal">
         {{ form.goal }}
         {% for error in form.goal.errors %}
@@ -183,7 +169,6 @@
         {% endfor %}
        </div> 
         
->>>>>>> 47fa00b2b7e50bfcb222d6108bb0049e61eed62f
 
     </article>
 
@@ -197,19 +182,11 @@
             <div class = "comments">
                 <div class="comment bubble">
                     <p> Thanks!</p>
-<<<<<<< HEAD
-                    <p> And could I also know your current height and weight?* </p>
-=======
                     <p> And could I also know your current height (in cm) and weight (in kg)? </p>
->>>>>>> 47fa00b2b7e50bfcb222d6108bb0049e61eed62f
                 </div>
             </div>
         </div>
         <!-- <h4> What is your current height and weight?</h4> -->
-<<<<<<< HEAD
-        <input type="text" name="height" id="text1" placeholder="Height (cm)" class="textbox" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-        <input type="text" name="weight" id="text2" placeholder="Weight (kg)" class="textbox" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-=======
         {{ form.height(placeholder="Height (cm)") }}
         {% for error in form.height.errors %}
         <span style="color:red;">{{error}}</span>
@@ -219,7 +196,6 @@
         <span style="color:red;">{{error}}</span>
         {% endfor %}
 
->>>>>>> 47fa00b2b7e50bfcb222d6108bb0049e61eed62f
     </article>
 
     <!-- Gender -->
@@ -333,11 +309,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        <input class = "buttons" type="submit" value="Submit" name="submit_button">
-        <!-- onclick="location.href = '/preferredname';" Add this above^ -->
-        
-=======
         {{ form.submit() }}
         {% for error in form.goal.errors %}
         <span style="color:red;">Error in goal: {{error}}</span>
@@ -364,7 +335,6 @@
         <span style="color:red;">Error in extra information: {{error}}</span>
         {% endfor %}
 
->>>>>>> 47fa00b2b7e50bfcb222d6108bb0049e61eed62f
     </article>
     
     </form>
@@ -518,12 +488,6 @@
             }
             
         });
-
-        // ONLY GO TO THE NEXT QUESTION IF THE QUESTIONS HAVE BEEN ANSWERED
-
-        // Get all the next buttons
-        var nextButtons = document.querySelectorAll(".next-button")
-
         
     </script>
 
