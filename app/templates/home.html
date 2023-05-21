@@ -8,51 +8,25 @@
 
       <h2>Sign In!</h2>
 
-      <form class="inline" name="login" action="" method="post" novalidate>
-        <!--  {{ form.hidden_tag() }}
-          <div class="form-group">
-            <span>{{ form.username.label }}<i class="material-icons">person</i></label>
-              {{ form.username(size=30) }}
-            </span>
-            <br/>
-            <span>{{ form.password.label }}<i class="material-icons">lock</i></label>
-              {{ form.password(size=30) }}  
-            </span>
-              <br/>
-            <span>
-              {{ form.remember() }} {{ form.remember.label }}
-            </span>
-            <br/>
-            {{ form.submit() }}
-          </div>
-          -->
-          <div class="form-group">
-            <input id="csrf_token" name="csrf_token" type="hidden" value="username">
-            <span><label for="username"><i class="material-icons">person</i></label>
-              <input type="text" id="username" name="username" required placeholder="Username"
-                value="{{request.form.username }}">
-            </span>
-            {% for error in form.username.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-            <br/>
-            <span><label for="password"><i class="material-icons">lock</i></label>
-              <input type="password" id="password" name="password" required placeholder="Password"
-                value=""> </span>
-            {% for error in form.password.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-              <br/>
-            <span>
-              <input id="remember" name="remember" type="checkbox">
-              <label for = "remember">Remember me?</label>
-            </span>
-            <br/>
-            {{ form.submit() }}
-          </div>
-          
-          
-      </form>
+      <form name="loginForm" action="" method="POST">
+        {{form.hidden_tag()}}
+
+        {{form.username.label}} <br>
+        {{form.username(size = 30)}} <br>
+        {% for error in form.username.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{form.password.label}} <br>
+        {{form.password(size = 30)}} <br>
+        {% for error in form.password.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+
+        {{form.remember()}} {{form.remember.label}} <br>
+        
+        {{form.submit}}
+    </form>
 
   <div class="signUpLink">
       <a href="/signup">Create an account!</a>
