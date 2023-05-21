@@ -6,3 +6,5 @@ Flask_WTF==1.1.1
 WTFORMS==3.0.1
 python-dotenv
 gunicorn==20.1.0
+config==3.3.9
+app-model==0.1.4
