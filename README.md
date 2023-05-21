@@ -25,6 +25,7 @@ Users will also be able to view their chat history and their answers to Gymrat's
     pip install flask-sqlalchemy  
     pip install flask-migrate  
     pip install flask-login  
+3. Change 'self.id' to 'self.username' in mixins.py inside flask_login folder in the virtual environment
 3. Then to run the server, do this:  
     flask run  
 4. Then click on the URL provided.  
