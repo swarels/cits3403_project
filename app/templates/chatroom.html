@@ -2,6 +2,10 @@
 
 {% block content %}
 
+        <div class="hist-button">
+            <input class = "buttons" type="submit" value="History" name="history_button" onclick="location.href = '/history';">
+        </div>
+
         <div id="message-container" class="message-input">
             <ul id="message-input">
             </ul>
@@ -43,6 +47,15 @@
             your_name: preferred_name,
             message: message.value,
         })
+    }); 
+
+    message.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+        socket.emit('chat', {
+            your_name: preferred_name,
+            message: message.value,
+        })
+        }
     }); 
 
     socket.on('chat', function(data) {

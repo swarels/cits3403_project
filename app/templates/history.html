@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>History</h2>
+<div class="form-container">
+<div class="history">
+{% for message in messages %}
+
+    {% if message.from_trainer == False %}
+        <article>
+        <b>
+            You (to {{ message.trainer_name.name}})
+        </b>
+        <br/>
+            {{ message.text }}
+        </article>
+
+    {% else %}
+        <article>
+        <b>
+            {{ message.trainer_name.name}} (to you)
+        </b>
+        <br/> 
+            {{ message.text }}
+        </article>
+    {% endif %}
+
+{% endfor %}
+</div>
+</div>
+{% endblock %}
