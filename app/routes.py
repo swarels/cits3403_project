@@ -33,7 +33,7 @@ def history():
     except UnboundLocalError:
         current_user = User.query.get('testUser123')
     messages = current_user.msg_history().all()
-    return render_template("history.html", title='History', messages=messages)
+    return render_template("history.html", title='History', messages=messages, user=current_user)
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():

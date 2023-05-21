@@ -28,4 +28,50 @@
 {% endfor %}
 </div>
 </div>
+<h2>User Info</h2>
+<div class="form-container">
+    <p>
+        Name: {{ user.name }}
+    </p>
+    <p>
+        Username: {{ user.username }}
+    </p>
+    <p>
+        Goal: {% if user.fitness_goal == 0 %} Lose Weight
+        {% elif user.fitness_goal == 1 %} Build Muscle
+        {% elif user.fitness_goal == 2 %} Get in shape
+        {% elif user.fitness_goal == 3 %} Other
+        {% else %} Not Selected
+        {% endif %}
+    </p>
+    <p>
+        Height: {{ user.height }}cm
+    </p>
+    <p>
+        Weight: {{ user.weight }}kg
+    </p>
+    <p>
+        Gender: {% if user.gender == 0 %} Male
+                {% elif user.gender == 1 %} Female
+                {% else %} Other
+                {% endif %}
+    </p>
+    <p>
+        Initial rate of exercise: {% if user.current_excercise == 0 %} Multiple times per week
+        {% elif user.current_excercise == 1 %} Roughly once per week
+        {% elif user.current_excercise == 2 %} Infrequently
+        {% elif user.current_excercise == 3 %} Never
+        {% else %} Not Selected
+        {% endif %}
+    </p>
+    <p>
+        Rate willing to exercise: {{ user.willing_excercise }} times per week
+    </p>
+    <p>
+        Allergies and diet information: {{ user.allergies }}
+    </p>
+    <p>
+        Other Information: {{ user.other_comments }}
+    </p>
+</div>
 {% endblock %}
