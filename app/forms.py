@@ -1,7 +1,7 @@
 #adapted from lecture 9
 from flask_wtf import FlaskForm
 from wtforms import RadioField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError, EqualTo, InputRequired, NumberRange, Length
 from app.models import User
 
@@ -23,6 +23,11 @@ class SignUpForm(FlaskForm):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Username is already in use')
+        
+class MessageForm(FlaskForm):
+    message = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=288)])
+    submit = SubmitField('Submit')
 
 class GoalForm(FlaskForm):
     #goal = SelectField('Fitness Goal', [ InputRequired()],
@@ -53,8 +58,8 @@ class GoalForm(FlaskForm):
     willing = IntegerField('Willing', [ InputRequired(),
         NumberRange(min=1, max=7, message="Invalid amount of days per week")
         ])
-    allergies = StringField('Allergies', [ Length(min=1, max=128, message="Too much information")
+    allergies = StringField('Allergies', [ Length(min=0, max=128, message="Too much information")
         ])
-    comments = StringField('Extra Info', [ Length(min=1, max=256, message="Too much information")
+    comments = StringField('Extra Info', [ Length(min=0, max=256, message="Too much information")
         ])
     submit = SubmitField('Submit')
