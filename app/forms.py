@@ -53,8 +53,8 @@ class GoalForm(FlaskForm):
     willing = IntegerField('Willing', [ InputRequired(),
         NumberRange(min=1, max=7, message="Invalid amount of days per week")
         ])
-    allergies = StringField('Allergies', [ Length(min=1, max=128, message="Too much information")
+    allergies = StringField('Allergies', [ Length(min=0, max=128, message="Too much information")
         ])
-    comments = StringField('Extra Info', [ Length(min=1, max=256, message="Too much information")
+    comments = StringField('Extra Info', [ Length(min=0, max=256, message="Too much information")
         ])
     submit = SubmitField('Submit')
