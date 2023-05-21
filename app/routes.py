@@ -69,7 +69,7 @@ def preferred_name():
 def talkingRat():
     return render_template("talkingRat.html")
 
-@app.route("/goalSetting")
+@app.route("/goalSetting", methods=["GET", "POST"])
 def goalSetting():
     try:
         current_user.is_authenticated()
