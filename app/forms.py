@@ -25,10 +25,10 @@ class SignUpForm(FlaskForm):
 
 class GoalForm(FlaskForm):
     goal = SelectField('Fitness Goal', [ InputRequired()],
-        choices=[ (-1, ''), (0, 'Lose weight'),
+        choices=[ (-1, 'Choose a goal'), (0, 'Lose weight'),
         (1, 'Build Muscle'),
         (2, 'Get in shape'),
-        (3, 'Other') ])
+        (3, 'Other') ], coerce=int)
     height = IntegerField('Height', [ InputRequired(),
         NumberRange(min=50, max=250, message="You are too tall/short")
         ])
@@ -36,14 +36,14 @@ class GoalForm(FlaskForm):
         NumberRange(min=20, max=400, message="You are too heavy/thin")
         ])
     gender = SelectField('Gender', [ InputRequired()],
-        choices=[ (-1, ''), (0, 'Male'),
+        choices=[ (-1, 'Choose a gender'), (0, 'Male'),
         (1, 'Female'),
-        (2, 'Other')])
+        (2, 'Other')], coerce=int)
     pastexercise = SelectField('Past Exercise', [ InputRequired()],
-        choices=[ (-1, ''), (0, 'Multiple times a week'),
+        choices=[ (-1, 'Choose a frequency of exercise'), (0, 'Multiple times a week'),
         (1, 'Once a Week or so'),
         (2, 'On the off occasion'),
-        (3, 'Never') ])
+        (3, 'Never') ], coerce=int)
     willing = IntegerField('Willing', [ InputRequired(),
         NumberRange(min=1, max=7, message="Invalid amount of days per week")
         ])

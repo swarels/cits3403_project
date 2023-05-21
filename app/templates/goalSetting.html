@@ -166,9 +166,7 @@
         </div>
 
         {{ form.goal }}
-        {% for error in form.goal.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
+        
 
     </article>
 
@@ -311,7 +309,31 @@
             </div>
         </div>
         {{ form.submit() }}
-        
+        {% for error in form.goal.errors %}
+        <span style="color:red;">Error in goal: {{error}}</span>
+        {% endfor %}
+        {% for error in form.height.errors %}
+        <span style="color:red;">Error in height: {{error}}</span>
+        {% endfor %}
+        {% for error in form.weight.errors %}
+        <span style="color:red;">Error in weight: {{error}}</span>
+        {% endfor %}
+        {% for error in form.gender.errors %}
+        <span style="color:red;">Error in gender: {{error}}</span>
+        {% endfor %}
+        {% for error in form.pastexercise.errors %}
+        <span style="color:red;">Error in past exercise: {{error}}</span>
+        {% endfor %}
+        {% for error in form.willing.errors %}
+        <span style="color:red;">Error in willing exercise: {{error}}</span>
+        {% endfor %}
+        {% for error in form.allergies.errors %}
+        <span style="color:red;">Error in allergies: {{error}}</span>
+        {% endfor %}
+        {% for error in form.comments.errors %}
+        <span style="color:red;">Error in extra information: {{error}}</span>
+        {% endfor %}
+
     </article>
     
     </form>
