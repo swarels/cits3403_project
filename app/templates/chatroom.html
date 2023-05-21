@@ -41,7 +41,7 @@
     socket.on("join_user", function(preferred_name) {
         var ul = document.getElementById("message-input");
         var li = document.createElement('li');
-        li.appendChild(document.createTextNode("User " + preferred_name + " has joined the room"));
+        li.appendChild(document.createTextNode(preferred_name + " have joined the room"));
         ul.appendChild(li);
     }); 
 
