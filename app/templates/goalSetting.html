@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="icon" type="image/x-icon" href="https://dreamlightvalleywiki.com/images/7/70/Remy.png">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='gymrat.png')}}">
 
     <style>
     body{
@@ -39,6 +39,10 @@
     left: 0;
     margin: 20px
     
+    }
+
+    input{
+        background-color: #384047;
     }
 
     input[type=radio]{
@@ -145,12 +149,13 @@
         </div> -->
     </div>
 
-    <form>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
     <!-- Goals -->
     <article id="question1" class="regular">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
@@ -160,18 +165,10 @@
             </div>
         </div>
 
-        <input type="radio" name="goal" id="rad1" value="Lose Weight">
-        <label for="rad1">Lose Weight</label>
-
-        <input type="radio" name="goal" id="rad2" value="Gain Weight">
-        <label for="rad2">Build Muscle</label>
-
-        <input type="radio" name="goal" id="rad3" value="Get in shape">
-        <label for="rad3">Get In Shape</label>
-
-        <input type="radio" name="goal" id="rad4" value="other">
-        <label for="rad4">Other</label><br><br>
-        <input type="text" name="goal" id="other-goal" name="other-goal" placeholder="Please specify" size="80" style="display: none;">
+        {{ form.goal }}
+        {% for error in form.goal.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
 
     </article>
 
@@ -185,13 +182,20 @@
             <div class = "comments">
                 <div class="comment bubble">
                     <p> Thanks!</p>
-                    <p> And could I also know your current height and weight? </p>
+                    <p> And could I also know your current height (in cm) and weight (in kg)? </p>
                 </div>
             </div>
         </div>
         <!-- <h4> What is your current height and weight?</h4> -->
-        <input type="text" name="height" id="text1" placeholder="Height (cm)" class="textbox">
-        <input type="text" name="weight" id="text2" placeholder="Weight (kg)" class="textbox">
+        {{ form.height(placeholder="Height (cm)") }}
+        {% for error in form.height.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
+        {{ form.weight(placeholder="Weight (kg)") }}
+        {% for error in form.weight.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
+
     </article>
 
     <!-- Gender -->
@@ -207,11 +211,10 @@
                 </div>
             </div>
         </div>
-        <select id="Gender" name="Gender" class="textbox">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
+        {{ form.gender }}
+        {% for error in form.gender.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
     </article>
 
     <!-- How regularly do they exercise? -->
@@ -228,12 +231,10 @@
                 </div>
             </div>
         </div>
-        <select id="Past exercise" name="Past exercise" class="textbox">
-            <option value="Mutiple_Week">Multiple times a week</option>
-            <option value="Once_Week">Once a Week or so</option>
-            <option value="Occasion">On the off occasion</option>
-            <option value="Never">Almost never</option>
-        </select>
+        {{ form.pastexercise }}
+        {% for error in form.pastexercise.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
     </article>
 
     <!-- Days willing -->
@@ -249,13 +250,10 @@
                 </div>
             </div>
         </div>
-        <select id="willing" name="willing" class="textbox">
-            <option value="7"> 7 days a week</option>
-            <option value="5-6"> 5 to 6 days a week</option>
-            <option value="3-4"> 3 to 4 days a week</option>
-            <option value="2"> 2 days a week</option>
-            <option value="1"> Once a week</option>
-        </select>
+        {{ form.willing }}
+        {% for error in form.willing.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
     </article>
 
     <!-- Food allergies-->
@@ -272,7 +270,10 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="dietary_requirements" id="dietary_requirements" placeholder="Please specify" size="80" class="textbox">
+        {{ form.allergies(size=80) }}
+        {% for error in form.allergies.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
     </article>
 
     <!-- Other Comments-->
@@ -289,7 +290,10 @@
                 </div>
             </div>
         </div>
-        <input type="text" name="extra info" id="extra info" placeholder="Please specify" size="80" class="textbox">
+        {{ form.comments(size=80) }}
+        {% for error in form.comments.errors %}
+        <span style="color:red;">{{error}}</span>
+        {% endfor %}
     </article>
 
     <!-- Submit-->
@@ -306,7 +310,7 @@
                 </div>
             </div>
         </div>
-        <input class = "buttons" type="submit" value="Submit" name="submit_button" onclick="location.href = '/preferredname';">
+        {{ form.submit() }}
         
     </article>
     
@@ -325,9 +329,10 @@
         /**
          * Make an "other" text-box appear when selecting other
          **/
-        const otherGoalRadio = document.getElementById('rad4');
-        const otherGoalTextbox = document.getElementById('other-goal');
+        //const otherGoalRadio = document.getElementById('rad4');
+        //const otherGoalTextbox = document.getElementById('other-goal');
 
+        /*
         otherGoalRadio.addEventListener('change', function() {
             console.log("Other Pressed");
         if (otherGoalRadio.checked) {
@@ -337,11 +342,9 @@
         }
         });
 
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-        /**
-         * Add form elements to an array, once selecting submit
-         **/
+        // Add form elements to an array, once selecting submit
+        
         const form = document.querySelector('form');
         form.addEventListener('submit', onSubmit);
 
@@ -386,6 +389,7 @@
             console.log("Array of form_answers: ");
             console.log(form_answers)
         }
+        */
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
