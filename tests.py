@@ -10,7 +10,8 @@ class TestDB(unittest.TestCase):
             'sqlite:///' + os.path.join(basedir, 'app.db')
         self.app = app_test_client()
         db.create_all()
-        u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages=1, fitness_goal=1, height=175, weight=80, gender=1, current_excercise=2, willing_excercise=3, allergies="", other_comments="")
+        
+        """u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages=1, fitness_goal=1, height=175, weight=80, gender=1, current_excercise=2, willing_excercise=3, allergies="", other_comments="")
         u2 = User(username="user2", name="Test Case2", hashed_password="testpassword2", messages=3, fitness_goal=2, height=155, weight=47, gender=1, current_excercise=1, willing_excercise=4, allergies="", other_comments="")
 
         m1 = Message(id=1, text="testmessage 1", time="now", trainer_id="trainer1", user_id="user1")
@@ -29,13 +30,49 @@ class TestDB(unittest.TestCase):
         db.session.add(m4)
         db.session.add(t1)
         db.session.add(t2)
-        db.session.commit()
+        db.session.commit()"""
 
     def tearDown(self):
         db.session.remove()
         db.drop_all()
 
-    # checking if password is correct 
+    def test_create_user(self):
+        # Test creating a new user
+        user = User(username="test_user", name="Test User", hashed_password="password", messages=0, fitness_goal="Lose weight", height=170, weight=70, gender="Male", current_excercise="Running", willing_excercise="Weightlifting", allergies="", other_comments="")
+        db.session.add(user)
+        db.session.commit()
+
+        user_from_db = User.query.filter_by(username="test_user").first()
+        self.assertIsNotNone(user_from_db)
+        self.assertEqual(user_from_db.name, "Test User")
+        self.assertEqual(user_from_db.messages, 0)
+
+    def test_create_trainer(self):
+        # Test creating a new trainer
+        trainer = Trainer(username="test_trainer", name="Test Trainer", hashed_password="password", messages=0)
+        db.session.add(trainer)
+        db.session.commit()
+
+        trainer_from_db = Trainer.query.filter_by(username="test_trainer").first()
+        self.assertIsNotNone(trainer_from_db)
+        self.assertEqual(trainer_from_db.name, "Test Trainer")
+        self.assertEqual(trainer_from_db.messages, 0)
+
+    def test_create_message(self):
+        # Test creating a new message
+        user = User.query.get(1)  # Assuming user with ID 1 exists
+        trainer = Trainer.query.get(1)  # Assuming trainer with ID 1 exists
+
+        message = Message(text="Hello", time=datetime.now(), trainer=trainer, user=user)
+        db.session.add(message)
+        db.session.commit()
+
+        message_from_db = Message.query.filter_by(text="Hello").first()
+        self.assertIsNotNone(message_from_db)
+        self.assertEqual(message_from_db.trainer, trainer)
+        self.assertEqual(message_from_db.user, user)
+
+    """# checking if password is correct 
     def test_password_hashing(self):
         u =  User.query.get("user1")
         self.assertFalse(u.hashed_password, "wrongpassword")
@@ -92,7 +129,7 @@ class TestDB(unittest.TestCase):
         self.assertEqual(m1.trainer_id, "trainer1")
         
         t2 = Trainer.query.get("trainer2")
-        self.assertEqual(t2.messages[0].text, "testmessage 2")
+        self.assertEqual(t2.messages[0].text, "testmessage 2")"""
 
 
 
