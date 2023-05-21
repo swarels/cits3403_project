@@ -32,8 +32,11 @@ Users will also be able to view their chat history and their answers to Gymrat's
 
 # Database Scheme
 
-SQLite based database. Contains tables User, Trainer and Message.
-The schemas are as follows:
-User(username, name, hashed_password, messages, fitness_goal, height, weight, gender, current_excercise, willing_excercise, allergies, other_comments)
-Trainer(username, name, hashed_password, messages)
-Message(id, text, time, trainer_id, user_id)
+SQLite based database. Contains tables User, Trainer and Message.  
+The schemas are as follows:  
+* User(username, name, hashed_password, messages, fitness_goal, height, weight, gender, current_excercise, willing_excercise, allergies, other_comments)
+* Trainer(username, name, hashed_password, messages)
+* Message(id, text, time, trainer_id, user_id, from_trainer[^1])
+
+[^1]: This variable is a boolean which determines where a message was sent from a trainer or a user.
+    Since trainers can only chat to users and vice versa, it was much more memory-efficient to store messages like this.
