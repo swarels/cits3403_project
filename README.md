@@ -38,5 +38,5 @@ The schemas are as follows:
 * Trainer(username, name, hashed_password, messages)
 * Message(id, text, time, trainer_id, user_id, from_trainer[^1])
 
-[^1]: This variable is a boolean which determines where a message was sent from a trainer or a user.
+[^1]: This variable is a boolean which determines whether a message was sent from a trainer or a user.
     Since trainers can only chat to users and vice versa, it was much more memory-efficient to store messages like this.
