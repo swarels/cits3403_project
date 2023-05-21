@@ -41,12 +41,12 @@ def signup():
         return redirect('/chatroom')
     form = SignUpForm()
     if form.validate_on_submit():
-        if (form.professional == True):
+        if (form.professional.data == True):
             trainer = Trainer(username=form.username.data, name=form.name.data)
             trainer.set_password(form.password.data)
             db.session.add(trainer)
             db.session.commit()
-            return redirect('/chatroom')
+            return redirect('/verify')
         else:
             user = User(username=form.username.data, name=form.name.data)
             user.set_password(form.password.data)
@@ -64,6 +64,10 @@ def chatroom():
 @app.route('/preferredname')
 def preferred_name():
     return render_template('preferredname.html')
+
+@app.route('/verify')
+def verify():
+    return render_template('verifytrainer.html')
 
 @app.route("/talkingRat")
 def talkingRat():
