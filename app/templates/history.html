@@ -12,6 +12,7 @@
 </head>
 
 <h2>History</h2>
+<h3>Chat History</h3>
 <div class="form-container">
 <div class="history">
 {% for message in messages %}
@@ -38,7 +39,7 @@
 {% endfor %}
 </div>
 </div>
-<h2>User Info</h2>
+<h3>User Info</h3>
 <div class="form-container">
     <p>
         Name: {{ user.name }}
@@ -77,11 +78,15 @@
     <p>
         Rate willing to exercise: {{ user.willing_excercise }} times per week
     </p>
+    {% if user.allergies|length %}
     <p>
         Allergies and diet information: {{ user.allergies }}
     </p>
+    {% endif %}
+    {% if user.other_comments|length %}
     <p>
         Other Information: {{ user.other_comments }}
     </p>
+    {% endif %}
 </div>
 {% endblock %}

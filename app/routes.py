@@ -3,7 +3,7 @@ from app import app, db
 from flask_login import current_user, login_user, logout_user
 from flask_socketio import join_room, leave_room, emit, send, SocketIO
 from app.models import User, Trainer, Message
-from app.forms import LoginForm, SignUpForm, GoalForm
+from app.forms import LoginForm, SignUpForm, GoalForm, MessageForm
 
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
@@ -60,6 +60,23 @@ def signup():
 #uncomment above when logging in works
 def chatroom():
     return render_template('chatroom.html')
+
+@app.route('/room', methods=["GET", "POST"])
+#@login_required
+#uncomment above when logging in works
+def room():
+    try:
+        current_user.is_authenticated()
+        current_trainer = Trainer.query.get('timtrainer')
+    except UnboundLocalError:
+        current_user = User.query.get('testUser123')
+        current_trainer = Trainer.query.get('trainer1')
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = Message(text=form.message.data, from_trainer=False, user_name=current_user, trainer_name=current_trainer)
+        db.session.add(msg)
+        db.session.commit()
+    return render_template('room.html', form=form)
 
 @app.route('/preferredname')
 def preferred_name():
