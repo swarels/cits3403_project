@@ -1,5 +1,6 @@
 #adapted from lecture 9
 from flask_wtf import FlaskForm
+from wtforms import RadioField
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField
 from wtforms.validators import DataRequired, ValidationError, EqualTo, InputRequired, NumberRange, Length
 from app.models import User
@@ -24,11 +25,16 @@ class SignUpForm(FlaskForm):
             raise ValidationError('Username is already in use')
 
 class GoalForm(FlaskForm):
-    goal = SelectField('Fitness Goal', [ InputRequired()],
-        choices=[ (-1, 'Choose a goal'), (0, 'Lose weight'),
-        (1, 'Build Muscle'),
-        (2, 'Get in shape'),
-        (3, 'Other') ], coerce=int)
+    #goal = SelectField('Fitness Goal', [ InputRequired()],
+     #   choices=[ (-1, 'Choose a goal'), (0, 'Lose weight'),
+     #   (1, 'Build Muscle'),
+      #  (2, 'Get in shape'),
+       # (3, 'Other') ], coerce=int)
+    goal = RadioField('Fitness Goal', [InputRequired()],
+                  choices=[(0, 'Lose weight'),
+                           (1, 'Build Muscle'), (2, 'Get in shape'),
+                           (3, 'Other')],
+                  coerce=int)
     height = IntegerField('Height', [ InputRequired(),
         NumberRange(min=50, max=250, message="You are too tall/short")
         ])

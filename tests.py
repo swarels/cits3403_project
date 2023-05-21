@@ -10,9 +10,9 @@ class TestDB(unittest.TestCase):
             'sqlite:///' + os.path.join(basedir, 'test.db')
         self.app = app_test_client()
         db.create_all()
-        u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages="test message 1", is_pro="N")
-        u2 = User(username="user2", name="Test Case2", hashed_password="testpassword2", messages="test message 2", is_pro="Y")
-        u3 = User(username="user3", name="Test Case3", hashed_password="testpassword3", messages="test message 3", is_pro="N")
+        u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages="test message 1", is_pro=False)
+        u2 = User(username="user2", name="Test Case2", hashed_password="testpassword2", messages="test message 2", is_pro=True)
+        u3 = User(username="user3", name="Test Case3", hashed_password="testpassword3", messages="test message 3", is_pro=False)
 
         m1 = Message(id=1, text="testmessage 1", time="now", userid="user1")
         m2 = Message(id=2, text="testmessage 2", time="now", userid="user2")
