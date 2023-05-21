@@ -19,15 +19,15 @@ Users will also be able to view their chat history and their answers to Gymrat's
 # Installation
 1. Activate your virtual environment  
 2. Install all of the following:  
-    pip install flask  
-    pip install flask-socketio  
-    pip install flask-wtf  
-    pip install flask-sqlalchemy  
-    pip install flask-migrate  
-    pip install flask-login  
-3. Change *self.id* to *self.username* in mixins.py *inside venv/lib/python3.10/site-packages/flask_login*
+    ``pip install flask``  
+    ``pip install flask-socketio``  
+    ``pip install flask-wtf``  
+    ``pip install flask-sqlalchemy``  
+    ``pip install flask-migrate``  
+    ``pip install flask-login``  
+3. Change ``self.id`` to ``self.username`` in mixins.py ``inside venv/lib/python3.10/site-packages/flask_login``
 4. Then to run the server, do this:  
-    flask run  
+    ``flask run``  
 5. Then click on the URL provided.  
 
 
