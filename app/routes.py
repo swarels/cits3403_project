@@ -82,10 +82,10 @@ def goalSetting():
         user.height = form.height.data
         user.weight = form.weight.data
         user.gender = form.gender.data
-        user.current_excercise = form.pastexercise
-        user.willing_excercise = form.willing
-        user.allergies = form.allergies
-        user.other_comments = form.comments
+        user.current_excercise = form.pastexercise.data
+        user.willing_excercise = form.willing.data
+        user.allergies = form.allergies.data
+        user.other_comments = form.comments.data
         db.session.add(user)
         db.session.commit()
         return redirect('/chatroom')
