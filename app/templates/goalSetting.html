@@ -161,6 +161,9 @@
 
        <div class="form-goal">
         {{ form.goal }}
+        {% for error in form.goal.errors %}
+        <span style="color:red;">Error: {{error}}</span>
+        {% endfor %}
        </div> 
         
 
