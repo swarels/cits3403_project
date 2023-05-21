@@ -1,6 +1,6 @@
 import unittest, os
 from app import app, db 
-from app.models import User, Message
+from app.models import User, Message, Trainer
 
 class TestDB(unittest.TestCase):
     
