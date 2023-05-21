@@ -7,7 +7,7 @@ class TestDB(unittest.TestCase):
     def setUp(self):
         basedir = os.path.abspath(os.path.dirname(__file__))
         app.config['SQLALCHEMY_DATABASE_URI'] = \
-            'sqlite:///' + os.path.join(basedir, 'test.db')
+            'sqlite:///' + os.path.join(basedir, 'app.db')
         self.app = app_test_client()
         db.create_all()
         u1 = User(username="user1", name="Test Case", hashed_password="testpassword", messages=1, fitness_goal=1, height=175, weight=80, gender=1, current_excercise=2, willing_excercise=3, allergies="", other_comments="")
@@ -94,7 +94,7 @@ class TestDB(unittest.TestCase):
         t2 = Trainer.query.get("trainer2")
         self.assertEqual(t2.messages[0].text, "testmessage 2")
 
-        
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2) 
