@@ -12,6 +12,13 @@
 </head>
 
 <h2>History</h2>
+
+<!--<div class="log-out-button">
+    <button type="submit" onclick="location.href = '/logout';" id="myButton">Log Out</button>
+</div>-->
+
+<h3>Chat History
+</h3>
 <div class="form-container">
 <div class="history">
 {% for message in messages %}
@@ -38,7 +45,9 @@
 {% endfor %}
 </div>
 </div>
-<h2>User Info</h2>
+<h3>User Info  
+    <input class = "buttons" type="submit" value="Edit user info" onclick="location.href = '/goalSetting';">
+</h3>
 <div class="form-container">
     <p>
         Name: {{ user.name }}
@@ -84,4 +93,6 @@
         Other Information: {{ user.other_comments }}
     </p>
 </div>
+
+
 {% endblock %}

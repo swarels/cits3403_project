@@ -103,6 +103,18 @@
     margin-bottom: 50px;
     }
 
+    .stripes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-45deg,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 8px);
+        background-size: 10px 10px;
+        animation: animateStripes 5s linear infinite;
+        z-index: -1;
+    }
+
     </style>
     
 </head>
@@ -110,7 +122,7 @@
 <body>
     <div class="content">
 
-        <h1>FitTrack</h1>
+        <h1 id="logo">FitTrack</h1>
 
         <div class = "rat">
             <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 250px>
@@ -139,11 +151,19 @@
         
 
     </div>
+    <div class="stripes"></div>
     
     <script>     
         var signinButton = document.getElementById("start_matching");    // Was gonna be functionality for the button to bring you another page
         signinButton.addEventListener('click', function() {
             window.location.href = "/goalSetting";
+        });
+
+        var logo = document.getElementById('logo');
+
+        logo.addEventListener("click", () => {
+            console.log("Logo pressed");
+            window.location.href = "/";
         });
     </script>
 </body>

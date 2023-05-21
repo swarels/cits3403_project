@@ -4,6 +4,7 @@
 
         <div class="hist-button">
             <input class = "buttons" type="submit" value="History" name="history_button" onclick="location.href = '/history';">
+            <!--<input class = "buttons" type="submit" value="Alternative chatroom" onclick="location.href = '/room';">-->
         </div>
 
         <div id="message-container" class="message-input">
@@ -19,7 +20,8 @@
                 Send
             </button>
            </div>
-       </div>
+        </div>
+
 
 <script>
     var socket = io();
@@ -39,7 +41,7 @@
     socket.on("join_user", function(preferred_name) {
         var ul = document.getElementById("message-input");
         var li = document.createElement('li');
-        li.appendChild(document.createTextNode("User " + preferred_name + " has joined the room"));
+        li.appendChild(document.createTextNode(preferred_name + " have joined the room"));
         ul.appendChild(li);
     }); 
 

@@ -129,17 +129,31 @@
         font-size: 16px;
     }
 
+    .buttons:hover {
+        opacity: 0.8;
+    }
+    
     .form-goal {
         height: 120px;
     }
     
-    
+    .stripes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-45deg,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 8px);
+        background-size: 10px 10px;
+        animation: animateStripes 5s linear infinite;
+        z-index: -1;
+    }
     
     </style>
 </head>
 <body> 
     <div class="content">
-        <h1>FitTrack</h1>
+        <h1 id="logo">FitTrack</h1>
 
     </div>
 
@@ -161,9 +175,6 @@
 
        <div class="form-goal">
         {{ form.goal }}
-        {% for error in form.goal.errors %}
-        <span style="color:red;">Error: {{error}}</span>
-        {% endfor %}
        </div> 
         
 
@@ -173,7 +184,7 @@
     <article id="question2" class=" regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
@@ -199,12 +210,12 @@
     <article id="question3" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
                 <div class="comment bubble">
-                    <p> What gender would you identify as? </p>
+                    <p> What gender would you identify as?* </p>
                 </div>
             </div>
         </div>
@@ -218,13 +229,13 @@
     <article id="question4" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
                 <div class="comment bubble">
                     <p> And how often would you say you've been exercising in the last year? </p>
-                    <p> Be as honest as you can! </p>
+                    <p> Be as honest as you can!* </p>
                 </div>
             </div>
         </div>
@@ -238,12 +249,12 @@
     <article id="question5" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
                 <div class="comment bubble">
-                    <p> I wonder.. how many days per week are you willing to commit to exercise? </p>
+                    <p> I wonder.. how many days per week are you willing to commit to exercise?* </p>
                 </div>
             </div>
         </div>
@@ -257,9 +268,8 @@
     <article id="question6" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
-    
             <div class = "comments">
                 <div class="comment bubble">
                     <p> Oh very important, do you have any dietary restrictions or food allergies? </p>
@@ -277,7 +287,7 @@
     <article id="question7" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
@@ -297,7 +307,7 @@
     <article id="question8" class="regular hidden">
         <div class="content">
             <div class="rat">
-                <img class="icon" src="https://dreamlightvalleywiki.com/images/7/70/Remy.png" width = 200px>
+                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
             </div>
     
             <div class = "comments">
@@ -308,6 +318,7 @@
             </div>
         </div>
         {{ form.submit() }}
+        
         {% for error in form.goal.errors %}
         <span style="color:red;">Error in goal: {{error}}</span>
         {% endfor %}
@@ -340,6 +351,8 @@
     <button id="previous-button" class="regular buttons">Previous Question</button>
     <button id="next-button" class="regular buttons">Next Question</button>
 
+    <div class="stripes"></div>
+
 
 
 
@@ -368,7 +381,6 @@
         
         const form = document.querySelector('form');
         form.addEventListener('submit', onSubmit);
-
         // Function for submit
         function onSubmit(event) {
             console.log("onSubmit function triggered");
@@ -409,6 +421,27 @@
             // Print array to console
             console.log("Array of form_answers: ");
             console.log(form_answers)
+            for (let i = 0; i < 8; i++) {
+                console.log(i);
+                if (i == 0) {
+                    if (form_answers[0] == null) {
+                        console.log("First question not answered");
+                        alert("Please complete all required questions");
+                        break;
+                    }
+                }
+                if (i == 1 ^ i == 2) {
+                    if (form_answers[i] == "") {
+                        console.log("Second not complete");
+                        alert("Please complete all required questions");
+                        break;
+                    }
+                }
+                if (i == 7) {
+                    // Navigate to the URL
+                    window.location.href = "/preferredname";
+                }
+            }
         }
         */
 
@@ -457,7 +490,6 @@
             if (currentQuestionId != "question8") {
                 showNextQuestion(currentQuestionId);
             }
-            
         });
         // Previous question button
         prev_button.addEventListener("click", function() {
@@ -466,6 +498,13 @@
                 showPrevQuestion(currentQuestionId);
             }
             
+        });
+
+        var logo = document.getElementById('logo');
+
+        logo.addEventListener("click", () => {
+            console.log("Logo pressed");
+            window.location.href = "/";
         });
 
         
