@@ -1,6 +1,6 @@
 from flask import Flask, request, session, redirect, render_template, flash
 from app import app, db
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, login_required
 from flask_socketio import join_room, leave_room, emit, send, SocketIO
 from app.models import User, Trainer, Message
 from app.forms import LoginForm, SignUpForm, GoalForm, MessageForm
@@ -12,7 +12,6 @@ def home():
         return redirect('/chatroom')
     form = LoginForm()
     if form.validate_on_submit():
-        print("right!")
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
@@ -26,6 +25,7 @@ def logout():
     return redirect('/index')
 
 @app.route("/history", methods=['GET'])
+@login_required
 def history():
     try:
         current_user.is_authenticated()
@@ -55,14 +55,12 @@ def signup():
     return render_template("signup.html", title='Sign Up', form=form)
 
 @app.route('/chatroom')
-#@login_required
-#uncomment above when logging in works
+@login_required
 def chatroom():
     return render_template('chatroom.html')
 
 @app.route('/room', methods=["GET", "POST"])
-#@login_required
-#uncomment above when logging in works
+@login_required
 def room():
     try:
         current_user.is_authenticated()
