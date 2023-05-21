@@ -3,7 +3,7 @@
 {% block content %}
 <div class="form-container">
 <div id="landing">
-    <input type="text" id="preferred_name" placeholder="Enter your preferred name">
+    <input type="text" id="preferred_name" placeholder="Enter your verification code">
     <button type="submit" id="join-btn">JOIN</button>
 </div>
 </div>
@@ -17,7 +17,7 @@
 
   document.getElementById("join-btn").addEventListener("click", function() {
       let preferred_name = document.getElementById("preferred_name").value;
-        localStorage.setItem('name', preferred_name);
+        localStorage.setItem('name', "You");
         localStorage.setItem('join-button', join-btn);
       /*socket.connect(); 
 

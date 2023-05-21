@@ -26,7 +26,8 @@
 
     const message = document.getElementById('message');
     const send_btn = document.getElementById('send-btn');
-    var preferred_name = localStorage.getItem('name');
+    var preferred_name = "You";
+    //var preferred_name = localStorage.getItem('name');
     var join_btn = localStorage.getItem('join-button');
 
     socket.connect();
