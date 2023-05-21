@@ -318,6 +318,9 @@
             </div>
         </div>
         {{ form.submit() }}
+        <div> 
+            <a href="/preferredname"> Redirect if submit not working </a>
+        </div>
         {% for error in form.goal.errors %}
         <span style="color:red;">Error in goal: {{error}}</span>
         {% endfor %}

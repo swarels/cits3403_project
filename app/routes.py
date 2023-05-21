@@ -109,5 +109,5 @@ def goalSetting():
         user.other_comments = form.comments.data
         db.session.add(user)
         db.session.commit()
-        return redirect('/chatroom')
+        return redirect('/preferredname')
     return render_template("goalSetting.html", title="goals", form=form)
