@@ -72,7 +72,8 @@
     <p>
         Gender: {% if user.gender == 0 %} Male
                 {% elif user.gender == 1 %} Female
-                {% else %} Other
+                {% elif user.gender == 2 %} Other
+                {% else %} Not specified
                 {% endif %}
     </p>
     <p>

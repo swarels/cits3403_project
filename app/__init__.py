@@ -14,6 +14,7 @@ print(app.secret_key)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, render_as_batch=True)
 login = LoginManager(app)
+login.login_view = 'home'
 
 from app import routes, models
 
