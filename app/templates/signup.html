@@ -12,6 +12,7 @@
     src="{{url_for('static', filename='gymrat.png')}}"
     width="150px"
   />
+  <!-- Create a form to allow users to sign up -->
   <form name="signupForm" action="" method="POST">
     {{form.hidden_tag()}} {{form.name.label}} <br />
     {{form.name(size = 30)}} <br />

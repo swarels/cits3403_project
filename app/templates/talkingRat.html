@@ -153,14 +153,15 @@
     </div>
     <div class="stripes"></div>
     
-    <script>     
+    <script>
+        // Allow the button to take you to the goalSetting page
         var signinButton = document.getElementById("start_matching");    // Was gonna be functionality for the button to bring you another page
         signinButton.addEventListener('click', function() {
             window.location.href = "/goalSetting";
         });
 
+        // Allow the logo in the top left to take you to the homepage
         var logo = document.getElementById('logo');
-
         logo.addEventListener("click", () => {
             console.log("Logo pressed");
             window.location.href = "/";

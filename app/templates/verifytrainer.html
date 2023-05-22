@@ -13,10 +13,12 @@
 </div>
 
 <script>
+  // Allow functionality of the join charoom button, to take you to the chatroom
   document.getElementById("join-btn").addEventListener("click", function () {
     window.location.href = "/chatroom";
   });
 
+  // Once the joined button is pressed add values to the local storage
   document.getElementById("join-btn").addEventListener("click", function () {
     let preferred_name = document.getElementById("preferred_name").value;
     localStorage.setItem("name", "You");

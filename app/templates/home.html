@@ -10,8 +10,10 @@
       width="150px"
     />
 
+    <!-- Sign in title -->
     <h2>Sign In!</h2>
 
+    <!-- Login Area -->
     <form name="loginForm" action="" method="POST">
       {{form.hidden_tag()}} {{form.username.label}} <br />
       {{form.username(size = 30)}} <br />
@@ -23,9 +25,11 @@
       <span style="color: red">{{ error }}</span>
       {% endfor %} {{form.remember()}} {{form.remember.label}} <br />
 
+      <!-- Submit button -->
       {{form.submit}}
     </form>
 
+    <!-- Sign up links -->
     <div class="signUpLink">
       <a href="/signup">Create an account!</a>
     </div>

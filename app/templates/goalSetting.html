@@ -403,6 +403,7 @@
       /**
        * Only show the next question once the previous one has been answered
        **/
+      // Function to hide the current question, and show the next question
       function showNextQuestion(currentQuestionId2) {
         // Hide the current question
         var currentQuestion = document.getElementById(currentQuestionId2);
@@ -419,6 +420,7 @@
         currentQuestionId = "question" + q_count.toString();
       }
 
+      // Function to hide the current question, and show the previous quesiton
       function showPrevQuestion(currentQuestionId2) {
         // Hide the current question
         var currentQuestion = document.getElementById(currentQuestionId2);
@@ -448,6 +450,7 @@
           showNextQuestion(currentQuestionId);
         }
       });
+
       // Previous question button
       prev_button.addEventListener("click", function () {
         // Show the next question
@@ -456,8 +459,9 @@
         }
       });
 
+      // Give functionality to the logo in the top left
+      // Once pressed, it will take you back to the homepage
       var logo = document.getElementById("logo");
-
       logo.addEventListener("click", () => {
         console.log("Logo pressed");
         window.location.href = "/";
