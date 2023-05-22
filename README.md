@@ -41,3 +41,12 @@ The schemas are as follows:
 
 [^1]: This variable is a boolean which determines whether a message was sent from a trainer or a user.
     Since trainers can only chat to users and vice versa, it was much more memory-efficient to store messages like this.
+
+# Group details
+| name           | student number | github username |
+|----------------|----------------|-----------------|
+| Jake McAuliffe | 23136241       | emgreye         |
+| Anupa Benoy    | 23082629       | anupa-benoy     |
+| Ryan Takeda    | 23073177       | swarels         |
+| Ife Mejiuni    | 22979825       | makon1234       |
+
