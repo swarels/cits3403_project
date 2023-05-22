@@ -52,6 +52,7 @@ def signup():
     return render_template("signup.html", title='Sign Up', form=form)
 
 @app.route('/chatroom')
+@login_required
 def chatroom():
     return render_template('chatroom.html')
 
