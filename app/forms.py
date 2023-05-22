@@ -1,17 +1,18 @@
-#adapted from lecture 9
+# Imports
 from flask_wtf import FlaskForm
 from wtforms import RadioField
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, IntegerField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError, EqualTo, InputRequired, NumberRange, Length
 from app.models import User
 
-# setting up forms for different pages
+# Create the form for the login page
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
+# Create the form for the sign up page
 class SignUpForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired(), Length(min=3, max=30, message="Username is wrong length")])
@@ -25,11 +26,13 @@ class SignUpForm(FlaskForm):
         if user is not None:
             raise ValidationError('Username is already in use')
         
+# Create the form for the chatroom message sending
 class MessageForm(FlaskForm):
     message = TextAreaField('Say something', validators=[
         DataRequired(), Length(min=1, max=288)])
     submit = SubmitField('Submit')
 
+# Create the form for the goal setting page
 class GoalForm(FlaskForm):
     goal = RadioField('Fitness Goal', [InputRequired()],
                   choices=[(0, 'Lose weight'),
