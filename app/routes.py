@@ -23,7 +23,7 @@ def home():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect('/index')
+    return redirect('/')
 
 @app.route("/history", methods=['GET'])
 @login_required
@@ -56,6 +56,7 @@ def signup():
 def chatroom():
     return render_template('chatroom.html')
 
+""" Code for archived alternate room
 @app.route('/room', methods=["GET", "POST"])
 @login_required
 def room():
@@ -66,10 +67,7 @@ def room():
         db.session.add(msg)
         db.session.commit()
     return render_template('room.html', form=form)
-
-@app.route('/preferredname')
-def preferred_name():
-    return render_template('preferredname.html')
+"""
 
 @app.route('/verify')
 def verify():

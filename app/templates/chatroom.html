@@ -1,4 +1,8 @@
 <!-- you can chat to a trainer on this page -->
+<!-- This room correctly functions as a chatroom but doesn't write to the database.
+  In app/templates/archive/room.html, there is an alternate chatroom which can write to the database
+  but doesn't correctly function as a chatroom. Unfortunately we could get a version which does both
+  actions correctly. -->
 
 {% extends "base.html" %} {% block content %}
 
