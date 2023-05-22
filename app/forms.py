@@ -5,6 +5,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, Selec
 from wtforms.validators import DataRequired, ValidationError, EqualTo, InputRequired, NumberRange, Length
 from app.models import User
 
+# setting up forms for different pages
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -30,11 +31,6 @@ class MessageForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class GoalForm(FlaskForm):
-    #goal = SelectField('Fitness Goal', [ InputRequired()],
-     #   choices=[ (-1, 'Choose a goal'), (0, 'Lose weight'),
-     #   (1, 'Build Muscle'),
-      #  (2, 'Get in shape'),
-       # (3, 'Other') ], coerce=int)
     goal = RadioField('Fitness Goal', [InputRequired()],
                   choices=[(0, 'Lose weight'),
                            (1, 'Build Muscle'), (2, 'Get in shape'),

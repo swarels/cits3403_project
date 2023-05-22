@@ -1,88 +1,38 @@
-{% extends "base.html" %}
+<!-- page for user to create an account -->
 
-
-{% block content %}
-
-{% if username %}
-    <h2> Welcome {{username}}!</h2>
-    <h4> Click below to start setting your goals </h4>
-    <a href="/talkingRat">Set your Goals</a>
+{% extends "base.html" %} {% block content %} {% if username %}
+<h2>Welcome {{username}}!</h2>
+<h4>Click below to start setting your goals</h4>
+<a href="/talkingRat">Set your Goals</a>
 {% else %}
-    <div class="form-container">
-        <h2>Sign Up</h2>
-        <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 150px>
-        <form name="signupForm" action="" method="POST">
-            {{form.hidden_tag()}}
+<div class="form-container">
+  <h2>Sign Up</h2>
+  <img
+    class="icon"
+    src="{{url_for('static', filename='gymrat.png')}}"
+    width="150px"
+  />
+  <form name="signupForm" action="" method="POST">
+    {{form.hidden_tag()}} {{form.name.label}} <br />
+    {{form.name(size = 30)}} <br />
+    {% for error in form.name.errors %}
+    <span style="color: red">{{ error }}</span>
+    {% endfor %} {{form.username.label}} <br />
+    {{form.username(size = 30)}} <br />
+    {% for error in form.username.errors %}
+    <span style="color: red">{{ error }}</span>
+    {% endfor %} {{form.password.label}} <br />
+    {{form.password(size = 30)}} <br />
+    {% for error in form.password.errors %}
+    <span style="color: red">{{ error }}</span>
+    {% endfor %} {{form.passwordagain.label}} <br />
+    {{form.passwordagain(size = 30)}} <br />
+    {% for error in form.passwordagain.errors %}
+    <span style="color: red">{{ error }}</span>
+    {% endfor %} {{form.professional()}} {{form.professional.label}} <br />
 
-            {{form.name.label}} <br>
-            {{form.name(size = 30)}} <br>
-            {% for error in form.name.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
+    {{form.submit}}
+  </form>
+</div>
 
-            {{form.username.label}} <br>
-            {{form.username(size = 30)}} <br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-
-            {{form.password.label}} <br>
-            {{form.password(size = 30)}} <br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-
-            {{form.passwordagain.label}} <br>
-            {{form.passwordagain(size = 30)}} <br>
-            {% for error in form.passwordagain.errors %}
-            <span style="color: red;">{{ error }}</span>
-            {% endfor %}
-
-            {{form.professional()}} {{form.professional.label}} <br>
-            
-            {{form.submit}}
-        </form>
-
-        <script>
-            /** function to validate email (make sure it includes '@') 
-            function validateEmailandCreateArray() {
-            let x = document.forms["signupForm"]["email"].value;
-            if (!(x.includes("@"))) {
-                alert("Must fill out a valid email");
-                return false;
-                }
-            **/
-            /** function to create an array 
-            const form = document.querySelector('form');
-            form.addEventListener('submit', onSubmit);
-
-            function onSubmit(event) {
-                console.log("onSubmit function triggered");
-                event.preventDefault();                 // Prevent default when submit is pressed
-                // Initialize answers array
-                const form_answers = [];
-
-                // Get the values of the form (with tags input or select)
-                const inputs = form.querySelectorAll('input, select');
-            
-                // Loop through inputs, pushing to the answers array
-                inputs.forEach(input => {
-                    if (input.name == "Sign up") {
-                        return;
-                    }
-                    form_answers.push(input.value);
-                })
-                // Print array to console
-                console.log("Array of form_answers: ");
-                console.log(form_answers.slice(1,-1)) 
-            }
-            
-            }
-            **/
-
-        </script>
-    </div>
-
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

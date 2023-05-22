@@ -1,80 +1,95 @@
+<!-- page to set goals for training -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>FitTrack</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='gymrat.png')}}">
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{url_for('static', filename='gymrat.png')}}"
+    />
 
     <style>
-    body{
-    background-color: #21262b;
-    color: white;
-    margin: 10px;
-    margin-left: 40px;
-    font-family: 'Poppins', sans-serif;
-    }
+      body {
+        background-color: #21262b;
+        color: white;
+        margin: 10px;
+        margin-left: 40px;
+        font-family: "Poppins", sans-serif;
+      }
 
-    /* .content {
+      /* .content {
     display: flex;
     align-items: center;
     justify-content: center
     } */
 
-    .content {
-            display: flex;
-            align-items: flex-start;
-        }
+      .content {
+        display: flex;
+        align-items: flex-start;
+      }
 
-    h1 {
-    font-family: 'Teko', sans-serif;
-    color: #eb1022;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 20px
-    
-    }
+      h1 {
+        font-family: "Teko", sans-serif;
+        color: #eb1022;
+        font-size: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 20px;
+      }
 
-    input{
+      input {
         background-color: #384047;
-    }
+      }
 
-    input[type=radio]{
+      input[type="radio"] {
         transform: scale(2);
         margin-right: 1em;
-    }
+      }
 
-    label{
+      label {
         margin-right: 2em;
-    }
+      }
 
-    .rat {
+      .rat {
         flex: 0 0 auto;
         margin-right: 10px;
         margin-top: 10px;
         margin-left: 200px;
-    } 
+      }
 
-    .comments {
+      .comments {
         width: 350px;
-    }
+      }
 
-    .comments .comment {
+      .comments .comment {
         width: 100%;
         margin-bottom: 20px;
-    }
+      }
 
-    .comments .comment p {
+      .comments .comment p {
         margin: 0 0 10px 0;
-    }
+      }
 
-    .bubble{
+      .bubble {
         position: relative;
         background: #fff;
         padding: 20px;
@@ -83,9 +98,9 @@
         margin-left: 75px;
         margin-top: 50px;
         font-family: Verdana;
-    }
+      }
 
-    .bubble:after {
+      .bubble:after {
         content: "";
         display: block;
         position: absolute;
@@ -97,420 +112,363 @@
         border-top: 8px solid transparent;
         border-bottom: 8px solid transparent;
         border-right: 15px solid #fff;
-    }
+      }
 
-    .regular{
+      .regular {
         flex: 0 0 auto;
         margin-right: 10px;
         margin-top: 50px;
         margin-left: 200px;
-    }
+      }
 
-    .hidden {
+      .hidden {
         display: none;
-    }
+      }
 
-    .buttons {
+      .buttons {
         padding: 12px 24px;
         border-radius: 4px;
         background-color: #ca2d1f;
-        color:white;
+        color: white;
         font-size: 16px;
         font-weight: bold;
         border: none;
         cursor: pointer;
-    }
+      }
 
-    .textbox {
+      .textbox {
         width: 300px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 16px;
-    }
+      }
 
-    .buttons:hover {
+      .buttons:hover {
         opacity: 0.8;
-    }
-    
-    .form-goal {
+      }
+
+      .form-goal {
         height: 120px;
-    }
-    
-    .stripes {
+      }
+
+      .stripes {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: repeating-linear-gradient(-45deg,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 8px);
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2) 1px,
+          transparent 1px,
+          transparent 8px
+        );
         background-size: 10px 10px;
         animation: animateStripes 5s linear infinite;
         z-index: -1;
-    }
-    
+      }
     </style>
-</head>
-<body> 
+  </head>
+  <body>
     <div class="content">
-        <h1 id="logo">FitTrack</h1>
-
+      <h1 id="logo">FitTrack</h1>
     </div>
 
     <form action="" method="post">
-        {{ form.hidden_tag() }}
-    <!-- Goals -->
-    <article id="question1" class="regular">
+      {{ form.hidden_tag() }}
+      <!-- Goals -->
+      <article id="question1" class="regular">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
+
+          <div class="comments">
+            <div class="comment bubble">
+              <p>What is your main fitness goal?</p>
             </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> What is your main fitness goal? </p>
-                </div>
-            </div>
+          </div>
         </div>
 
-       <div class="form-goal">
-        {{ form.goal }}
-       </div> 
-        
+        <div class="form-goal">{{ form.goal }}</div>
+      </article>
 
-    </article>
-
-    <!-- Height/Weight -->
-    <article id="question2" class=" regular hidden">
+      <!-- Height/Weight -->
+      <article id="question2" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
+
+          <div class="comments">
+            <div class="comment bubble">
+              <p>Thanks!</p>
+              <p>
+                And could I also know your current height (in cm) and weight (in
+                kg)?
+              </p>
             </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> Thanks!</p>
-                    <p> And could I also know your current height (in cm) and weight (in kg)? </p>
-                </div>
-            </div>
+          </div>
         </div>
         <!-- <h4> What is your current height and weight?</h4> -->
-        {{ form.height(placeholder="Height (cm)") }}
-        {% for error in form.height.errors %}
-        <span style="color:red;">{{error}}</span>
+        {{ form.height(placeholder="Height (cm)") }} {% for error in
+        form.height.errors %}
+        <span style="color: red">{{error}}</span>
+        {% endfor %} {{ form.weight(placeholder="Weight (kg)") }} {% for error
+        in form.weight.errors %}
+        <span style="color: red">{{error}}</span>
         {% endfor %}
-        {{ form.weight(placeholder="Weight (kg)") }}
-        {% for error in form.weight.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
+      </article>
 
-    </article>
-
-    <!-- Gender -->
-    <article id="question3" class="regular hidden">
+      <!-- Gender -->
+      <article id="question3" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
-            </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> What gender would you identify as?* </p>
-                </div>
-            </div>
-        </div>
-        {{ form.gender }}
-        {% for error in form.gender.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
-    </article>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
 
-    <!-- How regularly do they exercise? -->
-    <article id="question4" class="regular hidden">
+          <div class="comments">
+            <div class="comment bubble">
+              <p>What gender would you identify as?*</p>
+            </div>
+          </div>
+        </div>
+        {{ form.gender }} {% for error in form.gender.errors %}
+        <span style="color: red">{{error}}</span>
+        {% endfor %}
+      </article>
+
+      <!-- How regularly do they exercise? -->
+      <article id="question4" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
-            </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> And how often would you say you've been exercising in the last year? </p>
-                    <p> Be as honest as you can!* </p>
-                </div>
-            </div>
-        </div>
-        {{ form.pastexercise }}
-        {% for error in form.pastexercise.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
-    </article>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
 
-    <!-- Days willing -->
-    <article id="question5" class="regular hidden">
+          <div class="comments">
+            <div class="comment bubble">
+              <p>
+                And how often would you say you've been exercising in the last
+                year?
+              </p>
+              <p>Be as honest as you can!*</p>
+            </div>
+          </div>
+        </div>
+        {{ form.pastexercise }} {% for error in form.pastexercise.errors %}
+        <span style="color: red">{{error}}</span>
+        {% endfor %}
+      </article>
+
+      <!-- Days willing -->
+      <article id="question5" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
-            </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> I wonder.. how many days per week are you willing to commit to exercise?* </p>
-                </div>
-            </div>
-        </div>
-        {{ form.willing }}
-        {% for error in form.willing.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
-    </article>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
 
-    <!-- Food allergies-->
-    <article id="question6" class="regular hidden">
+          <div class="comments">
+            <div class="comment bubble">
+              <p>
+                I wonder.. how many days per week are you willing to commit to
+                exercise?*
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ form.willing }} {% for error in form.willing.errors %}
+        <span style="color: red">{{error}}</span>
+        {% endfor %}
+      </article>
+
+      <!-- Food allergies-->
+      <article id="question6" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
+          <div class="comments">
+            <div class="comment bubble">
+              <p>
+                Oh very important, do you have any dietary restrictions or food
+                allergies?
+              </p>
+              <p>
+                Just so that our fitness pro can help guide you with the optimal
+                diet for your fitness journey
+              </p>
             </div>
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> Oh very important, do you have any dietary restrictions or food allergies? </p>
-                    <p> Just so that our fitness pro can help guide you with the optimal diet for your fitness journey </p>
-                </div>
-            </div>
+          </div>
         </div>
-        {{ form.allergies(size=80) }}
-        {% for error in form.allergies.errors %}
-        <span style="color:red;">{{error}}</span>
+        {{ form.allergies(size=80) }} {% for error in form.allergies.errors %}
+        <span style="color: red">{{error}}</span>
         {% endfor %}
-    </article>
+      </article>
 
-    <!-- Other Comments-->
-    <article id="question7" class="regular hidden">
+      <!-- Other Comments-->
+      <article id="question7" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
-            </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> Awesome! </p>
-                    <p> Is there any other additional information you'd want your fitness guider to know? </p>
-                </div>
-            </div>
-        </div>
-        {{ form.comments(size=80) }}
-        {% for error in form.comments.errors %}
-        <span style="color:red;">{{error}}</span>
-        {% endfor %}
-    </article>
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
 
-    <!-- Submit-->
-    <article id="question8" class="regular hidden">
+          <div class="comments">
+            <div class="comment bubble">
+              <p>Awesome!</p>
+              <p>
+                Is there any other additional information you'd want your
+                fitness guider to know?
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ form.comments(size=80) }} {% for error in form.comments.errors %}
+        <span style="color: red">{{error}}</span>
+        {% endfor %}
+      </article>
+
+      <!-- Submit-->
+      <article id="question8" class="regular hidden">
         <div class="content">
-            <div class="rat">
-                <img class="icon" src="{{url_for('static', filename='gymrat.png')}}" width = 200px>
-            </div>
-    
-            <div class = "comments">
-                <div class="comment bubble">
-                    <p> Thanks so much for that! </p>
-                    <p> Just press submit to get connected, or feel free to change any of your previous answers :) </p>
-                </div>
-            </div>
-        </div>
-        {{ form.submit() }}
-        
-        {% for error in form.goal.errors %}
-        <span style="color:red;">Error in goal: {{error}}</span>
-        {% endfor %}
-        {% for error in form.height.errors %}
-        <span style="color:red;">Error in height: {{error}}</span>
-        {% endfor %}
-        {% for error in form.weight.errors %}
-        <span style="color:red;">Error in weight: {{error}}</span>
-        {% endfor %}
-        {% for error in form.gender.errors %}
-        <span style="color:red;">Error in gender: {{error}}</span>
-        {% endfor %}
-        {% for error in form.pastexercise.errors %}
-        <span style="color:red;">Error in past exercise: {{error}}</span>
-        {% endfor %}
-        {% for error in form.willing.errors %}
-        <span style="color:red;">Error in willing exercise: {{error}}</span>
-        {% endfor %}
-        {% for error in form.allergies.errors %}
-        <span style="color:red;">Error in allergies: {{error}}</span>
-        {% endfor %}
-        {% for error in form.comments.errors %}
-        <span style="color:red;">Error in extra information: {{error}}</span>
-        {% endfor %}
+          <div class="rat">
+            <img
+              class="icon"
+              src="{{url_for('static', filename='gymrat.png')}}"
+              width="200px"
+            />
+          </div>
 
-    </article>
-    
+          <div class="comments">
+            <div class="comment bubble">
+              <p>Thanks so much for that!</p>
+              <p>
+                Just press submit to get connected, or feel free to change any
+                of your previous answers :)
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ form.submit() }} {% for error in form.goal.errors %}
+        <span style="color: red">Error in goal: {{error}}</span>
+        {% endfor %} {% for error in form.height.errors %}
+        <span style="color: red">Error in height: {{error}}</span>
+        {% endfor %} {% for error in form.weight.errors %}
+        <span style="color: red">Error in weight: {{error}}</span>
+        {% endfor %} {% for error in form.gender.errors %}
+        <span style="color: red">Error in gender: {{error}}</span>
+        {% endfor %} {% for error in form.pastexercise.errors %}
+        <span style="color: red">Error in past exercise: {{error}}</span>
+        {% endfor %} {% for error in form.willing.errors %}
+        <span style="color: red">Error in willing exercise: {{error}}</span>
+        {% endfor %} {% for error in form.allergies.errors %}
+        <span style="color: red">Error in allergies: {{error}}</span>
+        {% endfor %} {% for error in form.comments.errors %}
+        <span style="color: red">Error in extra information: {{error}}</span>
+        {% endfor %}
+      </article>
     </form>
 
-    <button id="previous-button" class="regular buttons">Previous Question</button>
+    <button id="previous-button" class="regular buttons">
+      Previous Question
+    </button>
     <button id="next-button" class="regular buttons">Next Question</button>
 
     <div class="stripes"></div>
 
-
-
-
-
-
     <!-- JAVA SCRIPT SECTION-->
     <script>
-        /**
-         * Make an "other" text-box appear when selecting other
-         **/
-        //const otherGoalRadio = document.getElementById('rad4');
-        //const otherGoalTextbox = document.getElementById('other-goal');
+      /**
+       * Only show the next question once the previous one has been answered
+       **/
+      function showNextQuestion(currentQuestionId2) {
+        // Hide the current question
+        var currentQuestion = document.getElementById(currentQuestionId2);
+        currentQuestion.classList.add("hidden");
 
-        /*
-        otherGoalRadio.addEventListener('change', function() {
-            console.log("Other Pressed");
-        if (otherGoalRadio.checked) {
-            otherGoalTextbox.style.display = 'block';
-        } else {
-            otherGoalTextbox.style.display = 'none';
+        // Show the next question
+        var nextQuestionId =
+          "question" +
+          (parseInt(currentQuestionId2.replace("question", "")) + 1);
+        console.log("nextQuestionID: " + nextQuestionId);
+        var nextQuestion = document.getElementById(nextQuestionId);
+        nextQuestion.classList.remove("hidden");
+        q_count += 1;
+        currentQuestionId = "question" + q_count.toString();
+      }
+
+      function showPrevQuestion(currentQuestionId2) {
+        // Hide the current question
+        var currentQuestion = document.getElementById(currentQuestionId2);
+        currentQuestion.classList.add("hidden");
+
+        // Show the next question
+        var nextQuestionId =
+          "question" +
+          (parseInt(currentQuestionId2.replace("question", "")) - 1);
+        console.log("nextQuestionID: " + nextQuestionId);
+        var nextQuestion = document.getElementById(nextQuestionId);
+        nextQuestion.classList.remove("hidden");
+        q_count -= 1;
+        currentQuestionId = "question" + q_count.toString();
+      }
+
+      // Call the showNextQuestion function when the user clicks the button
+      var next_button = document.getElementById("next-button");
+      var prev_button = document.getElementById("previous-button");
+      var currentQuestionId = "question1";
+      var q_count = 1;
+
+      // Next question button
+      next_button.addEventListener("click", function () {
+        // Show the next question
+        if (currentQuestionId != "question8") {
+          showNextQuestion(currentQuestionId);
         }
-        });
-
-
-        // Add form elements to an array, once selecting submit
-        
-        const form = document.querySelector('form');
-        form.addEventListener('submit', onSubmit);
-        // Function for submit
-        function onSubmit(event) {
-            console.log("onSubmit function triggered");
-            event.preventDefault();                 // Prevent default when submit is pressed
-            // Initialize answers array
-            const form_answers = [];
-            
-            // Get the correct radio button for the goals
-            const goalRadios = form.querySelectorAll('input[name="goal"]');
-            let goal = null;
-            goalRadios.forEach(radio => {
-                if (radio.checked) {            // If checked select as the "goal"
-                    goal = radio.value;
-                }
-            })
-            if (goal == "other") {              // If other is selected, get the other value
-                goalRadios.forEach(radio => {
-                    if (radio.id == "other-goal") {
-                        goal = radio.value;
-                    }
-                })
-            }
-            form_answers.push(goal);
-
-            // Get the values of the form (with tags input or select)
-            const inputs = form.querySelectorAll('input, select');
-            
-            // Loop through inputs, pushing to the answers array
-            inputs.forEach(input => {
-                if (input.name == "goal") {
-                    return;
-                }
-                if (input.name == "submit_button") {
-                    return;
-                }
-                form_answers.push(input.value);
-            })
-            // Print array to console
-            console.log("Array of form_answers: ");
-            console.log(form_answers)
-            for (let i = 0; i < 8; i++) {
-                console.log(i);
-                if (i == 0) {
-                    if (form_answers[0] == null) {
-                        console.log("First question not answered");
-                        alert("Please complete all required questions");
-                        break;
-                    }
-                }
-                if (i == 1 ^ i == 2) {
-                    if (form_answers[i] == "") {
-                        console.log("Second not complete");
-                        alert("Please complete all required questions");
-                        break;
-                    }
-                }
-                if (i == 7) {
-                    // Navigate to the URL
-                    window.location.href = "/preferredname";
-                }
-            }
+      });
+      // Previous question button
+      prev_button.addEventListener("click", function () {
+        // Show the next question
+        if (currentQuestionId != "question1") {
+          showPrevQuestion(currentQuestionId);
         }
-        */
+      });
 
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+      var logo = document.getElementById("logo");
 
-        /**
-         * Only show the next question once the previous one has been answered
-         **/
-        function showNextQuestion(currentQuestionId2) {
-            // Hide the current question
-            var currentQuestion = document.getElementById(currentQuestionId2);
-            currentQuestion.classList.add("hidden");
-
-            // Show the next question
-            var nextQuestionId = "question" + (parseInt(currentQuestionId2.replace("question", "")) + 1);
-            console.log("nextQuestionID: " + nextQuestionId);
-            var nextQuestion = document.getElementById(nextQuestionId);
-            nextQuestion.classList.remove("hidden");
-            q_count += 1;
-            currentQuestionId = "question" + q_count.toString();
-        }
-
-        function showPrevQuestion(currentQuestionId2) {
-            // Hide the current question
-            var currentQuestion = document.getElementById(currentQuestionId2);
-            currentQuestion.classList.add("hidden");
-
-            // Show the next question
-            var nextQuestionId = "question" + (parseInt(currentQuestionId2.replace("question", "")) - 1);
-            console.log("nextQuestionID: " + nextQuestionId);
-            var nextQuestion = document.getElementById(nextQuestionId);
-            nextQuestion.classList.remove("hidden");
-            q_count -= 1;
-            currentQuestionId = "question" + q_count.toString();
-        }
-
-        // Call the showNextQuestion function when the user clicks the button
-        var next_button = document.getElementById("next-button");
-        var prev_button = document.getElementById("previous-button");
-        var currentQuestionId = "question1";
-        var q_count = 1;
-
-        // Next question button
-        next_button.addEventListener("click", function() {
-            // Show the next question
-            if (currentQuestionId != "question8") {
-                showNextQuestion(currentQuestionId);
-            }
-        });
-        // Previous question button
-        prev_button.addEventListener("click", function() {
-            // Show the next question
-            if (currentQuestionId != "question1") {
-                showPrevQuestion(currentQuestionId);
-            }
-            
-        });
-
-        var logo = document.getElementById('logo');
-
-        logo.addEventListener("click", () => {
-            console.log("Logo pressed");
-            window.location.href = "/";
-        });
-
-        
+      logo.addEventListener("click", () => {
+        console.log("Logo pressed");
+        window.location.href = "/";
+      });
     </script>
-
-
-
-</body>
+  </body>
 </html>

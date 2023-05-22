@@ -1,32 +1,27 @@
-{% extends "base.html" %}
+<!-- page to enter preferred name before entering chatroom -->
 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="form-container">
-<div id="landing">
-    <input type="text" id="preferred_name" placeholder="Enter your preferred name">
+  <div id="landing">
+    <input
+      type="text"
+      id="preferred_name"
+      placeholder="Enter your preferred name"
+    />
     <button type="submit" id="join-btn">JOIN</button>
-</div>
+  </div>
 </div>
 
 <script>
-  /*var socket = io({autoConnect: false}); */
-
-  document.getElementById("join-btn").addEventListener("click", function() {
-    window.location.href = "/chatroom"
-  }) 
-
-  document.getElementById("join-btn").addEventListener("click", function() {
-      let preferred_name = document.getElementById("preferred_name").value;
-        localStorage.setItem('name', preferred_name);
-        localStorage.setItem('join-button', join-btn);
-      /*socket.connect(); 
-
-      socket.on("connect", function() {
-        socket.emit("join_user", preferred_name); 
-      }) */
-
+  document.getElementById("join-btn").addEventListener("click", function () {
+    window.location.href = "/chatroom";
   });
 
+  document.getElementById("join-btn").addEventListener("click", function () {
+    let preferred_name = document.getElementById("preferred_name").value;
+    localStorage.setItem("name", preferred_name);
+    localStorage.setItem("join-button", join - btn);
+  });
 </script>
 
 {% endblock %}

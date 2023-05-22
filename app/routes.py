@@ -5,6 +5,7 @@ from flask_socketio import join_room, leave_room, emit, send, SocketIO
 from app.models import User, Trainer, Message
 from app.forms import LoginForm, SignUpForm, GoalForm, MessageForm
 
+# setting up routes for all webpages 
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
 def home():
@@ -27,10 +28,6 @@ def logout():
 @app.route("/history", methods=['GET'])
 @login_required
 def history():
-    #try:
-    #    current_user.is_authenticated()
-    #except UnboundLocalError:
-    #    current_user = User.query.get('testUser123')
     messages = current_user.msg_history().all()
     return render_template("history.html", title='History', messages=messages, user=current_user)
 
@@ -54,13 +51,6 @@ def signup():
             return redirect('/talkingRat')
     return render_template("signup.html", title='Sign Up', form=form)
 
-#@app.before_request.route('/chatroom')
-#def my_func():
-#
-#    if current_user.is_anonymous:
-#
-#        return redirect('/index')
-
 @app.route('/chatroom')
 def chatroom():
     return render_template('chatroom.html')
@@ -68,12 +58,6 @@ def chatroom():
 @app.route('/room', methods=["GET", "POST"])
 @login_required
 def room():
-    #try:
-    #    current_user.is_authenticated()
-    #    
-    #except UnboundLocalError:
-    #    current_user = User.query.get('testUser123')
-    #    current_trainer = Trainer.query.get('trainer1')
     current_trainer = Trainer.query.get('timtrainer')
     form = MessageForm()
     if form.validate_on_submit():
@@ -96,10 +80,6 @@ def talkingRat():
 
 @app.route("/goalSetting", methods=["GET", "POST"])
 def goalSetting():
-    #try:
-    #    current_user.is_authenticated()
-    #except UnboundLocalError:
-    #    current_user = User.query.get('testUser123')
     form = GoalForm()
     if form.validate_on_submit():
         user = current_user
