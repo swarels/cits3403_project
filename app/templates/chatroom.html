@@ -1,4 +1,8 @@
 <!-- you can chat to a trainer on this page -->
+<!-- This room correctly functions as a chatroom but doesn't write to the database.
+  In app/templates/archive/room.html, there is an alternate chatroom which can write to the database
+  but doesn't correctly function as a chatroom. Unfortunately we could get a version which does both
+  actions correctly. -->
 
 {% extends "base.html" %} {% block content %}
 
@@ -26,11 +30,11 @@
   const message = document.getElementById("message");
   const send_btn = document.getElementById("send-btn");
   var preferred_name = "You";
-  //var preferred_name = localStorage.getItem('name');
-  var join_btn = localStorage.getItem("join-button");
 
+  //opens connection to socker.io server
   socket.connect();
 
+  //listens for the connect event 
   socket.on("connect", function () {
     socket.emit("join_user", preferred_name);
   });
@@ -44,6 +48,7 @@
     ul.appendChild(li);
   });
 
+  //sends a chat event to server containing user's preferred name and message when they click enter
   send_btn.addEventListener("click", function () {
     socket.emit("chat", {
       your_name: preferred_name,
@@ -51,6 +56,7 @@
     });
   });
 
+  //sends a chat event to server containing user's preferred name and message when user click enter
   message.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       socket.emit("chat", {
@@ -60,6 +66,8 @@
     }
   });
 
+  //adds new list item with message to the UL and appends messages to chat, 
+  //clears input field and scrolls to bottom of message list when chat event from server received
   socket.on("chat", function (data) {
     var ul = document.getElementById("message-input");
     var li = document.createElement("li");

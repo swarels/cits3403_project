@@ -21,6 +21,16 @@
 </h3>
 <div class="form-container">
 <div class="history">
+    <!--This history works but unfortunately we coudln't get chat to write to the database. To test history,
+        populate the database with:
+            flask shell
+            u = User.query.get('your_username')
+            t = Trainer.query.get('trainer1')
+            m = Message(text="text goes here", trainer_name=t, user_name=u, from_trainer=True/False)
+            db.session.add(m)
+            db.session.commit()
+        Then repeat the last 3 steps for as many messages as you want
+    -->
 {% for message in messages %}
 
     {% if message.from_trainer == False %}
