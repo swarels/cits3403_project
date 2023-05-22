@@ -16,8 +16,9 @@ def home():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-        login_user(user, remember=form.remember.data)
-        return redirect('/chatroom')
+        else:
+            login_user(user, remember=form.remember.data)
+            return redirect('/chatroom')
     return render_template("home.html", title='Sign In', form=form)
 
 @app.route('/logout')
