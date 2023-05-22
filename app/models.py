@@ -22,6 +22,9 @@ class User(UserMixin, db.Model):
     allergies = db.Column(db.String(128))
     other_comments = db.Column(db.String(256))
 
+    def get_id(self):
+        return (self.username)
+
     def msg_history(self):
         return Message.query.filter_by(user_id=self.username).order_by(Message.time.asc()).limit(12)
 
