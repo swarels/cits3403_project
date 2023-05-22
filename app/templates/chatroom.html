@@ -34,11 +34,13 @@
   //opens connection to socker.io server
   socket.connect();
 
-  //listens for the connect event 
+  //listens for the connect event and emits a join user event
   socket.on("connect", function () {
     socket.emit("join_user", preferred_name);
   });
 
+  //listens for join_user event
+  //when received, creates a new list tiem with message
   socket.on("join_user", function (preferred_name) {
     var ul = document.getElementById("message-input");
     var li = document.createElement("li");
