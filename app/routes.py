@@ -5,7 +5,7 @@ from flask_socketio import join_room, leave_room, emit, send, SocketIO
 from app.models import User, Trainer, Message
 from app.forms import LoginForm, SignUpForm, GoalForm, MessageForm
 
-# setting up routes for all webpages 
+# Setting up routes for all webpages 
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
 def home():
@@ -20,17 +20,20 @@ def home():
         return redirect('/chatroom')
     return render_template("home.html", title='Sign In', form=form)
 
+# Logout page route
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect('/')
 
+# History page route
 @app.route("/history", methods=['GET'])
 @login_required
 def history():
     messages = current_user.msg_history().all()
     return render_template("history.html", title='History', messages=messages, user=current_user)
 
+# Signup page route
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if current_user.is_authenticated:
@@ -51,6 +54,7 @@ def signup():
             return redirect('/talkingRat')
     return render_template("signup.html", title='Sign Up', form=form)
 
+# Chatroom page route
 @app.route('/chatroom')
 @login_required
 def chatroom():
@@ -69,14 +73,17 @@ def room():
     return render_template('room.html', form=form)
 """
 
+# Verify page route
 @app.route('/verify')
 def verify():
     return render_template('verifytrainer.html')
 
+# Talking rat page route
 @app.route("/talkingRat")
 def talkingRat():
     return render_template("talkingRat.html")
 
+# Goal setting page route
 @app.route("/goalSetting", methods=["GET", "POST"])
 def goalSetting():
     form = GoalForm()
