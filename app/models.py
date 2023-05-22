@@ -64,6 +64,9 @@ class Message(db.Model):
     trainer_id = db.Column(db.String(30), db.ForeignKey('trainer.username'))
     user_id = db.Column(db.String(30), db.ForeignKey('user.username'))
     from_trainer = db.Column(db.Boolean)
+    """^ This variable is a boolean which determines whether a message was sent from a trainer or a user.
+    Since trainers can only chat to users and vice versa, it was much more memory-efficient to store messages like this.
+    """
 
     def __repr__(self):
         value = "Message({})".format(self.id)

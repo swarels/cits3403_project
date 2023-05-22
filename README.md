@@ -31,16 +31,15 @@ Users will also be able to view their chat history and their answers to Gymrat's
 5. Then click on the URL provided.  
 
 
-# Database Scheme
+# Database Schema
 
 SQLite based database. Contains tables User, Trainer and Message.  
 The schemas are as follows:  
 * User(username, name, hashed_password, messages, fitness_goal, height, weight, gender, current_excercise, willing_excercise, allergies, other_comments)
 * Trainer(username, name, hashed_password, messages)
-* Message(id, text, time, trainer_id, user_id, from_trainer[^1])
-
-[^1]: This variable is a boolean which determines whether a message was sent from a trainer or a user.
-    Since trainers can only chat to users and vice versa, it was much more memory-efficient to store messages like this.
+* Message(id, text, time, trainer_id, user_id, from_trainer)  
+  
+Details of the database are in app/models.py
 
 # Group details
 | name           | student number | github username |
