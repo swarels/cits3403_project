@@ -14,8 +14,8 @@ class LoginForm(FlaskForm):
 
 class SignUpForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired(), Length(min=3, max=30, message="Username is wrong length")])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=30, message="Password is wrong length")])
     passwordagain = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
     professional = BooleanField('Are you a professional?')
     submit = SubmitField('Sign up')
