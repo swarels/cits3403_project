@@ -1,38 +1,44 @@
-{% extends "base.html" %}
+<!-- alternative chatroom page, database works here but not printing messages on screen-->
 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
-        <div class="hist-button">
-            <input class = "buttons" type="submit" value="History" name="history_button" onclick="location.href = '/history';">
-        </div>
+<div class="hist-button">
+  <input
+    class="buttons"
+    type="submit"
+    value="History"
+    name="history_button"
+    onclick="location.href = '/history';"
+  />
+</div>
 
-        <div id="message-container" class="message-input">
+<div id="message-container" class="message-input">
+  <div class="history" id="message-history">
+    <!-- Existing message history code -->
+  </div>
 
-            <div class="history" id="message-history">
-                <!-- Existing message history code -->
-            </div>
+  <div id="message-form" class="message-form" style="margin-top: 360px">
+    <form action="" method="post" onsubmit="sendMessage(event)">
+      {{ form.hidden_tag() }} {{ form.message(cols=114, rows=50) }} {{
+      form.submit() }}
+    </form>
+  </div>
 
-            <div id="message-form" class="message-form" style="margin-top: 360px;">
-                <form action="" method="post" onsubmit="sendMessage(event)">
-                    {{ form.hidden_tag() }}
-                    {{ form.message(cols=114, rows=50) }}
-                    {{ form.submit() }}
-                </form>
-            </div>
+  <div id="chat-container">
+    <ul id="chat-messages"></ul>
+  </div>
+</div>
 
-            <div id="chat-container">
-                <ul id="chat-messages"></ul>
-            </div>
+<p>
+  This chatroom doesn't behave correctly as a chatroom but <em>does</em> send
+  the messages to the database, unlike the other one.
+</p>
 
-       </div>
-
-       <p>This chatroom doesn't behave correctly as a chatroom but <em>does</em> send the messages to the database, unlike the other one.</p>
-
-<!-- attempting to write code to print messages - not working at the moment -->       
+<!-- attempting to write code to print messages - not working at the moment -->
 <script>
-    function sendMessage(event) {
+  function sendMessage(event) {
     event.preventDefault();
-    
+
     // Get the user input value
     var userInput = document.getElementById("user-input");
     var message = userInput.value;
@@ -47,58 +53,60 @@
 
     // Clear the user input
     userInput.value = "";
-}
+  }
 </script>
 
 <!-- ######################################################## -->
 <!-- below is the old code -->
 <script>
-    var socket = io();
+  var socket = io();
 
-    const message = document.getElementById('message');
-    const send_btn = document.getElementById('submit');
-    var preferred_name = You;
-    var join_btn = localStorage.getItem('join-button');
+  const message = document.getElementById("message");
+  const send_btn = document.getElementById("submit");
+  var preferred_name = You;
+  var join_btn = localStorage.getItem("join-button");
 
-    socket.connect();
+  socket.connect();
 
-       socket.on("connect", function() {
-        socket.emit("join_user", preferred_name); 
-        }) 
+  socket.on("connect", function () {
+    socket.emit("join_user", preferred_name);
+  });
 
-    socket.on("join_user", function(preferred_name) {
-        var ul = document.getElementById("message-input");
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode("User " + preferred_name + " has joined the room"));
-        ul.appendChild(li);
-    }); 
+  socket.on("join_user", function (preferred_name) {
+    var ul = document.getElementById("message-input");
+    var li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode("User " + preferred_name + " has joined the room")
+    );
+    ul.appendChild(li);
+  });
 
-    send_btn.addEventListener('click', function(){
-        socket.emit('chat', {
-            your_name: preferred_name,
-            message: message.value,
-        })
-    }); 
-
-    message.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-        socket.emit('chat', {
-            your_name: preferred_name,
-            message: message.value,
-        })
-        }
-    }); 
-
-    socket.on('chat', function(data) {
-        var ul = document.getElementById('message-input');
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode(data["your_name"] + ": " + data["message"]));
-        ul.appendChild(li);
-        message.value = "";
-        ul.scrolltop = ul.scrollHeight;
+  send_btn.addEventListener("click", function () {
+    socket.emit("chat", {
+      your_name: preferred_name,
+      message: message.value,
     });
-    
-</script>
+  });
 
+  message.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      socket.emit("chat", {
+        your_name: preferred_name,
+        message: message.value,
+      });
+    }
+  });
+
+  socket.on("chat", function (data) {
+    var ul = document.getElementById("message-input");
+    var li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode(data["your_name"] + ": " + data["message"])
+    );
+    ul.appendChild(li);
+    message.value = "";
+    ul.scrolltop = ul.scrollHeight;
+  });
+</script>
 
 {% endblock %}
