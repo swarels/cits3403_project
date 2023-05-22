@@ -1,0 +1,1450 @@
+* commit cc93d1d333fb803783776ba81a3e973c93c3a9f2 (HEAD -> main, origin/main, origin/HEAD)
+| Author: emgreye <JakeRMcAuliffe@gmail.com>
+| Date:   Mon May 22 10:59:11 2023 +0800
+| 
+|     change location of info
+| 
+* commit e9b683fbc73596ec5a3139671bff14a5847a2952
+| Author: emgreye <JakeRMcAuliffe@gmail.com>
+| Date:   Mon May 22 10:54:30 2023 +0800
+| 
+|     group details added to readme.md
+|   
+*   commit 3217357c70d1089547f0569e86fe0e419c71c07e
+|\  Merge: 020fe6b 911b105
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Mon May 22 10:43:10 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | 
+| * commit 911b10573322a0cb60e2920df1bca893bc74c594
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Mon May 22 10:41:43 2023 +0800
+| | 
+| |     homepage flashes
+| |   
+| *   commit 78525489194bda3f24628b8fe9991bf37baaa960
+| |\  Merge: 4399b0e 559072b
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Mon May 22 10:35:08 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| * | commit 4399b0e9182e98430c0c0263a1965218cb7090f5
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Mon May 22 10:35:03 2023 +0800
+| | | 
+| | |     doesn't log in invalid users
+| | | 
+* | | commit 020fe6b6fe1fcbfcdb3da5d3595d6492493f0eb2
+| |/  Author: Ryan Takeda <ryantakeda1@gmail.com>
+|/|   Date:   Mon May 22 10:42:57 2023 +0800
+| |   
+| |       Comments
+| | 
+* | commit 559072b1cd737467c1057e6f785b10fd723e20a3
+|\| Merge: c6d7a85 9e5417d
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Mon May 22 10:30:55 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| |   
+| *   commit 9e5417d85606236c42a2fdd3fee36b9f57a18994
+| |\  Merge: c0e78e2 ecb34b5
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Mon May 22 10:28:12 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | |   
+| | *   commit ecb34b59127a68894f2be8ef55c1b6b16497aaf9
+| | |\  Merge: 0390f27 bfaf788
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Mon May 22 10:25:23 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| | * | commit 0390f27afe9c0e0f75a74e602f38ae552d18855a
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Mon May 22 10:25:11 2023 +0800
+| | | | 
+| | | |     added some comments to chatroom page
+| | | | 
+| * | | commit c0e78e2ee16df7fed8867c042c3b41c5353cba36
+| | |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| |/|   Date:   Mon May 22 10:28:08 2023 +0800
+| | |   
+| | |       Explanatory comments
+| | | 
+| * | commit bfaf78897c6e9bedf8cc983589448da09f0ff0ad
+| |\| Merge: b7ca279 718cf75
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Mon May 22 10:10:57 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | |   
+| | *   commit 718cf7559329b2a14f77542c7675a5a6eceac110
+| | |\  Merge: b09a061 81ad98d
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Mon May 22 10:05:51 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| | * | commit b09a061fd71b6e8b46e6173d053006ab69619f18
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Mon May 22 10:05:30 2023 +0800
+| | | | 
+| | | |     removed master.zip
+| | | | 
+| * | | commit b7ca27940620f1bab2d6b1b72c728e6e526fae88
+| | |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| |/|   Date:   Mon May 22 10:10:52 2023 +0800
+| | |   
+| | |       minimum password length
+| | | 
+* | | commit c6d7a858d2bb1be2d605d0807926cfeace7b1291
+|/ /  Author: Ryan Takeda <ryantakeda1@gmail.com>
+| |   Date:   Mon May 22 10:30:47 2023 +0800
+| |   
+| |       Added comments to JS
+| | 
+* | commit 81ad98dad2b762eb30dfc0cd87a69a5c280fcf22
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Mon May 22 10:02:27 2023 +0800
+| | 
+| |     redirects to log in if not authenticated
+| | 
+* | commit 67bc78f7ad3df5838ca49893b37564b1291b302a
+|\| Merge: 903cf21 3e65ee7
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Mon May 22 09:54:01 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| |   
+| *   commit 3e65ee7fc35b2d5478285989b1e4850964d22f1b
+| |\  Merge: c91f7b2 9a7cc8f
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Mon May 22 09:50:56 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| * | commit c91f7b2a18f58ea6d596cb1c3b6b7a1bf0115699
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Mon May 22 09:50:41 2023 +0800
+| | | 
+| | |     deleted binwalk master
+| | |   
+| * |   commit 1c3343b475cd6147f17dc1aa0aeb01068ac7d337
+| |\ \  Merge: a356541 781d189
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Mon May 22 01:22:30 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | |   
+| * | |   commit a356541545830dedb0b46a9fd9b9a427fa5951f1
+| |\ \ \  Merge: 82e36e5 395e8e5
+| | | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | | Date:   Mon May 22 01:06:11 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| * | | | commit 82e36e59410a7c94f598aa51715d5bedebda76c2
+| | | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | | Date:   Mon May 22 00:55:47 2023 +0800
+| | | | | 
+| | | | |     tried to fix test.py
+| | | | |   
+| * | | |   commit 8647677780ba821d1de488cb9abfcf78b4b710fd
+| |\ \ \ \  Merge: a02c056 b287168
+| | | | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | | | Date:   Sun May 21 18:16:34 2023 +0800
+| | | | | | 
+| | | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | | 
+* | | | | | commit 903cf21d49ff4ba76702d8d746d26144e5fe9acf
+| |_|_|_|/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/| | | |   Date:   Mon May 22 09:53:57 2023 +0800
+| | | | |   
+| | | | |       archived unused pages
+| | | | |   
+* | | | |   commit 9a7cc8fcef141680dfd0666f6d679b5e81c94944
+|\ \ \ \ \  Merge: 24dc96a 781d189
+| | |_|_|/  Author: anupa.benoy <anupabenoy7@gmail.com>
+| |/| | |   Date:   Mon May 22 09:40:19 2023 +0800
+| | | | |   
+| | | | |       Merge branch 'main' of https://github.com/swarels/
+| | | | |   
+| * | | |   commit 781d189fa8b6ab6590aed3e3a389ce337e7a7def
+| |\ \ \ \  Merge: be9a7d8 395e8e5
+| | | |_|/  Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | |/| |   Date:   Mon May 22 01:06:25 2023 +0800
+| | | | |   
+| | | | |       Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| * | | | commit be9a7d884ba0b33bb146e464cbef1cc87379e78d
+| | | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | | Date:   Mon May 22 01:06:14 2023 +0800
+| | | | | 
+| | | | |     removed old code
+| | | | | 
+* | | | | commit 24dc96a6bd757f48c7257a9c5829ab565ad44c4a
+| |/ / /  Author: anupa.benoy <anupabenoy7@gmail.com>
+|/| | |   Date:   Mon May 22 09:37:16 2023 +0800
+| | | |   
+| | | |       removed unecessary comments, added others
+| | | | 
+* | | | commit 395e8e5034c50ea1489356af690699a234824a21
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 23:37:53 2023 +0800
+| | | | 
+| | | |     removed link to alt chatroom since it doesn't work
+| | | | 
+* | | | commit cdffb79da3c719e12db74243b7d908af6a0557a3
+|/ / /  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | |   Date:   Sun May 21 23:27:28 2023 +0800
+| | |   
+| | |       fixed errors in authentification
+| | | 
+* | | commit 2e3e7b4ef163f84d8fada06ca1b482d2976c32cf
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 23:05:08 2023 +0800
+| | | 
+| | |     removed unneeded hyperlink
+| | | 
+* | | commit 5c9c6439d833c8bb453890cab7f2858150d9a44d
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 22:59:45 2023 +0800
+| | | 
+| | |     typo
+| | | 
+* | | commit c08a200d9c388a4f44635c5c9117160f80bb8c2c
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 22:59:08 2023 +0800
+| | | 
+| | |     logging in is required for chat & history
+| | | 
+* | | commit 61ef6833ac59e593d4501ae65f797220d550557c
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 22:55:28 2023 +0800
+| | | 
+| | |     logging in works
+| | | 
+* | | commit 3a13562724d5d3aa214fbfaac1e32a2d954552c9
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 22:48:49 2023 +0800
+| | | 
+| | |     login now redirects
+| | |   
+* | |   commit cd86c2b04092f277c87fd84126dac13251474abb
+|\ \ \  Merge: 0e3eaa3 f859fd0
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sun May 21 22:37:28 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | |   
+| * | |   commit f859fd07908dc2fb65d4d9090692281b5b00748c
+| |\ \ \  Merge: 5d907b6 7f19c63
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 22:36:16 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| * | | | commit 5d907b6980e01660fcf0eeb2e97a5e2b0c150f45
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 22:36:12 2023 +0800
+| | | | | 
+| | | | |     removed script which prevents default
+| | | | | 
+* | | | | commit 0e3eaa3496e388a62aa172a20a6479bd7d05fedd
+| |/ / /  Author: anupa.benoy <anupabenoy7@gmail.com>
+|/| | |   Date:   Sun May 21 22:37:21 2023 +0800
+| | | |   
+| | | |       fixed redirect link
+| | | | 
+* | | | commit 7f19c634cfe2907b1492132133a65e00474db3aa
+|\| | | Merge: 7e576a3 f6c5deb
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sun May 21 22:31:04 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| * | | commit f6c5deb8082e202700873292cebe53febbad931e
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 22:24:57 2023 +0800
+| | | | 
+| | | |     made requirements + changed flow a bit
+| | | | 
+* | | | commit 7e576a3249ce8df523bf4b80c9f490e3d218a0e2
+|/ / /  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | |   Date:   Sun May 21 22:30:57 2023 +0800
+| | |   
+| | |       added redirect link in homepage, removed from goal
+| | | 
+* | | commit 940fa6d9aff3406425a0acba450d411789f05c50
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 22:13:19 2023 +0800
+| | | 
+| | |     removed demo chatroom from home
+| | | 
+* | | commit 8cac7b1552811da40ad1c6fee58da0721f176827
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 22:01:53 2023 +0800
+| | | 
+| | |     added logout button to history page
+| | | 
+* | | commit 4a749abf79353de7acb15f140c60a2931551be11
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 21:56:34 2023 +0800
+| | | 
+| | |     added redirect link if submit not working for goal
+| | | 
+* | | commit c738fdbf6e747aebbbe0d33b7e4217c2a81f8d15
+| | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | Date:   Sun May 21 21:52:05 2023 +0800
+| | | 
+| | |     killed off crazy gymrat
+| | |   
+* | |   commit 4b4bdbe46bf07119df4d4d242e14db23d9a82f0e
+|\ \ \  Merge: 6954186 87d3777
+| | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | Date:   Sun May 21 20:26:44 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| * | | commit 87d377758961c8d69d554df02555b39179625880
+| | | | Author: emgreye <114972609+emgreye@users.noreply.github.com>
+| | | | Date:   Sun May 21 20:08:42 2023 +0800
+| | | | 
+| | | |     replaced remy with distinct original character
+| | | | 
+| * | | commit b1c2a0620ffe178394c2a7acd5fc5cfb1f339989
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 19:51:09 2023 +0800
+| | | | 
+| | | |     added stripes and clickable logo to 2 pages
+| | | |   
+| * | |   commit b9d5a0907db018b1d49e12ee3aadeec3ded3ede4
+| |\ \ \  Merge: 78a00bd e531cb0
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 19:44:05 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| * | | | commit 78a00bd089fcc6aa635726beeb56c31c0d8cbe74
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 19:43:52 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of
+| | | | | 
+* | | | | commit 69541862287d2dbca24634b3972506c1312accce
+| |/ / /  Author: Ryan Takeda <ryantakeda1@gmail.com>
+|/| | |   Date:   Sun May 21 20:26:31 2023 +0800
+| | | |   
+| | | |       requirements.txt
+| | | | 
+* | | | commit e531cb0052af04e4ba1e3612a0732aa0f5cd016e
+|\| | | Merge: 3529377 4ddc703
+| | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | Date:   Sun May 21 19:41:01 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| * | | commit 4ddc703993df2146a0f4d3a1ca721fb688187e7f
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 19:12:32 2023 +0800
+| | | | 
+| | | |     typo
+| | | |   
+| * | |   commit adbedcd956b7078e9fca38b2de286b247ba92095
+| |\ \ \  Merge: 2658aab 64f76fa
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 19:11:41 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| * | | | commit 2658aabdd9ca627c9a4e362f8e7783d12266a888
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 19:11:37 2023 +0800
+| | | | | 
+| | | | |     changes to readme
+| | | | | 
+* | | | | commit 35293779d76aec21d42f9491439e64c787b278ce
+| |/ / /  Author: Ryan Takeda <ryantakeda1@gmail.com>
+|/| | |   Date:   Sun May 21 19:40:44 2023 +0800
+| | | |   
+| | | |       small changes
+| | | | 
+* | | | commit 64f76fa58c4010b3032303706a873c1476e0d6c4
+|\| | | Merge: 55999d5 986e788
+| | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | Date:   Sun May 21 19:10:05 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | |   
+| * | |   commit 986e7881a7b9a9090aba46026f822b87c03fc496
+| |\ \ \  Merge: 10f74f3 9135f89
+| | | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | | Date:   Sun May 21 19:05:33 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | |   
+| | * | |   commit 9135f893bb1190786ffd9c82000d0642d6da557e
+| | |\ \ \  Merge: acded39 b287168
+| | | | |/  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | |/|   Date:   Sun May 21 19:01:36 2023 +0800
+| | | | |   
+| | | | |       Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+| | * | | commit acded39b451959c05a133c5adb2e9371b6dc664b
+| | | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | | Date:   Sun May 21 18:57:18 2023 +0800
+| | | | | 
+| | | | |     updated readme
+| | | | | 
+| * | | | commit 10f74f3ef39d7f5b3947d20be14af4e736dac463
+| | |/ /  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| |/| |   Date:   Sun May 21 19:01:54 2023 +0800
+| | | |   
+| | | |       Added the partially working chat as alternate page
+| | | | 
+| * | | commit b2871686767b186a5cbfcc25623be6668f307291
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 17:48:42 2023 +0800
+| | | | 
+| | | |     Added page which verifies trainer
+| | | | 
+| * | | commit 1812ed70b8a2622f402968a5b1361ac1bd199ef6
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 17:41:50 2023 +0800
+| | | | 
+| | | |     update readme
+| | | | 
+| * | | commit 9d291b0648e52e4fd30dc1bb73b87b5a0682e345
+| |\| | Merge: 7a01914 32a7a34
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 17:23:11 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| * | | commit 7a0191431a16cefd0d73762707099cd69a6a868c
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 17:23:06 2023 +0800
+| | | | 
+| | | |     User can now leave final goal q's blank
+| | | |   
+* | | |   commit 55999d554f8b5bc21b13a9c89c73ac1bfcec1d56
+|\ \ \ \  Merge: 9209d5c 47fa00b
+| | | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | | Date:   Sun May 21 19:09:08 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | | 
+* | | | | commit 9209d5ca6e567fe22cad07d86d3f9756785740f3
+| | | | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | | | Date:   Sun May 21 17:04:30 2023 +0800
+| | | | | 
+| | | | |     required questions
+| | | | |   
+| | | | | * commit 51e68385a8d57739005f699d2c6aa381604975f6 (origin/tests)
+| | | | |/  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | |/|   Date:   Sun May 21 18:35:10 2023 +0800
+| | | | |   
+| | | | |       trying to get tests to work - unsuccessful
+| | | | | 
+| | | * | commit 32a7a34d5d5dca06677517042ec87eec0d5d3898
+| | |/ /  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | |   Date:   Sun May 21 17:21:12 2023 +0800
+| | | |   
+| | | |       imported trainer table from db
+| | | | 
+| | * | commit 740673b6cd56e45b0faa5caf2eb7491b0d85b1f0
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sun May 21 17:16:01 2023 +0800
+| | | | 
+| | | |     minor variable fix for tests
+| | | | 
+| | * | commit 4e1496b443c5510b5abb18da7155148356b2eaa4
+| |/ /  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | |   Date:   Sun May 21 17:14:09 2023 +0800
+| | |   
+| | |       removed unused file fitnesoption, added test cases
+| | | 
+| * | commit 47fa00b2b7e50bfcb222d6108bb0049e61eed62f
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 16:17:11 2023 +0800
+| | | 
+| | |     enabling scrolling for history
+| | |   
+| * |   commit 9a339d4abb1096b98841d6cda019e3f30b52453e
+| |\ \  Merge: c93e6e2 7842a99
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sun May 21 16:08:58 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| | * | commit 7842a99050bfa95498524df7b91142026f820158
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sun May 21 15:53:04 2023 +0800
+| | | | 
+| | | |     User Info section created
+| | | | 
+| * | | commit c93e6e28417b0613c09eddd1614396bd294e89ed
+| |/ /  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | |   Date:   Sun May 21 16:08:41 2023 +0800
+| | |   
+| | |       changed formatting of some goal q's
+| | | 
+| * | commit 1d8bf53cc375ad1b934b4d2f991968d628384db2
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 15:28:24 2023 +0800
+| | | 
+| | |     Goal setting now works 100%
+| | | 
+| * | commit 67877cf92ff27002151434a2ec759b670315a89f
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 15:25:21 2023 +0800
+| | | 
+| | |     minor bug fix
+| | | 
+| * | commit 061a3e9190822b1191dee599047f793fcaec568d
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sun May 21 14:59:27 2023 +0800
+| | | 
+| | |     goal setting almost works
+| | | 
+| * | commit 0de20747cdcca23ee60fcacb424db761e480f0cc
+|/ /  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| |   Date:   Sun May 21 14:49:37 2023 +0800
+| |   
+| |       Goal setting (almost) commits to db
+| |   
+| | * commit b5eb1892d9b87094f5029e56e75ddf78612601b4 (origin/chatroom)
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sun May 21 18:11:47 2023 +0800
+| | | 
+| | |     updated requirements and procfile
+| | |   
+| | *   commit 78bb8be9510b9141ade4cdd7998eb08ec2660699
+| | |\  Merge: b4e76f4 a02c056
+| | |/  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| |/|   Date:   Sun May 21 17:57:23 2023 +0800
+| | |   
+| | |       Merge branch 'main' into chatroom
+| | | 
+| * | commit a02c05668183bbb51ec53855e5b16199ebd625f1
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sun May 21 17:38:08 2023 +0800
+| | | 
+| | |     'trying to fix binwalk requirements'
+| | |   
+| * |   commit ea496d2448342822fa89c598949286f6bb492032
+| |\ \  Merge: e7224c7 8c46a66
+| |/ /  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+|/| |   Date:   Sun May 21 03:13:30 2023 +0800
+| | |   
+| | |       Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+* | | commit 8c46a66fe4352178cccb8a7ab3d8fbb39738254b
+| | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | Date:   Sun May 21 00:24:48 2023 +0800
+| | | 
+| | |     added stripes
+| | | 
+* | | commit d2a01111801414f87f2115f3976ff492329422e5
+| | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | Date:   Sun May 21 00:24:32 2023 +0800
+| | | 
+| | |     added backgroudn stripes to everything
+| | | 
+| * | commit e7224c7fb898147fa0f0feba108f9fe94113162a
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sun May 21 03:12:59 2023 +0800
+| | | 
+| | |     syncing changes
+| | | 
+| | * commit b4e76f45854f643586e209cc0b42c2d70ed88fde
+| |/  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| |   Date:   Sun May 21 17:53:47 2023 +0800
+| |   
+| |       'got rid of binwalk'
+| |   
+| | * commit c88595e39363a55d85bc549df24fc14add2b7b5a (origin/chat2db, chat2db)
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 01:10:43 2023 +0800
+| | | 
+| | |     formatted input box, can't print messages yet
+| | | 
+| | * commit 89925ecff684183b13a2eca1c686f5b39886a520
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sun May 21 01:04:32 2023 +0800
+| | | 
+| | |     added scroll to history
+| | | 
+| | * commit 9a90634be0239c218299348fb7d218addc394e9b
+| |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/|   Date:   Sat May 20 23:25:21 2023 +0800
+| |   
+| |       chat doesn't work but db does
+| | 
+* | commit 28be6b8207e812f063f326334c94e98011172d36
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 21:45:57 2023 +0800
+| | 
+| |     Pressing 'enter' sends message
+| | 
+* | commit 7969d02e9cfd23b55d232f909907956a1a3ecedd
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 20 21:21:08 2023 +0800
+| | 
+| |     button to access history added in chatroom
+| | 
+* | commit 5f88fe0b0415c6782c0435bfce3efc53e4ca422e
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 21:06:57 2023 +0800
+| | 
+| |     Futureproofed history for when sign in works
+| | 
+* | commit 2b0e7c0f7a5f2b687f38235ec1b898ea946b0f19
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 20:54:53 2023 +0800
+| | 
+| |     Basic history page created
+| | 
+* | commit 2e2fcb20eacbbcc931d7810da288b1dcf129d6eb
+|\| Merge: e934f66 4af7c62
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 20:02:36 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | 
+| * commit 4af7c62abb152b6f2d2cf0a6c022cb2b0126936b
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Sat May 20 18:33:13 2023 +0800
+| | 
+| |     edited procfile, added to requirements.txt
+| |   
+| *   commit e60b93c2c38296371d9b1902368b431ef09f7292
+| |\  Merge: b6c2d93 91e40c7
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sat May 20 18:26:29 2023 +0800
+| | | 
+| | |     Merge branch 'main' into chatroom
+| | |   
+| | *   commit 91e40c7a340bc621924f1bea49763119c35a4adf
+| | |\  Merge: ea535ff cd26319
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat May 20 18:25:06 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| | | * commit cd263197f4a5ce27251af663cd8d092474c073a6
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sat May 20 17:51:44 2023 +0800
+| | | | 
+| | | |     goal submit takes you to preferredname
+| | | | 
+| | | * commit c75b2fb8b292151ddad29a52e2a9a131550c0f81
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sat May 20 17:48:21 2023 +0800
+| | | | 
+| | | |     submitting goals takes you to chatroom
+| | | | 
+| | | * commit d3c013aadeee8afc5d8beb79b1d1cc80697b3c53
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sat May 20 17:38:01 2023 +0800
+| | | | 
+| | | |     changing sign up route to goals
+| | | | 
+| | * | commit ea535ff904b234b1f1dedde8a07621c9449fcbbb
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat May 20 18:24:03 2023 +0800
+| | | | 
+| | | |     'added requirements for deployment on heroku'
+| | | | 
+| * | | commit b6c2d9344b7ae049235ce12492baedfe583efd14
+| |\| | Merge: f1f47f3 d0cf0e6
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat May 20 16:18:54 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' into chatroom
+| | | | 
+| | * | commit d0cf0e65e11e0ba241bc7b63f24362f625297d28
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat May 20 16:12:03 2023 +0800
+| | | | 
+| | | |     commented database url
+| | | | 
+| * | | commit f1f47f32293c52c5f45f90fb1f2d213c71a48577
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat May 20 16:15:29 2023 +0800
+| | | | 
+| | | |     adhered to main changes
+| | | | 
+* | | | commit e934f6608229ab9388d9df093b5ef1d5d9a03e1a
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Sat May 20 19:50:53 2023 +0800
+| | | | 
+| | | |     made skeleton for history
+| | | | 
+* | | | commit 774cf9b10786533efaa1100bbb735af2ef1d58c2
+| |_|/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/| |   Date:   Sat May 20 19:50:39 2023 +0800
+| | |   
+| | |       made skeleton for history
+| | | 
+* | | commit f890e77afa25e5c2ca7d7604f5898afb59308b0b
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sat May 20 16:18:13 2023 +0800
+| | | 
+| | |     added check for debugging
+| | | 
+* | | commit 33e8c022ca134514f0761bd2ba25f9682678b60d
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sat May 20 16:09:32 2023 +0800
+| | | 
+| | |     Commented out heroku stuff for now
+| | | 
+* | | commit 599a31cb438b460a4d832efb16648d0c02ffcb67
+| |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/|   Date:   Sat May 20 16:01:24 2023 +0800
+| |   
+| |       uncommented commented lines
+| | 
+* | commit 0172056f0a16778ea5b2ea34134e17b7bf6f889e
+|\| Merge: a50a15d 27ab368
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Sat May 20 14:51:48 2023 +0800
+| | 
+| |     Merge branch 'chatroom'
+| | 
+| * commit 27ab36849a8374a5620e01eb3500b460172c642f
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Sat May 20 14:28:54 2023 +0800
+| | 
+| |     initialised heroku
+| | 
+* | commit a50a15d977083c19435d515e66f0f09fe1df6ad4
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 14:04:44 2023 +0800
+| | 
+| |     minor changes
+| | 
+* | commit 3dfd28215d71bd818459aaeed7d22e5b73a45e19
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Sat May 20 13:39:13 2023 +0800
+| | 
+| |     signup page now works
+| | 
+* | commit 217cce385a879cfc4fae6c0de721c4872743dfb1
+|/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|   Date:   Sat May 20 12:29:03 2023 +0800
+|   
+|       fixed css issue
+|   
+*   commit 0fbbe0dfaa750e30b15292fe0d085401a274fa6d
+|\  Merge: 1da6987 469fece
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Fri May 19 21:39:47 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| |   
+| *   commit 469fece4721e1d18ec5832cb270234ec3ddc394b
+| |\  Merge: 9938145 4ef71f3
+| | | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | | Date:   Fri May 19 01:43:47 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| | * commit 4ef71f33c4887d62b8b06de0f7d7f8ea10cfc91b
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 18 19:56:16 2023 +0800
+| | | 
+| | |     transferred formatting etc from database branch
+| | | 
+| * | commit 9938145457e8bbd03085b42af7de4b224917c9cc
+| |/  Author: Ryan Takeda <ryantakeda1@gmail.com>
+| |   Date:   Fri May 19 01:43:29 2023 +0800
+| |   
+| |       gradient in background
+| | 
+| * commit e7052795c3ce0908604a7e8b9bb6cd34e0cc267e
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Thu May 18 15:46:45 2023 +0800
+| | 
+| |     small aesthetic changes
+| | 
+* | commit 1da6987393ba89b8951ebd08dd576e17ccca9a68
+|/  Author: anupa.benoy <anupabenoy7@gmail.com>
+|   Date:   Fri May 19 21:39:24 2023 +0800
+|   
+|       adding test cases
+| 
+* commit fdef5c440525155346f274a84ef98cf029a15152
+| Author: anupa.benoy <anupabenoy7@gmail.com>
+| Date:   Thu May 18 15:29:11 2023 +0800
+| 
+|     links to different pages, adding test cases for db
+| 
+* commit fc03ecc32d7c1c230d2dcdd3d02b9b9c5306e4b1
+| Author: anupa.benoy <anupabenoy7@gmail.com>
+| Date:   Wed May 17 13:53:49 2023 +0800
+| 
+|     fixed links
+| 
+* commit 77e4b01be8648a3d43a1755a28bdc1422b32a1ef
+| Author: anupa.benoy <anupabenoy7@gmail.com>
+| Date:   Wed May 17 13:53:38 2023 +0800
+| 
+|     fixing links and working on db test
+|   
+*   commit ed09dfa4a04ecfb72656501972b8c9cd718d6ed2
+|\  Merge: 853b5fb f273f96
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 16 15:29:10 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| |   
+| *   commit f273f965e31efc46c4a655f88be13f17664261e3
+| |\  Merge: 44abd90 4443ad3
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Tue May 16 14:59:50 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| * | commit 44abd902cfcaca63c7806a073739a1ae40f21500
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Tue May 16 14:59:43 2023 +0800
+| | | 
+| | |     implemented interactive chat
+| | | 
+| * | commit a9f9faa55bf034aaf7e8031b69814e7ad58906d7
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sun May 14 01:36:08 2023 +0800
+| | | 
+| | |     messages now appear on screen when click send
+| | | 
+* | | commit 853b5fb5453476b05a8719daf441135beb1afca9
+| |/  Author: anupa.benoy <anupabenoy7@gmail.com>
+|/|   Date:   Tue May 16 15:28:59 2023 +0800
+| |   
+| |       removed comment regarding pro button
+| | 
+* | commit 4443ad3bad4210184fd57d641291c801af92c04d
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 16 08:52:41 2023 +0800
+| | 
+| |     changed pro q from radio to text field (for array)
+| | 
+* | commit b90cdc01f7985168129fcfa27442dfac41519608
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 16 08:47:35 2023 +0800
+| | 
+| |     collecting info from signup in an array
+| | 
+* | commit de53838c0ae9f6bd7ede8d76642278675c024603
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 16 08:31:07 2023 +0800
+| | 
+| |     added name & 'are u pro' question to sign up form
+| | 
+* | commit db0102046ab6c65c334d51b200a6e7d189bae6ed
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 16 08:17:12 2023 +0800
+| | 
+| |     attempting to create test for db
+| | 
+* | commit 30f22e0afb53fe6b17353e4d65379200b583091a
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Sun May 14 20:37:57 2023 +0800
+| | 
+| |     changed fonts lol
+| | 
+* | commit 094526974b93ef0aaa2621113dc1174cb97fcd65
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Sun May 14 17:16:32 2023 +0800
+| | 
+| |     Pressing logo takes you to homepage
+| | 
+* | commit 23ca1d3bb1ee55f1c635465347715871d65c3666
+|\| Merge: b7411f7 17bb458
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Sun May 14 17:05:29 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| |   
+| *   commit 17bb458e26f3fbe9a5f1d90467e0346d57878e32
+| |\  Merge: 0fdd439 f9e4597
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Sat May 13 16:38:44 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | |   
+* | |   commit b7411f77c5f95a0ce316326c3a137afe9ee61145
+|\ \ \  Merge: 0fdd439 f9e4597
+| |/ /  Author: Ryan Takeda <ryantakeda1@gmail.com>
+|/| /   Date:   Sat May 13 15:22:29 2023 +0800
+| |/    
+| |         Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | 
+| * commit f9e45970b9b1b08dbae0771ca1b5771a761a74af
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 14:32:23 2023 +0800
+| | 
+| |     get values form username + password in an array
+| | 
+| * commit f869950e1aeb4194863b21bff23255d663105271
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 14:01:12 2023 +0800
+| | 
+| |     updated chatroom link to link for "professionals"
+| | 
+| * commit b9f8b2fc5b0c68604f61cfcca95a520a938815c3
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 13:47:59 2023 +0800
+| | 
+| |     added email validation (must include @) to submit
+| | 
+| * commit 9b20fddcfd17bf93459cd193a2e1f1f1dc37d5b7
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 13:27:28 2023 +0800
+| | 
+| |     deleted old signin page
+| | 
+| * commit e32267c8d61edde0d4deb5b286aea15f4a0fb483
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 13:26:19 2023 +0800
+| | 
+| |     added rat pic to sign up page
+| | 
+| * commit 7c58c35bb48cc570702fe2c75f9c932369f09bf9
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 13:25:52 2023 +0800
+| | 
+| |     added rat pic to sign up page, created test file
+| | 
+| * commit 6bc8492e52255dc160272ca19111d1d6a4bc187e
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 13 10:06:23 2023 +0800
+| | 
+| |     creating a file for test cases
+| | 
+| * commit a92e65bbf353c073a85218e3f1db08ea4a3e8e38 (origin/signUpForm)
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu May 11 17:51:38 2023 +0800
+| | 
+| |     added email to form
+| | 
+| * commit dab5432271ca30147ef1c0135d8096412e5626ec
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu May 11 17:38:42 2023 +0800
+| | 
+| |     centred form on the sign up page
+| | 
+| * commit ba33909cb58df9f1faa13e85a6a75f887b4ea6dc
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu May 11 17:28:20 2023 +0800
+| | 
+| |     added if block to welcome user in sign up page
+| |   
+* |   commit 0fdd43995e901f61d753e75ef63955e29247b33b
+|\ \  Merge: 06ea4a2 4171cbd
+| |/  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+|/|   Date:   Thu May 11 15:48:09 2023 +0800
+| |   
+| |       Merge branch 'chatroom'
+| | 
+| * commit 4171cbd51bce06f926bc363dd7620831c8f4e52c
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Thu May 11 15:14:43 2023 +0800
+| | 
+| |     established socket connection with server
+| | 
+| * commit 076113873741184bb50911b300c81723909644ae
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Sat May 6 17:13:18 2023 +0800
+| | 
+| |     created basic webpage for chatroom page
+| | 
+| * commit 1230de586fa8a631edd31beac0b2defaec00cc2a
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Thu May 4 18:22:54 2023 +0800
+| | 
+| |     changed chatroom.html to fitnessoptions.html
+| | 
+* | commit 06ea4a2c5357d86fb0e1d8ed55ae81e2ace5ff76
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Wed May 10 22:08:24 2023 +0800
+| | 
+| |     remy now talks to you
+| | 
+* | commit 6bc8dc70cb6aaf9cbce3ad671c85630817908ee5
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Tue May 9 23:43:47 2023 +0800
+| | 
+| |     "Next question" button working
+| | 
+* | commit 8569973a94b99d85261461256dfd256c304a3011
+| | Author: Ryan Takeda <ryantakeda1@gmail.com>
+| | Date:   Tue May 9 22:43:57 2023 +0800
+| | 
+| |     Submit form creates array (form_answers)
+| | 
+* | commit ee0a4920d4ab1bd5c6550845c8c74101645ed456
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Tue May 9 22:10:59 2023 +0800
+| | 
+| |     mini commit - Saves form to array (nearly working)
+| | 
+* | commit abe5bbf2f88f4809f5ac6fc692d401bc954d7125
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Tue May 9 20:43:53 2023 +0800
+| | 
+| |     update dreadme
+| | 
+* | commit 0ec6f7d296346b4e2cc27cad534549a6bc48e0a5
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Tue May 9 20:36:13 2023 +0800
+| | 
+| |     read me updated
+| | 
+* | commit 9c6173fbc20fc1f9478142739a2ea0de8a0d6b70
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Tue May 9 08:03:22 2023 +0800
+| | 
+| |     updated link to take user back to home page
+| | 
+* | commit 9e73ff3fcff37382c0c35dc9c16f81947373aa67
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Sun May 7 15:56:13 2023 +0800
+| | 
+| |     talking rat submit button, minor changes
+| | 
+* | commit ed2901f38784f3b9d40e4d096b4ca2e403e66546
+| | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | Date:   Sun May 7 13:28:16 2023 +0800
+| | 
+| |     added more questions to goalSetting.html
+| | 
+* | commit 729b40f4f6ec36f7d902948fb69c6436e1926a49
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 6 20:26:22 2023 +0800
+| | 
+| |     adding some initial questions for user
+| | 
+* | commit 1c303115539636572c12416a6127ed4fedc33492
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Sat May 6 14:10:49 2023 +0800
+| | 
+| |     creating file for goal setting page
+| | 
+* | commit efa239730ed905dd293f4d123e08b209398ee115
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Fri May 5 23:32:09 2023 +0800
+| | 
+| |     added link at the bottom to go back to home page
+| | 
+* | commit 0feb38012f1d0f3929966d213fe7c11b3197ad63
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Fri May 5 23:20:42 2023 +0800
+| | 
+| |     set up main design for rat page
+| | 
+* | commit b93114283ca7e611d73ec4d06caabe99e582d64a
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu May 4 18:19:37 2023 +0800
+| | 
+| |     setting up route and basic file for talking rat
+| |   
+* |   commit 5af94bd07b9f622191278cca38a750589ed3d659
+|\ \  Merge: bd73896 e45dcc3
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 4 18:15:41 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| * | commit e45dcc3655bac6fc1fca9252c37235f4603f9a6a
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Thu May 4 18:07:00 2023 +0800
+| | | 
+| | |     creating file for talking rat
+| | | 
+* | | commit bd73896dc2f8f4a97c2515e03758747d8e7d3609
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 4 18:15:37 2023 +0800
+| | | 
+| | |     minor style changes
+| | | 
+* | | commit 9b447334d86b60c4f6f4af4eccb261420023fa51
+|/ /  Author: emgreye <JakeRMcAuliffe@gmail.com>
+| |   Date:   Thu May 4 18:15:28 2023 +0800
+| |   
+| |       minor style changes
+| | 
+* | commit 5df6239873e423158a9514895f72f4bf876eb682
+| | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | Date:   Thu May 4 17:54:19 2023 +0800
+| | 
+| |     made loading page a template
+| |   
+| | * commit ef8061359f14620875852428c57b6922c7dad5a4 (origin/database, database)
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 18 15:54:50 2023 +0800
+| | | 
+| | |     prep for merge
+| | | 
+| | * commit 75b46328a5d07b18613a8795313075940af75aac
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 18 15:54:09 2023 +0800
+| | | 
+| | |     edits in preparation for merge
+| | | 
+| | * commit 2f527646927c4729e477ccea6df05d85be3181b7
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 18 14:42:38 2023 +0800
+| | | 
+| | |     db working and sign in starting to work
+| | | 
+| | * commit 6663a95136b049986e88424b2de27317c52b7372
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Wed May 17 14:35:04 2023 +0800
+| | | 
+| | |     db implemented but not linked
+| | | 
+| | * commit 747dc3fa8567a5c25b45592674c225b6fe322c64
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Wed May 17 13:09:15 2023 +0800
+| | | 
+| | |     Created working "app" package
+| | | 
+| | * commit e021d73c77852849c56b0c671042704b09766d00
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Wed May 17 13:08:57 2023 +0800
+| | | 
+| | |     Created working "app" package
+| | | 
+| | * commit b5f657b4dacd0a1fe068dea290d95172c19fad9d
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Wed May 17 12:28:44 2023 +0800
+| | | 
+| | |     fixed bug which cause 500 error
+| | | 
+| | * commit 9dfb95fdb715e9936a06c4f83eff30c78169f3ba
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Tue May 16 16:20:48 2023 +0800
+| | | 
+| | |     attempts to stop getting 500 error
+| | | 
+| | * commit 323da78e89074e4de50457ee19dc141806006917
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Mon May 15 18:18:47 2023 +0800
+| | | 
+| | |     fixed up forms import in main
+| | | 
+| | * commit 27df70a26a8cc266bb3a397faf7f54d7d99f7492
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Sat May 13 16:23:06 2023 +0800
+| | | 
+| | |     importing modules and attempting to initialise db
+| | |   
+| | *   commit c74e482d7346de0e27e21f22f23e4ea762d8c942
+| | |\  Merge: 140820c 5202c16
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sat May 13 16:16:23 2023 +0800
+| | | | 
+| | | |     Merge branch 'database' into database
+| | | | 
+| | | * commit 5202c1682d542146dbd6f0694dadfc341a7b4e72
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Thu May 11 16:02:09 2023 +0800
+| | | | 
+| | | |     meant to commit this with last commit
+| | | | 
+| | | * commit abd8e771f9f739c5ffe8fb9a7bf9deb831b1c31a
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Thu May 11 16:01:48 2023 +0800
+| | | | 
+| | | |     changed directory but now site doesn't work
+| | | | 
+| | | * commit f431b5ef63ce03b277d360823e34194307fe30fb
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Wed May 10 15:04:19 2023 +0800
+| | | | 
+| | | |     meant to include this in last commit
+| | | | 
+| | | * commit 363d3d9ce6c0124b68e441dbb05b0ea739d1a12c
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Wed May 10 15:03:54 2023 +0800
+| | | | 
+| | | |     created database background stuff
+| | | | 
+| | * | commit 140820ca0ec00bc693faabbade1a34b1c0be3f72
+| | | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | | Date:   Sat May 13 16:14:47 2023 +0800
+| | | | 
+| | | |     deleting init.py to resolve merge conflict
+| | | | 
+| | * | commit 25cc40d08396a2e8ababe7781899096df3ceef49
+| | |/  Author: anupa.benoy <anupabenoy7@gmail.com>
+| | |   Date:   Sat May 13 15:40:44 2023 +0800
+| | |   
+| | |       working on initialising db
+| | | 
+| | * commit fddc494c7b4a41722e0a4a6cc15d7d954357bec9
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu May 4 17:38:02 2023 +0800
+| | | 
+| | |     basic db setup
+| | | 
+| | * commit ec13fbad407f4cb130847de1b53d89e439ec1639
+| |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/|   Date:   Thu May 4 17:33:37 2023 +0800
+| |   
+| |       made basics of the database
+| |   
+* |   commit 4fae2946fde630402b5d8341501c9b8b0e79ffa6
+|\ \  Merge: 8342734 02039ad
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Wed May 3 14:08:42 2023 +0800
+| | | 
+| | |     Merge branch 'signin'
+| | |   
+| * |   commit 02039ad1083a1fab8925f2a8ac6feaad42b99a47 (signin)
+| |\ \  Merge: 8ddb4c2 0acd618
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Wed May 3 14:06:42 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' into signin
+| | | | 
+| * | | commit 8ddb4c2fec5f647b0d47a1ea77fe0c268c93d8bc (origin/signin)
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Wed May 3 13:50:32 2023 +0800
+| | | | 
+| | | |     Logging in now generates flash message
+| | | | 
+| * | | commit 4aefc4b88b9c6b46ab271a8a6cb9c6922ee776c3
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Wed May 3 13:49:02 2023 +0800
+| | | | 
+| | | |     Log in page now generates flash message
+| | | | 
+| * | | commit e9fc297d8033d72dec7dd4203d0ca1fc9b030d16
+| | | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | | Date:   Thu Apr 27 15:56:20 2023 +0800
+| | | | 
+| | | |     style changes
+| | | | 
+* | | | commit 8342734924b0830ee29b5faf397a74bed60035ca
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Wed May 3 13:37:45 2023 +0800
+| | | | 
+| | | |     added loading page
+| | | |   
+* | | |   commit f4cc34e8da41d8f8f0c2abf5c4fddda073cb2b00
+|\ \ \ \  Merge: 0acd618 88f493f
+| |_|/ /  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+|/| | /   Date:   Wed May 3 13:37:20 2023 +0800
+| | |/    
+| |/|         Merge branch 'chatroom'
+| | | 
+| * | commit 88f493fd5de3fd230d06527b7c605cbf388e942a
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Wed May 3 12:56:29 2023 +0800
+| | | 
+| | |     text disappears
+| | | 
+| * | commit f8e44edaeafdd11ceff45f0fcaa248a399082270
+| | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | Date:   Tue May 2 13:33:41 2023 +0800
+| | | 
+| | |     added textbox and repositioned parents divs
+| | | 
+* | | commit 0acd61861f034d7907dd0e178b3dec6342a00caf
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sat Apr 29 22:44:10 2023 +0800
+| | | 
+| | |     listed more things you have to install
+| | | 
+* | | commit 0360bb8053eab52ef737051f8c8ec154f97819c5
+|\| | Merge: c06d48f 9d9ad9b
+| | | Author: emgreye <JakeRMcAuliffe@gmail.com>
+| | | Date:   Sat Apr 29 22:26:05 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | |   
+| * |   commit 9d9ad9b8fd3cb1be51d93b8b87440880db18e089
+| |\ \  Merge: 13d6719 19ad819
+| | | | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | | | Date:   Sat Apr 29 19:28:12 2023 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | | 
+| | * | commit 19ad8195b4458128965bb372546116dc97f1f11f (origin/ryan_moreflask)
+| | | | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | | | Date:   Sat Apr 29 14:03:11 2023 +0800
+| | | | 
+| | | |     cleaned up a little
+| | | | 
+| | * | commit 43d426a50afd60cfb161d0715f56d4dcb227eb8d
+| | | | Author: swarels <104413979+swarels@users.noreply.github.com>
+| | | | Date:   Sat Apr 29 13:18:13 2023 +0800
+| | | | 
+| | | |     signups added to homepage
+| | | | 
+| | * | commit 7a41b40ddf8ca1bb12df2e8a203a49dbb8629691
+| | | | Author: anupa-benoy <126939441+anupa-benoy@users.noreply.github.com>
+| | | | Date:   Thu Apr 27 22:28:39 2023 +0800
+| | | | 
+| | | |     added link to take to create account page
+| | | | 
+| * | | commit 13d6719d2bd80bacb373dc815cd38cfbf735a884
+| | |/  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| |/|   Date:   Sat Apr 29 19:22:36 2023 +0800
+| | |   
+| | |       created chatroom page(fitness options)
+| | | 
+* | | commit c06d48f3e9959b6cfb5010afb3caaf1758e9c3b5
+| |/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|/|   Date:   Thu Apr 27 21:51:32 2023 +0800
+| |   
+| |       added room page
+| | 
+* | commit ccdaa32c3a62ece77fd332e4ee4e303bb9905188
+|/  Author: emgreye <JakeRMcAuliffe@gmail.com>
+|   Date:   Thu Apr 27 15:58:32 2023 +0800
+|   
+|       put title in template
+|   
+| * commit 8fa459fddc55bcbd3492311c971258c858d6e1e1 (origin/create_account)
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu Apr 27 22:19:15 2023 +0800
+| | 
+| |     trying to get basic layout of create account page
+| | 
+| * commit 3e0dce98489de02ddd6a7be3e67c2d318a5a098a
+| | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | Date:   Thu Apr 27 22:18:38 2023 +0800
+| | 
+| |     inserted link to take to create an account page
+| | 
+| * commit cd0b05f58803f74d4ec5ba4f4211db4fd452082f
+|/  Author: anupa.benoy <anupabenoy7@gmail.com>
+|   Date:   Thu Apr 27 20:18:24 2023 +0800
+|   
+|       create account page (+ testing merging to branch)
+| 
+* commit 5af9aa9769ef98f35c85a24b37912ca41a494ccb
+| Author: Ryan Takeda <ryantakeda1@gmail.com>
+| Date:   Thu Apr 27 14:18:42 2023 +0800
+| 
+|     no more index
+| 
+* commit d616aa14f33b809b4c6e4c5f3854742eb388eabc
+| Author: emgreye <JakeRMcAuliffe@gmail.com>
+| Date:   Wed Apr 26 13:52:51 2023 +0800
+| 
+|     made basic home page with temporary name
+| 
+* commit 8ae466f8c1c3eb63fe5869858d36299b4659f80d
+| Author: emgreye <JakeRMcAuliffe@gmail.com>
+| Date:   Wed Apr 26 13:51:09 2023 +0800
+| 
+|     Made basic home page with temporary name
+| 
+* commit badac46d2f896d37f97c7ec0b19be5fe5cff5057
+| Author: anupa.benoy <anupabenoy7@gmail.com>
+| Date:   Mon Apr 24 18:35:22 2023 +0800
+| 
+|     basic files needed to create style for chat room
+| 
+* commit ceaf4bf670103e9a854aa9d9dc7d1fe3ac2d9a53
+| Author: anupa.benoy <anupabenoy7@gmail.com>
+| Date:   Mon Apr 24 18:33:50 2023 +0800
+| 
+|     basic folders and files needed to create chat room
+| 
+* commit a8a09168ec67bc7db55b5c412d0d6102986d8e77
+| Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| Date:   Thu Apr 20 18:06:20 2023 +0800
+| 
+|     back to original
+|   
+*   commit 108d0127075d24d238b412dcdd94ea2ffbf99a6f
+|\  Merge: 90dd1b3 d435951
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Thu Apr 20 18:00:28 2023 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | 
+| * commit d4359514db9562da204e02758bde061f5f053f00
+| | Author: emgrey <JakeRMcAuliffe@gmail.com>
+| | Date:   Thu Apr 20 17:09:43 2023 +0800
+| | 
+| |     removed thing
+| |   
+| *   commit b466ea8fce2a8e00a0ca43cb478ae5f5019fdc78
+| |\  Merge: a3e86b6 3ebcaa0
+| | | Author: emgrey <JakeRMcAuliffe@gmail.com>
+| | | Date:   Thu Apr 20 17:03:00 2023 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/swarels/cits3403_project
+| | | 
+| | * commit 3ebcaa00f8316550645a6258ba5d7232f6dd0252
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Thu Apr 20 16:44:54 2023 +0800
+| | | 
+| | |     deleted test
+| | | 
+| | * commit 7ab0c8a9eac1bb74af9e93a2b440d611455c30e5
+| | | Author: anupa.benoy <anupabenoy7@gmail.com>
+| | | Date:   Thu Apr 20 16:43:20 2023 +0800
+| | | 
+| | |     this is a test
+| | | 
+| * | commit a3e86b65efd76c9e541dd771e9d6025a627956c8
+| |/  Author: emgrey <JakeRMcAuliffe@gmail.com>
+| |   Date:   Thu Apr 20 16:52:56 2023 +0800
+| |   
+| |       added test page
+| | 
+* | commit 90dd1b3c10e8fb13afc6c66c2d94e188bdc98620
+| | Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+| | Date:   Thu Apr 20 17:59:23 2023 +0800
+| | 
+| |     test commit
+| | 
+* | commit 4ac02d6f60ade990a38ee2aac7398264eb538220
+|/  Author: Ifeoluwa Mejiuni <22979825@student.uwa.edu.au>
+|   Date:   Thu Apr 20 17:25:33 2023 +0800
+|   
+|       test commit
+| 
+* commit 08aa92e49246e4c6c3f850dada99e8adbbe53642
+| Author: anupa-benoy <126939441+anupa-benoy@users.noreply.github.com>
+| Date:   Wed Apr 12 11:32:43 2023 +0800
+| 
+|     Rename signUp.html to signIn.html
+|     
+|     realised will need to make separate file for "create an account / sign in"
+| 
+* commit 1e66f0d77545bb3a9fab188aeca26dab98ebbe65
+| Author: anupa-benoy <126939441+anupa-benoy@users.noreply.github.com>
+| Date:   Wed Apr 12 11:22:24 2023 +0800
+| 
+|     initial basic design of sign up page
+| 
+* commit 0229535373088abf996a033f228097ad8025b6b4
+| Author: Ryan Takeda <ryantakeda1@gmail.com>
+| Date:   Thu Mar 30 00:46:02 2023 +0800
+| 
+|     random stuff
+| 
+* commit 03f1a4f8baa201350b9ecebce27ffe2424337788
+| Author: Ryan Takeda <ryantakeda1@gmail.com>
+| Date:   Fri Mar 24 12:51:12 2023 +0800
+| 
+|     first test
+| 
+* commit d657c59c8ef01189170788061282dd5d92f044c2 (origin/ryan, origin/anupa)
+  Author: Ryan <104413979+swarels@users.noreply.github.com>
+  Date:   Fri Mar 24 12:10:40 2023 +0800
+  
+      Initial commit
