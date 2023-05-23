@@ -49,3 +49,6 @@ Details of the database are in app/models.py
 | Ryan Takeda    | 23073177       | swarels         |
 | Ife Mejiuni    | 22979825       | makon1234       |
 
+# Running Tests
+
+Unfortunately, we couldn't get tests to work by the submission deadline.
